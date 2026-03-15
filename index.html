@@ -86,7 +86,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #1a7a3c 0%, #2da05a 40%, #4db87a 70%, #a8d96c 100%);
+      background: #1a5c30;
     }
     .hero-bg {
       position: absolute;
@@ -94,17 +94,19 @@
       background-image: url('images/room503_1.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.15;
+      opacity: 0.75;
     }
-    /* 光の差し込み効果 */
+    /* グリーン薄掛けオーバーレイ */
     .hero::after {
       content: '';
       position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 60%;
-      height: 160%;
-      background: radial-gradient(ellipse at center, rgba(255,245,150,0.28) 0%, rgba(255,255,255,0.10) 50%, transparent 75%);
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(20, 90, 40, 0.55) 0%,
+        rgba(30, 120, 60, 0.40) 50%,
+        rgba(180, 220, 100, 0.18) 100%
+      );
       pointer-events: none;
       z-index: 1;
     }
