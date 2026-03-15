@@ -651,6 +651,95 @@
     .footer-link:hover { color: var(--primary-light); }
     .footer-bottom { text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
 
+    /* ===== STATS ===== */
+    .stats-section { background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%); color: #fff; padding: 56px 20px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .stat-item { text-align: center; padding: 24px 16px; background: rgba(255,255,255,0.1); border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
+    .stat-num { font-size: clamp(32px, 5vw, 48px); font-weight: 900; color: #FFD700; line-height: 1.1; }
+    .stat-unit { font-size: 16px; font-weight: 700; color: #FFD700; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px; line-height: 1.5; }
+
+    /* ===== FAQ ===== */
+    .faq-section { background: var(--bg-light); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; }
+    .faq-item { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .faq-question {
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      user-select: none;
+      list-style: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-q-icon { width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+    .faq-q-text { flex: 1; line-height: 1.6; }
+    .faq-toggle { font-size: 18px; color: var(--primary); flex-shrink: 0; transition: transform 0.3s; margin-top: 2px; }
+    details[open] .faq-toggle { transform: rotate(45deg); }
+    .faq-answer { padding: 0 24px 20px 66px; font-size: 14px; color: var(--text-mid); line-height: 1.8; border-top: 1px solid var(--border); padding-top: 16px; }
+    .faq-a-icon { color: var(--secondary); font-weight: 700; margin-right: 6px; }
+
+    /* ===== MAP ===== */
+    .map-section { background: #fff; }
+    .map-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .map-info { display: flex; flex-direction: column; gap: 16px; }
+    .map-info-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--bg-light); border-radius: var(--radius-sm); }
+    .map-info-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .map-info-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+    .map-info-text strong { color: var(--text-dark); display: block; margin-bottom: 2px; font-size: 15px; }
+    .map-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .map-frame iframe { display: block; width: 100%; height: 340px; border: none; }
+    @media (max-width: 768px) {
+      .map-wrap { grid-template-columns: 1fr; }
+      .map-frame iframe { height: 260px; }
+    }
+
+    /* ===== GALLERY LIGHTBOX ===== */
+    .gallery-section { background: var(--bg-light); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .gallery-thumb {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery-thumb:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-thumb-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .gallery-thumb:hover .gallery-thumb-overlay { background: rgba(0,0,0,0.28); }
+    .gallery-thumb-overlay span { color: #fff; font-size: 28px; opacity: 0; transition: opacity 0.2s; }
+    .gallery-thumb:hover .gallery-thumb-overlay span { opacity: 1; }
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); object-fit: contain; }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; color: #fff; font-size: 36px; cursor: pointer; line-height: 1; background: none; border: none; }
+    .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.85); font-size: 14px; text-align: center; white-space: nowrap; }
+    .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; font-size: 40px; cursor: pointer; background: rgba(255,255,255,0.12); border: none; border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.28); }
+
     /* ===== FLOATING CTA ===== */
     .floating-cta { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
     .floating-btn {
@@ -1015,6 +1104,52 @@
   </div>
 </section>
 
+<!-- ===== GALLERY ===== -->
+<section class="gallery-section">
+  <div class="section-inner">
+    <div class="text-center">
+      <div class="section-label">教室ギャラリー</div>
+      <h2 class="section-title">清潔で広々とした<span class="accent">教室をご覧ください</span></h2>
+      <p class="section-lead">写真をクリックすると拡大表示されます。見学のご予約もお気軽にどうぞ。</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-thumb" onclick="openLightbox(0)">
+        <img src="images/room503_1.jpg" alt="503号室 研修教室 全体" loading="lazy">
+        <div class="gallery-thumb-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-thumb" onclick="openLightbox(1)">
+        <img src="images/room503_2.jpg" alt="503号室 研修教室 PC席" loading="lazy">
+        <div class="gallery-thumb-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-thumb" onclick="openLightbox(2)">
+        <img src="images/room506_1.jpg" alt="506号室 研修教室 全体" loading="lazy">
+        <div class="gallery-thumb-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-thumb" onclick="openLightbox(3)">
+        <img src="images/room506_2.jpg" alt="506号室 研修教室 前方" loading="lazy">
+        <div class="gallery-thumb-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-thumb" onclick="openLightbox(4)">
+        <img src="images/room606_1.jpg" alt="606号室 研修教室 全体" loading="lazy">
+        <div class="gallery-thumb-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-thumb" onclick="openLightbox(5)">
+        <img src="images/facility1.jpg" alt="施設設備 PC" loading="lazy">
+        <div class="gallery-thumb-overlay"><span>🔍</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-prev" onclick="changeLightbox(-1)">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="changeLightbox(1)">&#8250;</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <!-- ===== USE CASES ===== -->
 <section class="usecase-section">
   <div class="section-inner">
@@ -1323,6 +1458,38 @@
   </div>
 </section>
 
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="section-inner">
+    <div class="text-center" style="margin-bottom:36px;">
+      <div class="section-label" style="background:rgba(255,255,255,0.2);color:#FFD700;">実績・信頼</div>
+      <h2 class="section-title" style="color:#fff;">数字で見る<span style="color:#FFD700;">クロスアビリティズ</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">2003<span class="stat-unit">年</span></div>
+        <div class="stat-label">創業。20年以上にわたり<br>教育・研修を支援</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span class="stat-unit">教室</span></div>
+        <div class="stat-label">パソコン完備の教室を<br>3部屋ご用意</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">30<span class="stat-unit">名</span></div>
+        <div class="stat-label">1部屋あたり最大収容。<br>小〜大規模まで対応</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">31<span class="stat-unit">台</span></div>
+        <div class="stat-label">Windows11 PC完備。<br>機材持ち込み不要</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">9:00<span class="stat-unit">〜</span>20:00</div>
+        <div class="stat-label">土曜日も利用可。<br>柔軟な時間帯に対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== TRUST ===== -->
 <section class="trust-section">
   <div class="section-inner">
@@ -1351,6 +1518,136 @@
         <div class="trust-icon">💬</div>
         <div class="trust-title">どんな相談でも歓迎</div>
         <div class="trust-desc">「こんな研修がしたい」「予算はこのくらい」など、どんな些細なご相談でも丁寧にお答えします。まずはお気軽にご連絡ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="text-center">
+      <div class="section-label">よくあるご質問</div>
+      <h2 class="section-title">お申し込み前に<span class="accent">よく聞かれること</span></h2>
+      <p class="section-lead">ご不明な点はお気軽にお問い合わせください。</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">会場だけ借りることはできますか？講師手配は必須ですか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>もちろん会場のみのご利用も大歓迎です。講師手配・研修プログラムのご相談はオプションですので、必要な方だけお申し付けください。「会場だけ借りたい」「設備だけ使いたい」というご要望にも柔軟に対応いたします。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">1日だけ・数時間だけの短期利用はできますか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、1日単位・数時間単位からご利用いただけます。長期契約は不要です。「新人研修の3日間だけ」「週末の資格対策講座だけ」など、必要な期間だけ柔軟にご利用ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">パソコンの台数は変更できますか？自分のPCを持ち込んでもいいですか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>各教室にWindows11 PCを11〜31台ご用意しています。参加人数に合わせてご利用いただけます。もちろんご自身のPCの持ち込みも可能です。ご不明な点はお気軽にご相談ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">土曜日・夜間の利用はできますか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、土曜日もご利用いただけます。利用時間は9:00〜20:00を基本としており、ご要望に応じてご相談も承ります。週末の資格講座・社外セミナーにもご活用ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">事前に会場を見学することはできますか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、随時見学を受け付けております。「実際の広さを確認したい」「設備を見てから決めたい」という方も、まずはお気軽にご連絡ください。スタッフが丁寧にご案内します。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">教材・資料を事前に送ることはできますか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、荷物の事前受取・終了後の発送代行に無料で対応しています。大量の教材や機材も事前にお送りいただけますので、当日の持ち込みの手間を省けます。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <div class="faq-q-icon">Q</div>
+          <div class="faq-q-text">キャンペーン料金は何回でも使えますか？</div>
+          <div class="faq-toggle">＋</div>
+        </summary>
+        <div class="faq-answer"><span class="faq-a-icon">A</span>2026年3月1日〜4月15日の期間中にご利用いただく分については、何回でもキャンペーン料金（20%OFF）が適用されます。複数日程のご予約もお気軽にご相談ください。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<section class="map-section">
+  <div class="section-inner">
+    <div class="text-center">
+      <div class="section-label">アクセス</div>
+      <h2 class="section-title">福岡市中央区大名。<span class="accent">地下鉄赤坂駅から徒歩3分。</span></h2>
+      <p class="section-lead">天神・赤坂エリアの中心部。交通アクセス抜群で、参加者の方も来やすい立地です。</p>
+    </div>
+    <div class="map-wrap">
+      <div class="map-info">
+        <div class="map-info-item">
+          <div class="map-info-icon">🏢</div>
+          <div class="map-info-text">
+            <strong>研修センター（503号室・506号室）</strong>
+            〒810-0041 福岡市中央区大名2丁目11-25 新栄ビル
+          </div>
+        </div>
+        <div class="map-info-item">
+          <div class="map-info-icon">🏢</div>
+          <div class="map-info-text">
+            <strong>研修センター（606号室）</strong>
+            〒810-0041 福岡市中央区大名2丁目11-25 新栄ビル
+          </div>
+        </div>
+        <div class="map-info-item">
+          <div class="map-info-icon">🚇</div>
+          <div class="map-info-text">
+            <strong>最寄り駅</strong>
+            福岡市地下鉄空港線「赤坂駅」2番出口より徒歩約3分
+          </div>
+        </div>
+        <div class="map-info-item">
+          <div class="map-info-icon">🚌</div>
+          <div class="map-info-text">
+            <strong>バス</strong>
+            西鉄バス「大名」バス停より徒歩約2分
+          </div>
+        </div>
+        <div class="map-info-item">
+          <div class="map-info-icon">📞</div>
+          <div class="map-info-text">
+            <strong>お電話でのお問い合わせ</strong>
+            <a href="tel:0927917656" style="color:var(--primary);font-weight:700;font-size:18px;">092-791-7656</a><br>
+            受付時間：平日 9:00〜18:00
+          </div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4!2d130.3886!3d33.5897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191c5a0e5d8e3%3A0x1!2z56aP5qCh44OT44Or77yI5paw5qCh44OT44Or77yJ!5e0!3m2!1sja!2sjp!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="株式会社クロスアビリティズ 研修センター 地図"
+          style="width:100%;height:340px;border:none;">
+        </iframe>
       </div>
     </div>
   </div>
@@ -1411,5 +1708,46 @@
 
 
 
+<script>
+  // Gallery Lightbox
+  const galleryImages = [
+    { src: 'images/room503_1.jpg', caption: '503号室 研修教室 全体' },
+    { src: 'images/room503_2.jpg', caption: '503号室 研修教室 PC席' },
+    { src: 'images/room506_1.jpg', caption: '506号室 研修教室 全体' },
+    { src: 'images/room506_2.jpg', caption: '506号室 研修教室 前方' },
+    { src: 'images/room606_1.jpg', caption: '606号室 研修教室 全体' },
+    { src: 'images/facility1.jpg', caption: '施設設備 PC' },
+  ];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function closeLightboxOnBg(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+  function changeLightbox(dir) {
+    currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
+    updateLightbox();
+  }
+  function updateLightbox() {
+    document.getElementById('lightboxImg').src = galleryImages[currentIndex].src;
+    document.getElementById('lightboxImg').alt = galleryImages[currentIndex].caption;
+    document.getElementById('lightboxCaption').textContent = galleryImages[currentIndex].caption + ' (' + (currentIndex + 1) + ' / ' + galleryImages.length + ')';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') changeLightbox(-1);
+    if (e.key === 'ArrowRight') changeLightbox(1);
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
