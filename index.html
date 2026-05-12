@@ -11,818 +11,750 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #1a2744;
-    --navy-light: #2c3e6b;
-    --green: #2e7d52;
-    --green-light: #3a9e68;
-    --green-pale: #e8f5ee;
-    --orange: #e07b2a;
-    --orange-light: #f5a050;
-    --gold: #c8a84b;
-    --white: #ffffff;
-    --off-white: #f8f9fa;
-    --gray-100: #f4f5f7;
-    --gray-200: #e8eaed;
-    --gray-400: #9aa0ab;
-    --gray-700: #4a5568;
-    --gray-900: #1a202c;
-    --font-main: 'Noto Sans JP', sans-serif;
-    --font-serif: 'Noto Serif JP', serif;
+    --sky:      #1E88E5;
+    --sky-d:    #1565C0;
+    --sky-l:    #E3F2FD;
+    --sky-m:    #BBDEFB;
+    --gold:     #F9A825;
+    --gold-l:   #FFF8E1;
+    --coral:    #FF7043;
+    --teal:     #00897B;
+    --purple:   #5E35B1;
+    --white:    #FFFFFF;
+    --off:      #F8FBFF;
+    --g50:      #F5F7FA;
+    --g100:     #EEF1F6;
+    --g300:     #C8D0DC;
+    --g500:     #7B8A9A;
+    --g700:     #4A5568;
+    --g900:     #1A2332;
+    --text:     #2D3748;
+    --font:     'Noto Sans JP', sans-serif;
+    --serif:    'Noto Serif JP', serif;
+    --r:        16px;
+    --sh:       0 4px 24px rgba(30,136,229,0.10);
+    --sh-lg:    0 12px 48px rgba(30,136,229,0.15);
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: var(--font-main); color: var(--gray-900); background: var(--white); line-height: 1.7; }
+  body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.7; }
 
-  /* ========== HEADER ========== */
-  .site-header {
+  /* ===== HEADER ===== */
+  .hdr {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--gray-200);
-    padding: 0 24px;
-    height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--sky-l);
+    height: 68px;
+    display: flex; align-items: center;
+    padding: 0 28px; gap: 16px;
+    box-shadow: 0 2px 16px rgba(30,136,229,0.08);
   }
-  .header-logo a {
-    text-decoration: none;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .header-logo-mark {
-    width: 36px; height: 36px;
-    background: var(--navy);
-    border-radius: 8px;
+  .hdr-logo a { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .hdr-logo-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
+    border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     color: white; font-size: 14px; font-weight: 900;
-    letter-spacing: -0.5px;
+    box-shadow: 0 3px 10px rgba(30,136,229,0.35);
   }
-  .header-logo-text {
-    font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.3;
-  }
-  .header-logo-sub {
-    font-size: 10px; font-weight: 400; color: var(--gray-400);
-  }
-  .header-right {
-    display: flex; align-items: center; gap: 16px;
-  }
-  .header-tel {
-    text-align: right;
-  }
-  .header-tel a {
-    font-size: 18px; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: 0.5px;
-  }
-  .header-tel-note { font-size: 10px; color: var(--gray-400); }
-  .header-cta-btn {
-    background: var(--green);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
+  .hdr-logo-name { font-size: 13px; font-weight: 700; color: var(--sky-d); line-height: 1.3; }
+  .hdr-logo-sub  { font-size: 10px; color: var(--g500); }
+  .hdr-sp { flex: 1; }
+  .hdr-tel a { font-size: 18px; font-weight: 700; color: var(--sky-d); text-decoration: none; letter-spacing: 0.5px; }
+  .hdr-tel-note { font-size: 10px; color: var(--g500); text-align: right; }
+  .hdr-btn {
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
+    color: white; padding: 10px 22px; border-radius: 50px;
+    text-decoration: none; font-size: 13px; font-weight: 700;
     white-space: nowrap;
-    transition: background 0.2s;
+    box-shadow: 0 3px 12px rgba(30,136,229,0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
-  .header-cta-btn:hover { background: var(--green-light); }
+  .hdr-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(30,136,229,0.4); }
 
-  /* ========== HERO ========== */
+  /* ===== HERO ===== */
   .hero {
-    margin-top: 64px;
+    margin-top: 68px;
     position: relative;
-    min-height: 520px;
+    min-height: 580px;
     display: flex; align-items: center;
     overflow: hidden;
+    background: linear-gradient(135deg, #E3F2FD 0%, #EDE7F6 40%, #E8F5E9 100%);
   }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background-image: url('images/room503_1.jpg');
-    background-size: cover;
-    background-position: center;
+  .hero-blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(60px); opacity: 0.45; pointer-events: none;
   }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(105deg, rgba(26,39,68,0.82) 0%, rgba(26,39,68,0.55) 55%, rgba(26,39,68,0.15) 100%);
-  }
+  .hero-blob.b1 { width: 480px; height: 480px; background: #90CAF9; top: -120px; right: -80px; }
+  .hero-blob.b2 { width: 320px; height: 320px; background: #FFD54F; bottom: -100px; left: 38%; }
+  .hero-blob.b3 { width: 220px; height: 220px; background: #A5D6A7; top: 80px; left: -60px; }
   .hero-inner {
     position: relative; z-index: 2;
     max-width: 1100px; margin: 0 auto;
-    padding: 60px 32px;
-    width: 100%;
+    padding: 64px 32px; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center;
   }
   .hero-eyebrow {
-    display: inline-block;
-    background: var(--gold);
-    color: white;
-    font-size: 11px; font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 20px;
-    letter-spacing: 1.5px;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-  }
-  .hero-title {
-    font-family: var(--font-serif);
-    font-size: clamp(26px, 4vw, 44px);
-    font-weight: 700;
-    color: white;
-    line-height: 1.45;
-    margin-bottom: 16px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  }
-  .hero-title em {
-    font-style: normal;
-    color: #7ee8a2;
-  }
-  .hero-subtitle {
-    font-size: clamp(14px, 2vw, 17px);
-    color: rgba(255,255,255,0.88);
-    margin-bottom: 28px;
-    max-width: 520px;
-    line-height: 1.8;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
-  }
-  .hero-tags {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin-bottom: 32px;
-  }
-  .hero-tag {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    font-size: 12px; font-weight: 500;
-    padding: 5px 14px;
-    border-radius: 20px;
-    backdrop-filter: blur(4px);
-  }
-  .hero-btns {
-    display: flex; flex-wrap: wrap; gap: 12px;
-  }
-  .btn-primary {
-    background: var(--green);
-    color: white;
-    padding: 14px 32px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 15px; font-weight: 700;
     display: inline-flex; align-items: center; gap: 8px;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 4px 16px rgba(46,125,82,0.4);
+    background: white;
+    border: 2px solid var(--sky-l);
+    color: var(--sky);
+    font-size: 12px; font-weight: 700;
+    padding: 6px 16px; border-radius: 50px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 10px rgba(30,136,229,0.12);
   }
-  .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
-  .btn-secondary {
-    background: rgba(255,255,255,0.12);
-    border: 2px solid rgba(255,255,255,0.6);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 15px; font-weight: 600;
-    backdrop-filter: blur(4px);
-    transition: background 0.2s;
+  .hero-eyebrow-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+  .hero-h1 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3.2vw, 40px);
+    font-weight: 700; color: var(--sky-d);
+    line-height: 1.5; margin-bottom: 20px;
   }
-  .btn-secondary:hover { background: rgba(255,255,255,0.22); }
+  .hero-h1 .hl {
+    color: var(--sky);
+    position: relative; display: inline-block;
+  }
+  .hero-h1 .hl::after {
+    content: '';
+    position: absolute; bottom: 1px; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), #FFD54F);
+    border-radius: 3px; opacity: 0.65;
+  }
+  .hero-sub {
+    font-size: 15px; color: var(--g700); line-height: 1.9; margin-bottom: 28px;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
+  .hero-tag {
+    background: white; border: 1.5px solid var(--sky-l);
+    color: var(--sky-d); font-size: 12px; font-weight: 600;
+    padding: 5px 14px; border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(30,136,229,0.08);
+  }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn-main {
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
+    color: white; padding: 15px 32px; border-radius: 50px;
+    text-decoration: none; font-size: 15px; font-weight: 700;
+    box-shadow: 0 6px 24px rgba(30,136,229,0.38);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(30,136,229,0.45); }
+  .btn-sub {
+    background: white; border: 2px solid var(--sky);
+    color: var(--sky); padding: 13px 28px; border-radius: 50px;
+    text-decoration: none; font-size: 15px; font-weight: 700;
+    transition: background 0.15s;
+  }
+  .btn-sub:hover { background: var(--sky-l); }
 
-  /* ========== SECTION BASE ========== */
-  section { padding: 72px 24px; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
-    color: var(--green); text-transform: uppercase;
-    margin-bottom: 10px; display: block;
+  .hero-photo { position: relative; }
+  .hero-photo-img {
+    width: 100%; height: 330px; object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 16px 48px rgba(30,136,229,0.22);
+    display: block;
   }
-  .section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(22px, 3.5vw, 34px);
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.4;
-    margin-bottom: 14px;
+  .hero-badge1 {
+    position: absolute; bottom: -18px; left: -18px;
+    background: white; border-radius: 18px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+    display: flex; align-items: center; gap: 10px;
   }
-  .section-desc {
-    font-size: 15px; color: var(--gray-700); line-height: 1.85;
-    max-width: 640px;
+  .hero-badge1-icon { font-size: 28px; }
+  .hero-badge1-num { font-size: 20px; font-weight: 900; color: var(--sky-d); line-height: 1; }
+  .hero-badge1-txt { font-size: 11px; color: var(--g500); }
+  .hero-badge2 {
+    position: absolute; top: -18px; right: -18px;
+    background: linear-gradient(135deg, var(--gold) 0%, #FFD54F 100%);
+    border-radius: 50%; width: 82px; height: 82px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(249,168,37,0.42);
+    color: white; text-align: center;
   }
-  .section-header { margin-bottom: 48px; }
+  .hero-badge2 .bn { font-size: 22px; font-weight: 900; line-height: 1; }
+  .hero-badge2 .bt { font-size: 9px; font-weight: 700; }
 
-  /* ========== APPEAL STRIP ========== */
-  .appeal-strip {
-    background: var(--navy);
-    padding: 0;
+  /* ===== STATS ===== */
+  .stats {
+    background: var(--sky-d);
   }
-  .appeal-strip-inner {
+  .stats-inner {
     max-width: 1100px; margin: 0 auto;
     display: grid; grid-template-columns: repeat(4, 1fr);
-    divide-x: 1px solid rgba(255,255,255,0.1);
   }
-  .appeal-item {
-    padding: 28px 20px;
-    text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.1);
+  .stat {
+    padding: 30px 20px; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.12);
   }
-  .appeal-item:last-child { border-right: none; }
-  .appeal-icon { font-size: 28px; margin-bottom: 8px; }
-  .appeal-num {
-    font-size: 28px; font-weight: 900; color: #7ee8a2;
-    line-height: 1; margin-bottom: 4px;
-  }
-  .appeal-num span { font-size: 14px; font-weight: 400; }
-  .appeal-label { font-size: 12px; color: rgba(255,255,255,0.7); }
+  .stat:last-child { border-right: none; }
+  .stat-icon { font-size: 26px; margin-bottom: 6px; }
+  .stat-num { font-size: 34px; font-weight: 900; color: white; line-height: 1; }
+  .stat-num span { font-size: 14px; font-weight: 400; }
+  .stat-lbl { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 5px; }
 
-  /* ========== STRENGTH ========== */
-  .strength-section { background: var(--white); }
-  .strength-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-  }
-  .strength-card {
-    background: var(--off-white);
-    border-radius: 16px;
-    padding: 36px 28px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--gray-200);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .strength-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-  .strength-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 4px;
-    background: var(--green);
-  }
-  .strength-card.accent::before { background: var(--navy); }
-  .strength-card.accent2::before { background: var(--gold); }
-  .strength-num {
+  /* ===== SECTION BASE ===== */
+  section { padding: 80px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .sec-lbl {
+    display: inline-block;
+    background: var(--sky-l); color: var(--sky);
     font-size: 11px; font-weight: 700; letter-spacing: 2px;
-    color: var(--green); margin-bottom: 12px;
+    padding: 4px 14px; border-radius: 50px; margin-bottom: 12px;
+    text-transform: uppercase;
   }
-  .strength-card.accent .strength-num { color: var(--navy); }
-  .strength-card.accent2 .strength-num { color: var(--gold); }
-  .strength-title {
-    font-size: 19px; font-weight: 700; color: var(--navy);
-    margin-bottom: 12px; line-height: 1.4;
+  .sec-h2 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 700; color: var(--sky-d);
+    line-height: 1.4; margin-bottom: 14px;
   }
-  .strength-body { font-size: 14px; color: var(--gray-700); line-height: 1.8; }
-  .strength-list { list-style: none; margin-top: 14px; }
-  .strength-list li {
-    font-size: 13px; color: var(--gray-700);
-    padding: 5px 0 5px 20px;
-    position: relative;
-    border-bottom: 1px solid var(--gray-200);
-  }
-  .strength-list li:last-child { border-bottom: none; }
-  .strength-list li::before {
-    content: '✓';
-    position: absolute; left: 0;
-    color: var(--green); font-weight: 700;
-  }
+  .sec-desc { font-size: 15px; color: var(--g700); line-height: 1.85; max-width: 640px; }
+  .sec-hd { margin-bottom: 48px; }
+  .sec-hd.c { text-align: center; }
+  .sec-hd.c .sec-desc { margin: 0 auto; }
 
-  /* ========== VENUE OK BANNER ========== */
-  .venue-ok-banner {
-    background: linear-gradient(135deg, var(--green-pale) 0%, #d4eddf 100%);
-    border-left: 5px solid var(--green);
-    border-radius: 12px;
-    padding: 28px 32px;
+  /* ===== REASON ===== */
+  .reason-sec { background: var(--off); }
+  .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .reason-card {
+    background: white; border-radius: 24px; padding: 36px 28px;
+    border: 2px solid transparent;
+    box-shadow: var(--sh);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .reason-card:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); border-color: var(--sky-l); }
+  .reason-card-bg-num {
+    position: absolute; top: 16px; right: 20px;
+    font-size: 60px; font-weight: 900; color: var(--sky-l);
+    line-height: 1; font-family: var(--serif); pointer-events: none;
+  }
+  .reason-icon {
+    width: 62px; height: 62px;
+    background: linear-gradient(135deg, var(--sky-l) 0%, var(--sky-m) 100%);
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(30,136,229,0.15);
+  }
+  .reason-title { font-size: 19px; font-weight: 700; color: var(--sky-d); margin-bottom: 12px; line-height: 1.4; }
+  .reason-body { font-size: 14px; color: var(--g700); line-height: 1.8; }
+  .reason-list { list-style: none; margin-top: 14px; }
+  .reason-list li {
+    font-size: 13px; color: var(--g700);
+    padding: 6px 0 6px 22px; position: relative;
+    border-bottom: 1px solid var(--g100);
+  }
+  .reason-list li:last-child { border-bottom: none; }
+  .reason-list li::before { content: '✓'; position: absolute; left: 0; color: var(--sky); font-weight: 700; }
+
+  .venue-ok {
     margin-top: 48px;
+    background: linear-gradient(135deg, var(--gold-l) 0%, #FFFDE7 100%);
+    border: 2px solid #FFD54F; border-radius: 20px;
+    padding: 28px 36px;
     display: flex; align-items: flex-start; gap: 20px;
   }
-  .venue-ok-icon { font-size: 36px; flex-shrink: 0; }
-  .venue-ok-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-  .venue-ok-body { font-size: 14px; color: var(--gray-700); line-height: 1.8; }
+  .venue-ok-icon { font-size: 40px; flex-shrink: 0; }
+  .venue-ok-title { font-size: 18px; font-weight: 700; color: #E65100; margin-bottom: 6px; }
+  .venue-ok-body { font-size: 14px; color: var(--g700); line-height: 1.8; }
 
-  /* ========== EQUIPMENT ========== */
-  .equipment-section { background: var(--gray-100); }
-  .equip-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  }
+  /* ===== EQUIPMENT ===== */
+  .equip-sec { background: white; }
+  .equip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .equip-card {
-    background: white;
-    border-radius: 12px;
+    background: var(--off); border-radius: 18px;
     padding: 24px 20px;
     display: flex; align-items: flex-start; gap: 14px;
-    border: 1px solid var(--gray-200);
+    border: 1.5px solid var(--g100);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
-  .equip-icon-wrap {
-    width: 44px; height: 44px; flex-shrink: 0;
-    background: var(--green-pale);
-    border-radius: 10px;
+  .equip-card:hover { transform: translateY(-3px); box-shadow: var(--sh); }
+  .equip-icon {
+    width: 50px; height: 50px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--sky-l) 0%, var(--sky-m) 100%);
+    border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
+    font-size: 22px;
   }
-  .equip-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-  .equip-detail { font-size: 12px; color: var(--gray-700); line-height: 1.6; }
-  .equip-free-badge {
+  .equip-name { font-size: 14px; font-weight: 700; color: var(--sky-d); margin-bottom: 4px; }
+  .equip-detail { font-size: 12px; color: var(--g500); line-height: 1.6; }
+  .free-tag {
     display: inline-block;
-    background: var(--green);
-    color: white;
-    font-size: 10px; font-weight: 700;
-    padding: 2px 8px; border-radius: 10px;
-    margin-left: 6px; vertical-align: middle;
+    background: linear-gradient(135deg, #43A047 0%, #66BB6A 100%);
+    color: white; font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 10px; margin-left: 6px;
+    vertical-align: middle;
   }
 
-  /* ========== USE CASES ========== */
-  .usecase-section { background: var(--white); }
-  .usecase-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  /* ===== USE CASES ===== */
+  .uc-sec { background: var(--off); }
+  .uc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .uc-card {
+    background: white; border-radius: 20px; overflow: hidden;
+    box-shadow: var(--sh);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .usecase-card {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--gray-200);
-    display: flex; flex-direction: column;
-  }
-  .usecase-header {
-    background: var(--navy);
-    padding: 20px 24px;
+  .uc-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
+  .uc-head {
+    padding: 22px 26px;
     display: flex; align-items: center; gap: 14px;
   }
-  .usecase-header.green { background: var(--green); }
-  .usecase-header.gold { background: var(--gold); }
-  .usecase-header.navy-light { background: var(--navy-light); }
-  .usecase-case-num { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
-  .usecase-case-title { font-size: 17px; font-weight: 700; color: white; }
-  .usecase-body { padding: 20px 24px; background: white; flex: 1; }
-  .usecase-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-  .usecase-tag {
-    background: var(--gray-100);
-    color: var(--gray-700);
-    font-size: 11px; font-weight: 500;
-    padding: 3px 10px; border-radius: 12px;
+  .uc-head.sky    { background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); }
+  .uc-head.teal   { background: linear-gradient(135deg, #00695C 0%, #00897B 100%); }
+  .uc-head.amber  { background: linear-gradient(135deg, #E65100 0%, #F57C00 100%); }
+  .uc-head.purple { background: linear-gradient(135deg, #4527A0 0%, #5E35B1 100%); }
+  .uc-head-icon { font-size: 32px; }
+  .uc-case-num { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
+  .uc-case-title { font-size: 17px; font-weight: 700; color: white; }
+  .uc-body { padding: 22px 26px; }
+  .uc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .uc-tag {
+    background: var(--sky-l); color: var(--sky-d);
+    font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 50px;
   }
-  .usecase-desc { font-size: 13px; color: var(--gray-700); line-height: 1.75; }
+  .uc-desc { font-size: 13px; color: var(--g700); line-height: 1.75; }
 
-  /* ========== ROOMS ========== */
-  .rooms-section { background: var(--gray-100); }
-  .rooms-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    margin-bottom: 40px;
-  }
+  /* ===== ROOMS ===== */
+  .rooms-sec { background: white; }
+  .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .room-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--gray-200);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    background: white; border-radius: 20px; overflow: hidden;
+    box-shadow: var(--sh); border: 1.5px solid var(--g100);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
+  .room-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
   .room-img {
-    width: 100%; height: 180px;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
-    transition: opacity 0.2s;
+    width: 100%; height: 190px; object-fit: cover;
+    display: block; cursor: pointer;
+    transition: transform 0.3s;
   }
-  .room-img:hover { opacity: 0.9; }
+  .room-card:hover .room-img { transform: scale(1.03); }
   .room-info { padding: 20px; }
-  .room-name { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .room-name {
+    font-size: 16px; font-weight: 700; color: var(--sky-d);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .room-name::before {
+    content: '';
+    width: 4px; height: 18px;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--gold) 100%);
+    border-radius: 2px; flex-shrink: 0;
+  }
   .room-specs { list-style: none; }
   .room-specs li {
-    font-size: 13px; color: var(--gray-700);
-    padding: 5px 0;
-    border-bottom: 1px solid var(--gray-100);
+    font-size: 13px; color: var(--g700);
+    padding: 6px 0; border-bottom: 1px solid var(--g100);
     display: flex; justify-content: space-between;
   }
   .room-specs li:last-child { border-bottom: none; }
-  .room-spec-val { font-weight: 600; color: var(--navy); }
+  .room-spec-v { font-weight: 700; color: var(--sky-d); }
 
-  /* ========== PRICE ========== */
-  .price-section { background: var(--white); }
-  .price-intro {
-    background: var(--navy);
-    border-radius: 16px;
-    padding: 32px 36px;
-    margin-bottom: 36px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-    align-items: center;
+  /* ===== PRICE ===== */
+  .price-sec { background: var(--off); }
+  .price-hl {
+    background: linear-gradient(135deg, var(--sky-d) 0%, #1976D2 100%);
+    border-radius: 24px; padding: 36px 40px; margin-bottom: 36px;
+    display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center;
+    box-shadow: 0 12px 40px rgba(21,101,192,0.25);
   }
-  .price-highlight-num {
-    font-size: 52px; font-weight: 900; color: #7ee8a2; line-height: 1;
+  .price-big { text-align: center; }
+  .price-big-lbl { font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+  .price-big-num {
+    font-size: 64px; font-weight: 900; color: #FFD54F; line-height: 1;
+    font-family: var(--serif);
   }
-  .price-highlight-num span { font-size: 20px; }
-  .price-highlight-label { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 4px; }
-  .price-highlight-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.8; }
-  .price-table-wrap { overflow-x: auto; }
-  .price-table {
-    width: 100%; border-collapse: collapse;
-    font-size: 14px;
+  .price-big-num span { font-size: 22px; }
+  .price-big-sub { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+  .price-big-desc { font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.85; }
+  .price-big-desc strong { color: #FFD54F; }
+  .price-tbl-wrap { overflow-x: auto; border-radius: 16px; box-shadow: var(--sh); }
+  .price-tbl {
+    width: 100%; border-collapse: collapse; font-size: 14px; background: white;
   }
-  .price-table th {
-    background: var(--navy);
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    font-weight: 600;
+  .price-tbl th {
+    background: var(--sky-d); color: white;
+    padding: 14px 24px; text-align: center; font-weight: 700;
   }
-  .price-table td {
-    padding: 12px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--gray-200);
+  .price-tbl td {
+    padding: 13px 24px; text-align: center;
+    border-bottom: 1px solid var(--g100);
   }
-  .price-table tr:nth-child(even) td { background: var(--gray-100); }
-  .price-table .price-val { font-weight: 700; color: var(--navy); font-size: 15px; }
+  .price-tbl tr:last-child td { border-bottom: none; }
+  .price-tbl tr:nth-child(even) td { background: var(--sky-l); }
+  .price-tbl .pv { font-weight: 700; color: var(--sky-d); font-size: 15px; }
   .price-note {
-    margin-top: 16px;
-    padding: 16px 20px;
-    background: var(--gray-100);
-    border-radius: 8px;
-    font-size: 13px; color: var(--gray-700); line-height: 1.7;
+    margin-top: 20px;
+    background: white; border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0; padding: 16px 22px;
+    font-size: 13px; color: var(--g700); line-height: 1.8;
+    box-shadow: var(--sh);
   }
-  .price-note strong { color: var(--navy); }
+  .price-note strong { color: var(--sky-d); }
 
-  /* ========== ONESTOP ========== */
-  .onestop-section { background: var(--navy); }
-  .onestop-section .section-title { color: white; }
-  .onestop-section .section-label { color: #7ee8a2; }
-  .onestop-section .section-desc { color: rgba(255,255,255,0.75); }
-  .onestop-flow {
-    display: flex; align-items: stretch; gap: 0;
-    margin-top: 48px;
-    flex-wrap: wrap;
+  /* ===== ONESTOP ===== */
+  .os-sec { background: white; }
+  .flow-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    position: relative; margin-top: 48px;
   }
-  .flow-step {
-    flex: 1; min-width: 160px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
-    padding: 24px 18px;
-    text-align: center;
-    position: relative;
+  .flow-grid::before {
+    content: '';
+    position: absolute; top: 38px; left: 12.5%; right: 12.5%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sky) 0%, var(--gold) 100%);
+    z-index: 0;
   }
-  .flow-step + .flow-step { margin-left: 12px; }
-  .flow-step-num {
-    font-size: 11px; font-weight: 700; color: #7ee8a2;
-    letter-spacing: 1px; margin-bottom: 10px;
+  .flow-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+  .flow-circle {
+    width: 76px; height: 76px;
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; margin: 0 auto 16px;
+    box-shadow: 0 6px 20px rgba(30,136,229,0.30);
+    border: 4px solid white;
   }
-  .flow-step-icon { font-size: 28px; margin-bottom: 10px; }
-  .flow-step-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 6px; }
-  .flow-step-desc { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; }
-  .flow-arrow {
-    display: flex; align-items: center; padding: 0 4px;
-    color: #7ee8a2; font-size: 20px; font-weight: 700;
-    flex-shrink: 0;
+  .flow-num { font-size: 10px; font-weight: 700; color: var(--sky); letter-spacing: 1px; margin-bottom: 6px; }
+  .flow-title { font-size: 14px; font-weight: 700; color: var(--sky-d); margin-bottom: 6px; }
+  .flow-desc { font-size: 12px; color: var(--g500); line-height: 1.6; }
+  .os-note {
+    margin-top: 40px;
+    background: var(--gold-l); border: 2px solid #FFD54F;
+    border-radius: 16px; padding: 20px 28px;
+    font-size: 14px; color: var(--g700); line-height: 1.8;
   }
-  .onestop-note {
-    margin-top: 32px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 12px;
-    padding: 20px 28px;
-    font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.8;
-  }
-  .onestop-note strong { color: #7ee8a2; }
+  .os-note strong { color: #E65100; }
 
-  /* ========== AI ========== */
-  .ai-section { background: linear-gradient(135deg, #0f1f3d 0%, #1a3a5c 100%); }
-  .ai-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
-  }
+  /* ===== AI ===== */
+  .ai-sec { background: linear-gradient(135deg, var(--sky-l) 0%, #E8F5E9 100%); }
+  .ai-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   .ai-badge {
     display: inline-block;
-    background: linear-gradient(90deg, #7ee8a2, #4db8ff);
-    color: var(--navy);
-    font-size: 11px; font-weight: 700;
-    padding: 4px 14px; border-radius: 20px;
-    letter-spacing: 1px; margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
+    color: white; font-size: 11px; font-weight: 700;
+    padding: 4px 16px; border-radius: 50px; margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(30,136,229,0.3);
   }
-  .ai-title { font-size: clamp(20px, 3vw, 30px); font-weight: 700; color: white; margin-bottom: 14px; line-height: 1.4; }
-  .ai-desc { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.85; margin-bottom: 24px; }
+  .ai-title { font-size: clamp(20px, 2.8vw, 30px); font-weight: 700; color: var(--sky-d); margin-bottom: 14px; line-height: 1.4; }
+  .ai-desc { font-size: 14px; color: var(--g700); line-height: 1.85; margin-bottom: 24px; }
   .ai-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .ai-tag {
-    background: rgba(126,232,162,0.15);
-    border: 1px solid rgba(126,232,162,0.4);
-    color: #7ee8a2;
-    font-size: 12px; padding: 4px 14px; border-radius: 16px;
+    background: white; border: 1.5px solid var(--sky-l);
+    color: var(--sky-d); font-size: 12px; font-weight: 600;
+    padding: 4px 14px; border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(30,136,229,0.1);
   }
   .ai-visual {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 36px;
+    background: white; border-radius: 24px; padding: 40px;
     text-align: center;
+    box-shadow: var(--sh-lg); border: 2px solid var(--sky-l);
   }
-  .ai-visual-icon { font-size: 64px; margin-bottom: 16px; }
-  .ai-visual-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+  .ai-visual-icon { font-size: 72px; margin-bottom: 16px; }
+  .ai-visual-text { font-size: 14px; color: var(--g500); line-height: 1.7; }
 
-  /* ========== FAQ ========== */
-  .faq-section { background: var(--gray-100); }
+  /* ===== FAQ ===== */
+  .faq-sec { background: var(--off); }
   .faq-list { max-width: 780px; margin: 0 auto; }
   .faq-item {
-    background: white;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border: 1px solid var(--gray-200);
-    overflow: hidden;
+    background: white; border-radius: 14px; margin-bottom: 12px;
+    border: 1.5px solid var(--g100); overflow: hidden;
+    box-shadow: 0 2px 10px rgba(30,136,229,0.05);
+    transition: box-shadow 0.2s;
   }
+  .faq-item:hover { box-shadow: var(--sh); }
   .faq-q {
     padding: 20px 24px;
     display: flex; align-items: flex-start; gap: 14px;
-    cursor: pointer;
-    font-size: 15px; font-weight: 600; color: var(--navy);
-    line-height: 1.5;
-    user-select: none;
+    cursor: pointer; user-select: none;
+    font-size: 15px; font-weight: 600; color: var(--sky-d); line-height: 1.5;
   }
   .faq-q-mark {
-    width: 28px; height: 28px; flex-shrink: 0;
-    background: var(--navy);
+    width: 30px; height: 30px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
     color: white; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 13px; font-weight: 700;
+    box-shadow: 0 3px 8px rgba(30,136,229,0.3);
   }
   .faq-q-text { flex: 1; }
-  .faq-toggle { color: var(--gray-400); font-size: 18px; flex-shrink: 0; transition: transform 0.2s; }
+  .faq-toggle { color: var(--sky); font-size: 20px; flex-shrink: 0; transition: transform 0.2s; }
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
   .faq-a {
-    display: none;
-    padding: 0 24px 20px 66px;
-    font-size: 14px; color: var(--gray-700); line-height: 1.85;
-    border-top: 1px solid var(--gray-200);
-    padding-top: 16px;
+    display: none; padding: 16px 24px 20px 68px;
+    font-size: 14px; color: var(--g700); line-height: 1.85;
+    border-top: 1px solid var(--g100);
   }
   .faq-item.open .faq-a { display: block; }
 
-  /* ========== ACCESS ========== */
-  .access-section { background: var(--white); }
-  .access-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
-  }
-  .access-info-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  /* ===== ACCESS ===== */
+  .access-sec { background: white; }
+  .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .access-info-title { font-size: 17px; font-weight: 700; color: var(--sky-d); margin-bottom: 20px; }
   .access-list { list-style: none; }
   .access-list li {
-    display: flex; gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--gray-200);
+    display: flex; gap: 14px;
+    padding: 12px 0; border-bottom: 1px solid var(--g100);
     font-size: 14px;
   }
   .access-list li:last-child { border-bottom: none; }
-  .access-list-label { font-weight: 600; color: var(--navy); min-width: 80px; flex-shrink: 0; }
-  .access-list-val { color: var(--gray-700); line-height: 1.6; }
-  .access-map {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--gray-200);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  }
+  .access-lbl { font-weight: 700; color: var(--sky-d); min-width: 80px; flex-shrink: 0; }
+  .access-val { color: var(--g700); line-height: 1.6; }
+  .access-map { border-radius: 20px; overflow: hidden; border: 2px solid var(--sky-l); box-shadow: var(--sh); }
   .access-map iframe { display: block; width: 100%; height: 320px; border: none; }
 
-  /* ========== CTA ========== */
-  .cta-section {
-    background: linear-gradient(135deg, var(--green) 0%, #1e5e3a 100%);
-    padding: 80px 24px;
-    text-align: center;
+  /* ===== CTA ===== */
+  .cta-sec {
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 60%, #0288D1 100%);
+    padding: 88px 24px; text-align: center;
+    position: relative; overflow: hidden;
   }
-  .cta-eyebrow {
-    font-size: 12px; font-weight: 700; letter-spacing: 2px;
-    color: rgba(255,255,255,0.7); text-transform: uppercase;
-    margin-bottom: 14px;
+  .cta-deco { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.06); }
+  .cta-deco.d1 { width: 400px; height: 400px; top: -150px; right: -100px; }
+  .cta-deco.d2 { width: 250px; height: 250px; bottom: -80px; left: 5%; }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-bottom: 14px; text-transform: uppercase; }
+  .cta-h2 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 700; color: white; line-height: 1.4; margin-bottom: 14px;
   }
-  .cta-title {
-    font-family: var(--font-serif);
-    font-size: clamp(22px, 4vw, 38px);
-    font-weight: 700; color: white;
-    line-height: 1.4; margin-bottom: 14px;
-  }
-  .cta-desc { font-size: 15px; color: rgba(255,255,255,0.82); margin-bottom: 36px; line-height: 1.8; }
-  .cta-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 32px; }
+  .cta-h2 .ca { color: #FFD54F; }
+  .cta-desc { font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 40px; line-height: 1.8; }
+  .cta-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 36px; }
   .cta-btn-main {
-    background: white;
-    color: var(--green);
-    padding: 16px 40px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px; font-weight: 700;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, var(--gold) 0%, #FFD54F 100%);
+    color: var(--sky-d); padding: 17px 44px; border-radius: 50px;
+    text-decoration: none; font-size: 16px; font-weight: 700;
+    box-shadow: 0 6px 24px rgba(249,168,37,0.45);
     transition: transform 0.15s, box-shadow 0.15s;
   }
-  .cta-btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+  .cta-btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(249,168,37,0.55); }
   .cta-btn-sub {
-    background: rgba(255,255,255,0.12);
-    border: 2px solid rgba(255,255,255,0.5);
-    color: white;
-    padding: 14px 36px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px; font-weight: 600;
-    transition: background 0.2s;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.6);
+    color: white; padding: 15px 38px; border-radius: 50px;
+    text-decoration: none; font-size: 16px; font-weight: 600;
+    backdrop-filter: blur(4px);
+    transition: background 0.15s;
   }
-  .cta-btn-sub:hover { background: rgba(255,255,255,0.22); }
-  .cta-tel-wrap { font-size: 14px; color: rgba(255,255,255,0.7); }
-  .cta-tel-wrap a { color: white; font-size: 26px; font-weight: 700; text-decoration: none; display: block; margin: 4px 0; }
+  .cta-btn-sub:hover { background: rgba(255,255,255,0.25); }
+  .cta-tel { font-size: 14px; color: rgba(255,255,255,0.75); }
+  .cta-tel a { color: white; font-size: 28px; font-weight: 700; text-decoration: none; display: block; margin: 6px 0; }
   .cta-tel-note { font-size: 12px; color: rgba(255,255,255,0.6); }
 
-  /* ========== FOOTER ========== */
-  .site-footer {
-    background: var(--gray-900);
-    padding: 48px 24px 24px;
-    color: rgba(255,255,255,0.6);
-  }
+  /* ===== FOOTER ===== */
+  .footer { background: var(--g900); padding: 52px 24px 24px; color: rgba(255,255,255,0.55); }
   .footer-inner {
     max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
-    margin-bottom: 40px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
   }
-  .footer-brand-name { font-size: 15px; font-weight: 700; color: white; margin-bottom: 8px; }
+  .footer-brand { font-size: 15px; font-weight: 700; color: white; margin-bottom: 10px; }
   .footer-brand-desc { font-size: 13px; line-height: 1.8; }
-  .footer-nav-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.8); letter-spacing: 1px; margin-bottom: 14px; text-transform: uppercase; }
+  .footer-nav-title { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 1.5px; margin-bottom: 14px; text-transform: uppercase; }
   .footer-nav-list { list-style: none; }
   .footer-nav-list li { margin-bottom: 8px; }
-  .footer-nav-list a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-nav-list a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
   .footer-nav-list a:hover { color: white; }
   .footer-bottom {
     max-width: 1100px; margin: 0 auto;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: center; font-size: 12px;
   }
 
-  /* ========== FLOATING CTA ========== */
-  .floating-cta {
+  /* ===== FLOATING ===== */
+  .floating {
     position: fixed; bottom: 24px; right: 24px; z-index: 999;
     display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
   }
-  .floating-tel-btn {
-    background: var(--navy);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 14px; font-weight: 700;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  .fl-tel {
+    background: white; border: 2px solid var(--sky-l);
+    color: var(--sky-d); padding: 10px 18px; border-radius: 50px;
+    text-decoration: none; font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 16px rgba(30,136,229,0.15);
     display: flex; align-items: center; gap: 8px;
     transition: transform 0.15s;
   }
-  .floating-tel-btn:hover { transform: scale(1.04); }
-  .floating-contact-btn {
-    background: var(--green);
-    color: white;
-    padding: 14px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 14px; font-weight: 700;
-    box-shadow: 0 4px 20px rgba(46,125,82,0.4);
+  .fl-tel:hover { transform: scale(1.04); }
+  .fl-contact {
+    background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
+    color: white; padding: 13px 22px; border-radius: 50px;
+    text-decoration: none; font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 20px rgba(30,136,229,0.38);
     display: flex; align-items: center; gap: 8px;
     transition: transform 0.15s;
   }
-  .floating-contact-btn:hover { transform: scale(1.04); }
+  .fl-contact:hover { transform: scale(1.04); }
 
-  /* ========== LIGHTBOX ========== */
-  .lightbox {
-    display: none; position: fixed; inset: 0; z-index: 9999;
-    background: rgba(0,0,0,0.9);
-    align-items: center; justify-content: center;
-  }
-  .lightbox.active { display: flex; }
-  .lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
-  .lightbox-close {
-    position: absolute; top: 20px; right: 28px;
-    color: white; font-size: 36px; cursor: pointer; line-height: 1;
-  }
-  .lightbox-prev, .lightbox-next {
+  /* ===== LIGHTBOX ===== */
+  .lb { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; }
+  .lb.active { display: flex; }
+  .lb-img { max-width: 90vw; max-height: 85vh; border-radius: 12px; }
+  .lb-close { position: absolute; top: 20px; right: 28px; color: white; font-size: 38px; cursor: pointer; line-height: 1; }
+  .lb-prev, .lb-next {
     position: absolute; top: 50%; transform: translateY(-50%);
-    color: white; font-size: 40px; cursor: pointer;
-    background: rgba(255,255,255,0.1); width: 52px; height: 52px;
+    color: white; font-size: 42px; cursor: pointer;
+    background: rgba(255,255,255,0.12); width: 54px; height: 54px;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     user-select: none;
   }
-  .lightbox-prev { left: 16px; }
-  .lightbox-next { right: 16px; }
+  .lb-prev { left: 16px; }
+  .lb-next { right: 16px; }
 
-  /* ========== RESPONSIVE ========== */
-  @media (max-width: 900px) {
-    .strength-grid { grid-template-columns: 1fr; }
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+    .reason-grid { grid-template-columns: 1fr; }
     .equip-grid { grid-template-columns: repeat(2, 1fr); }
-    .usecase-grid { grid-template-columns: 1fr; }
+    .uc-grid { grid-template-columns: 1fr; }
     .rooms-grid { grid-template-columns: repeat(2, 1fr); }
-    .appeal-strip-inner { grid-template-columns: repeat(2, 1fr); }
-    .price-intro { grid-template-columns: 1fr; gap: 16px; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .price-hl { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+    .flow-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .flow-grid::before { display: none; }
     .ai-inner { grid-template-columns: 1fr; }
     .access-grid { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; gap: 28px; }
     .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-    .onestop-flow { gap: 8px; }
-    .flow-step + .flow-step { margin-left: 0; }
-    .flow-arrow { display: none; }
   }
   @media (max-width: 600px) {
     .equip-grid { grid-template-columns: 1fr; }
     .rooms-grid { grid-template-columns: 1fr; }
-    .appeal-strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .flow-grid { grid-template-columns: 1fr; }
     .hero-btns { flex-direction: column; }
     .cta-btns { flex-direction: column; align-items: center; }
-    .header-tel { display: none; }
-    .floating-tel-btn { display: none; }
+    .hdr-tel { display: none; }
+    .fl-tel { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- ========== HEADER ========== -->
-<header class="site-header">
-  <div class="header-logo">
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-logo">
     <a href="https://www.c-as.co.jp/" target="_blank" rel="noopener">
-      <div class="header-logo-mark">CA</div>
+      <div class="hdr-logo-icon">CA</div>
       <div>
-        <div class="header-logo-text">株式会社クロスアビリティズ</div>
-        <div class="header-logo-sub">Cross Abilities Co., Ltd.</div>
+        <div class="hdr-logo-name">株式会社クロスアビリティズ</div>
+        <div class="hdr-logo-sub">Cross Abilities Co., Ltd.</div>
       </div>
     </a>
   </div>
-  <div class="header-right">
-    <div class="header-tel">
-      <a href="tel:0927917656">092-791-7656</a>
-      <div class="header-tel-note">受付時間 9:00〜18:00</div>
-    </div>
-    <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="header-cta-btn">お問い合わせ</a>
+  <div class="hdr-sp"></div>
+  <div class="hdr-tel">
+    <a href="tel:0927917656">092-791-7656</a>
+    <div class="hdr-tel-note">受付 9:00〜18:00</div>
   </div>
+  <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="hdr-btn">お問い合わせ</a>
 </header>
 
-<!-- ========== HERO ========== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
   <div class="hero-inner">
-    <span class="hero-eyebrow">Rental Classroom · Fukuoka Akasaka</span>
-    <h1 class="hero-title">
-      研修は、<em>まるごと</em>お任せください。<br>
-      会場・PC・講師まで<em>ワンストップ</em>対応。
-    </h1>
-    <p class="hero-subtitle">
-      福岡・赤坂エリアのパソコン完備貸し教室。<br>
-      会場だけのご利用はもちろん、研修の企画・運営・講師手配まで、ご要望に合わせて柔軟に対応します。
-    </p>
-    <div class="hero-tags">
-      <span class="hero-tag">✅ 会場のみの利用もOK</span>
-      <span class="hero-tag">💻 PC最大31台完備・無料</span>
-      <span class="hero-tag">🚇 地下鉄赤坂駅 徒歩3分</span>
-      <span class="hero-tag">📅 土曜日も利用可</span>
+    <div>
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        福岡・赤坂 パソコン完備の研修会場
+      </div>
+      <h1 class="hero-h1">
+        研修は、<span class="hl">まるごと</span><br>
+        お任せください。<br>
+        会場・PC・講師まで<br>
+        <span class="hl">ワンストップ</span>対応。
+      </h1>
+      <p class="hero-sub">
+        パソコン完備の清潔な教室で、すぐに研修が始められます。<br>
+        会場だけのご利用も、企画・講師手配もすべてご相談いただけます。
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">✅ 会場のみ利用OK</span>
+        <span class="hero-tag">💻 PC最大31台・無料</span>
+        <span class="hero-tag">🚇 赤坂駅 徒歩3分</span>
+        <span class="hero-tag">📅 土曜日も利用可</span>
+      </div>
+      <div class="hero-btns">
+        <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="btn-main">✉ お問い合わせ・見積もりを依頼する</a>
+        <a href="#price" class="btn-sub">料金を確認する</a>
+      </div>
     </div>
-    <div class="hero-btns">
-      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="btn-primary">お問い合わせ・見積もりを依頼する</a>
-      <a href="#price" class="btn-secondary">料金を確認する</a>
+    <div class="hero-photo">
+      <img src="images/room506_1.jpg" alt="クロスアビリティズ 研修教室" class="hero-photo-img">
+      <div class="hero-badge1">
+        <div class="hero-badge1-icon">💻</div>
+        <div>
+          <div class="hero-badge1-num">31台</div>
+          <div class="hero-badge1-txt">Windows11 PC完備</div>
+        </div>
+      </div>
+      <div class="hero-badge2">
+        <div class="bn">3</div>
+        <div class="bt">教室</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ========== APPEAL STRIP ========== -->
-<div class="appeal-strip">
-  <div class="appeal-strip-inner">
-    <div class="appeal-item">
-      <div class="appeal-icon">🏫</div>
-      <div class="appeal-num">3<span>教室</span></div>
-      <div class="appeal-label">最大30名 × 3室</div>
-    </div>
-    <div class="appeal-item">
-      <div class="appeal-icon">💻</div>
-      <div class="appeal-num">31<span>台</span></div>
-      <div class="appeal-label">Windows11 PC完備</div>
-    </div>
-    <div class="appeal-item">
-      <div class="appeal-icon">🚇</div>
-      <div class="appeal-num">3<span>分</span></div>
-      <div class="appeal-label">地下鉄赤坂駅から徒歩</div>
-    </div>
-    <div class="appeal-item">
-      <div class="appeal-icon">🕘</div>
-      <div class="appeal-num">9<span>〜</span>20<span>時</span></div>
-      <div class="appeal-label">ご利用可能時間（相談可）</div>
-    </div>
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-icon">🏫</div><div class="stat-num">3<span>教室</span></div><div class="stat-lbl">最大30名 × 3室</div></div>
+    <div class="stat"><div class="stat-icon">💻</div><div class="stat-num">31<span>台</span></div><div class="stat-lbl">Windows11 PC完備</div></div>
+    <div class="stat"><div class="stat-icon">🚇</div><div class="stat-num">3<span>分</span></div><div class="stat-lbl">地下鉄赤坂駅から徒歩</div></div>
+    <div class="stat"><div class="stat-icon">🕘</div><div class="stat-num">9<span>〜</span>20<span>時</span></div><div class="stat-lbl">ご利用可能時間（相談可）</div></div>
   </div>
 </div>
 
-<!-- ========== STRENGTH ========== -->
-<section class="strength-section">
+<!-- REASON -->
+<section class="reason-sec">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">Why Choose Us</span>
-      <h2 class="section-title">クロスアビリティズが<br>選ばれる3つの理由</h2>
-      <p class="section-desc">設備・立地・サポート体制の三拍子が揃った、法人研修に最適な環境をご提供します。</p>
+    <div class="sec-hd">
+      <span class="sec-lbl">Why Choose Us</span>
+      <h2 class="sec-h2">クロスアビリティズが<br>選ばれる3つの理由</h2>
+      <p class="sec-desc">設備・立地・サポート体制の三拍子が揃った、法人研修に最適な環境をご提供します。</p>
     </div>
-    <div class="strength-grid">
-      <div class="strength-card">
-        <div class="strength-num">REASON 01</div>
-        <h3 class="strength-title">準備ゼロで<br>すぐに研修が始められる</h3>
-        <p class="strength-body">Windows 11 PC・65インチモニター・マイク・ホワイトボード・インターネット環境がすべて揃っています。機材の手配や設営は一切不要です。</p>
-        <ul class="strength-list">
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="reason-card-bg-num">01</div>
+        <div class="reason-icon">💻</div>
+        <h3 class="reason-title">準備ゼロで<br>すぐに研修が始められる</h3>
+        <p class="reason-body">Windows 11 PC・65インチモニター・マイク・ホワイトボード・インターネット環境がすべて揃っています。機材の手配や設営は一切不要です。</p>
+        <ul class="reason-list">
           <li>PC 11〜31台（講師用含む）無料</li>
           <li>65インチ大型モニター設置済み</li>
           <li>Wi-Fi完備・有線接続も対応</li>
           <li>荷物の事前受取・送付にも対応</li>
         </ul>
       </div>
-      <div class="strength-card accent">
-        <div class="strength-num">REASON 02</div>
-        <h3 class="strength-title">研修の企画から<br>当日運営まで相談できる</h3>
-        <p class="strength-body">「どんな研修をすればいいかわからない」という段階からご相談いただけます。研修プログラムの設計・講師の手配・当日の運営サポートまで、ワンストップで対応します。</p>
-        <ul class="strength-list">
+      <div class="reason-card">
+        <div class="reason-card-bg-num">02</div>
+        <div class="reason-icon">🤝</div>
+        <h3 class="reason-title">研修の企画から<br>当日運営まで相談できる</h3>
+        <p class="reason-body">「どんな研修をすればいいかわからない」という段階からご相談いただけます。研修プログラムの設計・講師の手配・当日の運営サポートまで、ワンストップで対応します。</p>
+        <ul class="reason-list">
           <li>研修プログラムの企画・設計</li>
           <li>講師の手配（講師料は別途）</li>
           <li>当日の運営・進行サポート</li>
           <li>AI研修・IT研修にも対応</li>
         </ul>
       </div>
-      <div class="strength-card accent2">
-        <div class="strength-num">REASON 03</div>
-        <h3 class="strength-title">短期・単発利用も<br>大歓迎です</h3>
-        <p class="strength-body">1日だけ、数日間だけのご利用も歓迎します。繁忙期・新年度・特定のプロジェクト期間など、必要なときだけご利用いただけます。</p>
-        <ul class="strength-list">
+      <div class="reason-card">
+        <div class="reason-card-bg-num">03</div>
+        <div class="reason-icon">📅</div>
+        <h3 class="reason-title">短期・単発利用も<br>大歓迎です</h3>
+        <p class="reason-body">1日だけ、数日間だけのご利用も歓迎します。繁忙期・新年度・特定のプロジェクト期間など、必要なときだけご利用いただけます。</p>
+        <ul class="reason-list">
           <li>1日からの短期利用OK</li>
           <li>複数日・連続利用も対応</li>
           <li>土曜日も利用可能</li>
@@ -830,8 +762,7 @@
         </ul>
       </div>
     </div>
-
-    <div class="venue-ok-banner">
+    <div class="venue-ok">
       <div class="venue-ok-icon">🏢</div>
       <div>
         <div class="venue-ok-title">「会場だけ借りたい」という方も、もちろん大歓迎です。</div>
@@ -841,176 +772,92 @@
   </div>
 </section>
 
-<!-- ========== EQUIPMENT ========== -->
-<section class="equipment-section">
+<!-- EQUIPMENT -->
+<section class="equip-sec">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">Equipment</span>
-      <h2 class="section-title">充実の設備が<br>すべて無料でご利用いただけます</h2>
-      <p class="section-desc">研修に必要な設備を一式ご用意しています。追加費用なしで、すぐにご利用いただけます。</p>
+    <div class="sec-hd">
+      <span class="sec-lbl">Equipment</span>
+      <h2 class="sec-h2">充実の設備が<br>すべて無料でご利用いただけます</h2>
+      <p class="sec-desc">研修に必要な設備を一式ご用意しています。追加費用なしで、すぐにご利用いただけます。</p>
     </div>
     <div class="equip-grid">
-      <div class="equip-card">
-        <div class="equip-icon-wrap">💻</div>
-        <div>
-          <div class="equip-name">Windows 11 PC<span class="equip-free-badge">無料</span></div>
-          <div class="equip-detail">11〜31台（講師用含む）・15インチ画面</div>
-        </div>
+      <div class="equip-card"><div class="equip-icon">💻</div><div><div class="equip-name">Windows 11 PC<span class="free-tag">無料</span></div><div class="equip-detail">11〜31台（講師用含む）・15インチ画面</div></div></div>
+      <div class="equip-card"><div class="equip-icon">📺</div><div><div class="equip-name">65インチ大型モニター<span class="free-tag">無料</span></div><div class="equip-detail">全教室に設置。プレゼン・講義に最適</div></div></div>
+      <div class="equip-card"><div class="equip-icon">🎤</div><div><div class="equip-name">マイク<span class="free-tag">無料</span></div><div class="equip-detail">講師・発表者の声を明瞭に届けます</div></div></div>
+      <div class="equip-card"><div class="equip-icon">📋</div><div><div class="equip-name">ホワイトボード<span class="free-tag">無料</span></div><div class="equip-detail">マーカー・イレーザー完備</div></div></div>
+      <div class="equip-card"><div class="equip-icon">🌐</div><div><div class="equip-name">インターネット環境<span class="free-tag">無料</span></div><div class="equip-detail">Wi-Fi・有線LAN完備。高速回線</div></div></div>
+      <div class="equip-card"><div class="equip-icon">📦</div><div><div class="equip-name">荷物の事前受取・送付<span class="free-tag">無料</span></div><div class="equip-detail">テキスト・教材の事前送付に対応</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="uc-sec">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="sec-lbl">Use Cases</span>
+      <h2 class="sec-h2">こんな研修・講座に<br>ご活用いただいています</h2>
+    </div>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-head sky"><div class="uc-head-icon">🌱</div><div><div class="uc-case-num">CASE 01</div><div class="uc-case-title">新入社員・社内研修</div></div></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">新入社員研修</span><span class="uc-tag">ビジネスマナー</span><span class="uc-tag">OJT補完</span></div><p class="uc-desc">4月の新年度に合わせた新入社員研修や、社内スキルアップ研修に最適です。PCを使ったハンズオン研修もすぐに実施できます。</p></div>
       </div>
-      <div class="equip-card">
-        <div class="equip-icon-wrap">📺</div>
-        <div>
-          <div class="equip-name">65インチ大型モニター<span class="equip-free-badge">無料</span></div>
-          <div class="equip-detail">全教室に設置。プレゼン・講義に最適</div>
-        </div>
+      <div class="uc-card">
+        <div class="uc-head teal"><div class="uc-head-icon">💻</div><div><div class="uc-case-num">CASE 02</div><div class="uc-case-title">IT・パソコン研修</div></div></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">Excel・Word</span><span class="uc-tag">プログラミング</span><span class="uc-tag">AI活用</span></div><p class="uc-desc">PC完備のため、参加者が自分のPCを持参する必要がありません。Excel・Word・プログラミング・AI活用など、実践的なIT研修に最適です。</p></div>
       </div>
-      <div class="equip-card">
-        <div class="equip-icon-wrap">🎤</div>
-        <div>
-          <div class="equip-name">マイク<span class="equip-free-badge">無料</span></div>
-          <div class="equip-detail">講師・発表者の声を明瞭に届けます</div>
-        </div>
+      <div class="uc-card">
+        <div class="uc-head amber"><div class="uc-head-icon">📜</div><div><div class="uc-case-num">CASE 03</div><div class="uc-case-title">資格対策講座・スクール</div></div></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">IT資格</span><span class="uc-tag">短期集中</span><span class="uc-tag">資格スクール</span></div><p class="uc-desc">ITパスポート・基本情報技術者など、PCを使った資格対策講座の会場として多くのスクールにご利用いただいています。</p></div>
       </div>
-      <div class="equip-card">
-        <div class="equip-icon-wrap">📋</div>
-        <div>
-          <div class="equip-name">ホワイトボード<span class="equip-free-badge">無料</span></div>
-          <div class="equip-detail">マーカー・イレーザー完備</div>
-        </div>
-      </div>
-      <div class="equip-card">
-        <div class="equip-icon-wrap">🌐</div>
-        <div>
-          <div class="equip-name">インターネット環境<span class="equip-free-badge">無料</span></div>
-          <div class="equip-detail">Wi-Fi・有線LAN完備。高速回線</div>
-        </div>
-      </div>
-      <div class="equip-card">
-        <div class="equip-icon-wrap">📦</div>
-        <div>
-          <div class="equip-name">荷物の事前受取・送付<span class="equip-free-badge">無料</span></div>
-          <div class="equip-detail">テキスト・教材の事前送付に対応</div>
-        </div>
+      <div class="uc-card">
+        <div class="uc-head purple"><div class="uc-head-icon">🎤</div><div><div class="uc-case-num">CASE 04</div><div class="uc-case-title">セミナー・講習会</div></div></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">企業セミナー</span><span class="uc-tag">勉強会</span><span class="uc-tag">講習会</span></div><p class="uc-desc">9〜30名規模のセミナー・勉強会・講習会に最適です。65インチモニターとマイクで、参加者全員に伝わる環境を整えています。</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== USE CASES ========== -->
-<section class="usecase-section">
+<!-- ROOMS -->
+<section class="rooms-sec">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">Use Cases</span>
-      <h2 class="section-title">こんな研修・講座に<br>ご活用いただいています</h2>
-    </div>
-    <div class="usecase-grid">
-      <div class="usecase-card">
-        <div class="usecase-header">
-          <div>
-            <div class="usecase-case-num">CASE 01</div>
-            <div class="usecase-case-title">新入社員・社内研修</div>
-          </div>
-        </div>
-        <div class="usecase-body">
-          <div class="usecase-tags">
-            <span class="usecase-tag">新入社員研修</span>
-            <span class="usecase-tag">ビジネスマナー</span>
-            <span class="usecase-tag">OJT補完</span>
-          </div>
-          <p class="usecase-desc">4月の新年度に合わせた新入社員研修や、社内スキルアップ研修に最適です。PCを使ったハンズオン研修もすぐに実施できます。</p>
-        </div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-header green">
-          <div>
-            <div class="usecase-case-num">CASE 02</div>
-            <div class="usecase-case-title">IT・パソコン研修</div>
-          </div>
-        </div>
-        <div class="usecase-body">
-          <div class="usecase-tags">
-            <span class="usecase-tag">Excel・Word</span>
-            <span class="usecase-tag">プログラミング</span>
-            <span class="usecase-tag">AI活用</span>
-          </div>
-          <p class="usecase-desc">PC完備のため、参加者が自分のPCを持参する必要がありません。Excel・Word・プログラミング・AI活用など、実践的なIT研修に最適です。</p>
-        </div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-header gold">
-          <div>
-            <div class="usecase-case-num">CASE 03</div>
-            <div class="usecase-case-title">資格対策講座・スクール</div>
-          </div>
-        </div>
-        <div class="usecase-body">
-          <div class="usecase-tags">
-            <span class="usecase-tag">IT資格</span>
-            <span class="usecase-tag">短期集中</span>
-            <span class="usecase-tag">資格スクール</span>
-          </div>
-          <p class="usecase-desc">ITパスポート・基本情報技術者など、PCを使った資格対策講座の会場として多くのスクールにご利用いただいています。</p>
-        </div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-header navy-light">
-          <div>
-            <div class="usecase-case-num">CASE 04</div>
-            <div class="usecase-case-title">セミナー・講習会</div>
-          </div>
-        </div>
-        <div class="usecase-body">
-          <div class="usecase-tags">
-            <span class="usecase-tag">企業セミナー</span>
-            <span class="usecase-tag">勉強会</span>
-            <span class="usecase-tag">講習会</span>
-          </div>
-          <p class="usecase-desc">9〜30名規模のセミナー・勉強会・講習会に最適です。65インチモニターとマイクで、参加者全員に伝わる環境を整えています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== ROOMS ========== -->
-<section class="rooms-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Rooms</span>
-      <h2 class="section-title">3つの教室から<br>ご要望に合わせてお選びいただけます</h2>
-      <p class="section-desc">各教室70㎡以上の広々とした空間。最大30名まで収容可能です。</p>
+    <div class="sec-hd">
+      <span class="sec-lbl">Rooms</span>
+      <h2 class="sec-h2">3つの教室から<br>ご要望に合わせてお選びいただけます</h2>
+      <p class="sec-desc">各教室70㎡以上の広々とした空間。最大30名まで収容可能です。</p>
     </div>
     <div class="rooms-grid">
       <div class="room-card">
-        <img src="images/room503_1.jpg" alt="503号室" class="room-img" onclick="openLightbox(0)">
+        <img src="images/room503_1.jpg" alt="503号室" class="room-img" onclick="openLb(0)">
         <div class="room-info">
           <div class="room-name">503号室</div>
           <ul class="room-specs">
-            <li><span>収容人数</span><span class="room-spec-val">最大30名</span></li>
-            <li><span>面積</span><span class="room-spec-val">70㎡以上</span></li>
-            <li><span>PC台数</span><span class="room-spec-val">最大31台</span></li>
+            <li><span>収容人数</span><span class="room-spec-v">最大30名</span></li>
+            <li><span>面積</span><span class="room-spec-v">70㎡以上</span></li>
+            <li><span>PC台数</span><span class="room-spec-v">最大31台</span></li>
           </ul>
         </div>
       </div>
       <div class="room-card">
-        <img src="images/room506_1.jpg" alt="506号室" class="room-img" onclick="openLightbox(1)">
+        <img src="images/room506_1.jpg" alt="506号室" class="room-img" onclick="openLb(1)">
         <div class="room-info">
           <div class="room-name">506号室</div>
           <ul class="room-specs">
-            <li><span>収容人数</span><span class="room-spec-val">最大30名</span></li>
-            <li><span>面積</span><span class="room-spec-val">70㎡以上</span></li>
-            <li><span>PC台数</span><span class="room-spec-val">最大31台</span></li>
+            <li><span>収容人数</span><span class="room-spec-v">最大30名</span></li>
+            <li><span>面積</span><span class="room-spec-v">70㎡以上</span></li>
+            <li><span>PC台数</span><span class="room-spec-v">最大31台</span></li>
           </ul>
         </div>
       </div>
       <div class="room-card">
-        <img src="images/room606_1.jpg" alt="606号室" class="room-img" onclick="openLightbox(2)">
+        <img src="images/room606_1.jpg" alt="606号室" class="room-img" onclick="openLb(2)">
         <div class="room-info">
           <div class="room-name">606号室</div>
           <ul class="room-specs">
-            <li><span>収容人数</span><span class="room-spec-val">最大30名</span></li>
-            <li><span>面積</span><span class="room-spec-val">70㎡以上</span></li>
-            <li><span>PC台数</span><span class="room-spec-val">最大31台</span></li>
+            <li><span>収容人数</span><span class="room-spec-v">最大30名</span></li>
+            <li><span>面積</span><span class="room-spec-v">70㎡以上</span></li>
+            <li><span>PC台数</span><span class="room-spec-v">最大31台</span></li>
           </ul>
         </div>
       </div>
@@ -1018,42 +865,37 @@
   </div>
 </section>
 
-<!-- ========== PRICE ========== -->
-<section class="price-section" id="price">
+<!-- PRICE -->
+<section class="price-sec" id="price">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">Pricing</span>
-      <h2 class="section-title">料金プラン</h2>
-      <p class="section-desc">福岡・天神エリアで最安値クラスの料金設定。設備費は一部無料で、コストパフォーマンスの高い研修環境をご提供します。</p>
+    <div class="sec-hd">
+      <span class="sec-lbl">Pricing</span>
+      <h2 class="sec-h2">料金プラン</h2>
+      <p class="sec-desc">設備費込みで、コストパフォーマンスの高い研修環境をご提供します。</p>
     </div>
-
-    <div class="price-intro">
-      <div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:6px;">30名・3時間ご利用の場合</div>
-        <div class="price-highlight-num">550<span>円</span></div>
-        <div class="price-highlight-label">1人当たり（税込・平日）</div>
+    <div class="price-hl">
+      <div class="price-big">
+        <div class="price-big-lbl">30名・3時間ご利用の場合</div>
+        <div class="price-big-num">550<span>円〜</span></div>
+        <div class="price-big-sub">1人当たり（税別・平日）</div>
       </div>
-      <div class="price-highlight-desc">
-        設備代込みのこの料金は、天神・赤坂エリアでも最安値クラスです。PC・モニター・ホワイトボードなど、研修に必要な設備がすべて含まれています。
+      <div class="price-big-desc">
+        PC・モニター・マイク・ホワイトボードなど、<strong>研修に必要な設備がすべて含まれています。</strong><br>
+        機材の手配・設営・撤収は一切不要。すぐに研修が始められます。
       </div>
     </div>
-
-    <div class="price-table-wrap">
-      <table class="price-table">
+    <div class="price-tbl-wrap">
+      <table class="price-tbl">
         <thead>
-          <tr>
-            <th>ご利用時間</th>
-            <th>平日</th>
-            <th>土曜日</th>
-          </tr>
+          <tr><th>ご利用時間</th><th>平日</th><th>土曜日</th></tr>
         </thead>
         <tbody>
-          <tr><td>3時間</td><td class="price-val">20,000円（税別）</td><td class="price-val">25,000円（税別）</td></tr>
-          <tr><td>4時間</td><td class="price-val">22,000円（税別）</td><td class="price-val">27,500円（税別）</td></tr>
-          <tr><td>5時間</td><td class="price-val">24,000円（税別）</td><td class="price-val">30,000円（税別）</td></tr>
-          <tr><td>6時間</td><td class="price-val">26,000円（税別）</td><td class="price-val">32,500円（税別）</td></tr>
-          <tr><td>7時間</td><td class="price-val">28,000円（税別）</td><td class="price-val">35,000円（税別）</td></tr>
-          <tr><td>8時間</td><td class="price-val">30,000円（税別）</td><td class="price-val">37,500円（税別）</td></tr>
+          <tr><td>3時間</td><td class="pv">20,000円（税別）</td><td class="pv">25,000円（税別）</td></tr>
+          <tr><td>4時間</td><td class="pv">22,000円（税別）</td><td class="pv">27,500円（税別）</td></tr>
+          <tr><td>5時間</td><td class="pv">24,000円（税別）</td><td class="pv">30,000円（税別）</td></tr>
+          <tr><td>6時間</td><td class="pv">26,000円（税別）</td><td class="pv">32,500円（税別）</td></tr>
+          <tr><td>7時間</td><td class="pv">28,000円（税別）</td><td class="pv">35,000円（税別）</td></tr>
+          <tr><td>8時間</td><td class="pv">30,000円（税別）</td><td class="pv">37,500円（税別）</td></tr>
         </tbody>
       </table>
     </div>
@@ -1065,55 +907,32 @@
   </div>
 </section>
 
-<!-- ========== ONESTOP ========== -->
-<section class="onestop-section">
+<!-- ONESTOP -->
+<section class="os-sec">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">One-Stop Service</span>
-      <h2 class="section-title">「何から始めればいいか<br>わからない」という方へ</h2>
-      <p class="section-desc">研修の企画・会場・設備・講師・当日の運営まで、すべてご相談いただけます。初めて研修を担当する方も、安心してお任せください。</p>
+    <div class="sec-hd c">
+      <span class="sec-lbl">One-Stop Service</span>
+      <h2 class="sec-h2">「何から始めればいいか<br>わからない」という方へ</h2>
+      <p class="sec-desc">研修の企画・会場・設備・講師・当日の運営まで、すべてご相談いただけます。初めて研修を担当する方も、安心してお任せください。</p>
     </div>
-    <div class="onestop-flow">
-      <div class="flow-step">
-        <div class="flow-step-num">STEP 01</div>
-        <div class="flow-step-icon">💬</div>
-        <div class="flow-step-title">ご相談・ヒアリング</div>
-        <div class="flow-step-desc">研修の目的・人数・日程・予算をお聞きします</div>
-      </div>
-      <div class="flow-arrow">›</div>
-      <div class="flow-step">
-        <div class="flow-step-num">STEP 02</div>
-        <div class="flow-step-icon">📝</div>
-        <div class="flow-step-title">プログラム提案</div>
-        <div class="flow-step-desc">ご要望に合わせた研修プログラムと会場をご提案</div>
-      </div>
-      <div class="flow-arrow">›</div>
-      <div class="flow-step">
-        <div class="flow-step-num">STEP 03</div>
-        <div class="flow-step-icon">👨‍🏫</div>
-        <div class="flow-step-title">講師・会場の手配</div>
-        <div class="flow-step-desc">講師の選定・手配と会場の予約を行います</div>
-      </div>
-      <div class="flow-arrow">›</div>
-      <div class="flow-step">
-        <div class="flow-step-num">STEP 04</div>
-        <div class="flow-step-icon">🎓</div>
-        <div class="flow-step-title">当日の研修実施</div>
-        <div class="flow-step-desc">設備設営・受付・運営サポートまで対応します</div>
-      </div>
+    <div class="flow-grid">
+      <div class="flow-step"><div class="flow-circle">💬</div><div class="flow-num">STEP 01</div><div class="flow-title">ご相談・ヒアリング</div><div class="flow-desc">研修の目的・人数・日程・予算をお聞きします</div></div>
+      <div class="flow-step"><div class="flow-circle">📝</div><div class="flow-num">STEP 02</div><div class="flow-title">プログラム提案</div><div class="flow-desc">ご要望に合わせた研修プログラムと会場をご提案</div></div>
+      <div class="flow-step"><div class="flow-circle">👨‍🏫</div><div class="flow-num">STEP 03</div><div class="flow-title">講師・会場の手配</div><div class="flow-desc">講師の選定・手配と会場の予約を行います</div></div>
+      <div class="flow-step"><div class="flow-circle">🎓</div><div class="flow-num">STEP 04</div><div class="flow-title">当日の研修実施</div><div class="flow-desc">設備設営・受付・運営サポートまで対応します</div></div>
     </div>
-    <div class="onestop-note">
-      <strong>会場だけのご利用も歓迎しています。</strong> 研修の手配はご自身で行い、会場と設備だけをご利用いただくことも可能です。必要なサービスだけを選んでご利用ください。講師料は別途となります。内容・時間・専門性により異なりますので、お気軽にご相談ください。
+    <div class="os-note">
+      <strong>会場だけのご利用も歓迎しています。</strong> 研修の手配はご自身で行い、会場と設備だけをご利用いただくことも可能です。必要なサービスだけを選んでご利用ください。
     </div>
   </div>
 </section>
 
-<!-- ========== AI ========== -->
-<section class="ai-section">
+<!-- AI -->
+<section class="ai-sec">
   <div class="container">
     <div class="ai-inner">
       <div>
-        <span class="ai-badge">NEW · AI Training</span>
+        <span class="ai-badge">✦ NEW · AI Training</span>
         <h2 class="ai-title">AI研修にも<br>対応しています</h2>
         <p class="ai-desc">ChatGPT・生成AI・業務効率化ツールの活用研修など、最新のAI研修にも対応しています。PC完備の環境で、実践的なハンズオン研修を実施できます。詳細は別途ご案内予定です。</p>
         <div class="ai-tags">
@@ -1131,129 +950,63 @@
   </div>
 </section>
 
-<!-- ========== FAQ ========== -->
-<section class="faq-section">
+<!-- FAQ -->
+<section class="faq-sec">
   <div class="container">
-    <div class="section-header" style="text-align:center;">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title">よくあるご質問</h2>
+    <div class="sec-hd c">
+      <span class="sec-lbl">FAQ</span>
+      <h2 class="sec-h2">よくあるご質問</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">会場だけ借りることはできますか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">はい、もちろんです。会場と設備のみのご利用も大歓迎です。研修の手配はご自身で行い、会場・PC・モニター・ホワイトボードなどの設備だけをご利用いただけます。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">1日だけの短期利用は可能ですか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">はい、1日からのご利用を歓迎しています。短期・単発のご利用も、複数日・連続利用も柔軟に対応します。まずはご希望の日程をお知らせください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">PCの台数は変更できますか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">各教室に11〜31台のPCをご用意しています。参加人数に合わせて台数を調整できます。詳しくはお問い合わせください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">土曜日や夜間の利用は可能ですか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">土曜日もご利用いただけます。ご利用時間は9:00〜20:00が基本ですが、時間についてはご相談ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">講師の手配もお願いできますか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">はい、対応しております。研修内容・人数・時間などをお聞きした上で、適切な講師をご提案します。講師料は研修内容・時間・専門性により異なりますので、まずはお気軽にご相談ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">テキストや教材を事前に送ることはできますか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">はい、荷物の事前受取・送付に対応しています。研修で使用するテキスト・教材を事前にお送りいただくことが可能です。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">見学はできますか？</div>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">はい、事前にご連絡いただければ見学も可能です。実際の教室の広さや設備をご確認いただけます。お気軽にお問い合わせください。</div>
-      </div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">会場だけ借りることはできますか？</div><div class="faq-toggle">+</div></div><div class="faq-a">はい、もちろんです。会場と設備のみのご利用も大歓迎です。研修の手配はご自身で行い、会場・PC・モニター・ホワイトボードなどの設備だけをご利用いただけます。</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">1日だけの短期利用は可能ですか？</div><div class="faq-toggle">+</div></div><div class="faq-a">はい、1日からのご利用を歓迎しています。短期・単発のご利用も、複数日・連続利用も柔軟に対応します。まずはご希望の日程をお知らせください。</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">PCの台数は変更できますか？</div><div class="faq-toggle">+</div></div><div class="faq-a">各教室に11〜31台のPCをご用意しています。参加人数に合わせて台数を調整できます。詳しくはお問い合わせください。</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">土曜日や夜間の利用は可能ですか？</div><div class="faq-toggle">+</div></div><div class="faq-a">土曜日もご利用いただけます。ご利用時間は9:00〜20:00が基本ですが、時間についてはご相談ください。</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">講師の手配もお願いできますか？</div><div class="faq-toggle">+</div></div><div class="faq-a">はい、対応しております。研修内容・人数・時間などをお聞きした上で、適切な講師をご提案します。講師料は研修内容・時間・専門性により異なりますので、まずはお気軽にご相談ください。</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">テキストや教材を事前に送ることはできますか？</div><div class="faq-toggle">+</div></div><div class="faq-a">はい、荷物の事前受取・送付に対応しています。研修で使用するテキスト・教材を事前にお送りいただくことが可能です。</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-mark">Q</div><div class="faq-q-text">見学はできますか？</div><div class="faq-toggle">+</div></div><div class="faq-a">はい、事前にご連絡いただければ見学も可能です。実際の教室の広さや設備をご確認いただけます。お気軽にお問い合わせください。</div></div>
     </div>
   </div>
 </section>
 
-<!-- ========== ACCESS ========== -->
-<section class="access-section">
+<!-- ACCESS -->
+<section class="access-sec">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">Access</span>
-      <h2 class="section-title">アクセス</h2>
+    <div class="sec-hd">
+      <span class="sec-lbl">Access</span>
+      <h2 class="sec-h2">アクセス</h2>
     </div>
     <div class="access-grid">
       <div>
         <div class="access-info-title">株式会社クロスアビリティズ</div>
         <ul class="access-list">
-          <li>
-            <span class="access-list-label">所在地</span>
-            <span class="access-list-val">福岡市中央区赤坂1丁目（新栄ビル5F・6F）</span>
-          </li>
-          <li>
-            <span class="access-list-label">最寄り駅</span>
-            <span class="access-list-val">地下鉄空港線「赤坂駅」2番出口より徒歩3分</span>
-          </li>
-          <li>
-            <span class="access-list-label">電話番号</span>
-            <span class="access-list-val"><a href="tel:0927917656" style="color:var(--navy);font-weight:700;">092-791-7656</a></span>
-          </li>
-          <li>
-            <span class="access-list-label">受付時間</span>
-            <span class="access-list-val">9:00〜18:00（平日）</span>
-          </li>
-          <li>
-            <span class="access-list-label">利用時間</span>
-            <span class="access-list-val">9:00〜20:00（相談可）</span>
-          </li>
+          <li><span class="access-lbl">所在地</span><span class="access-val">福岡市中央区赤坂1丁目（新栄ビル5F・6F）</span></li>
+          <li><span class="access-lbl">最寄り駅</span><span class="access-val">地下鉄空港線「赤坂駅」2番出口より徒歩3分</span></li>
+          <li><span class="access-lbl">電話番号</span><span class="access-val"><a href="tel:0927917656" style="color:var(--sky-d);font-weight:700;">092-791-7656</a></span></li>
+          <li><span class="access-lbl">受付時間</span><span class="access-val">9:00〜18:00（平日）</span></li>
+          <li><span class="access-lbl">利用時間</span><span class="access-val">9:00〜20:00（相談可）</span></li>
         </ul>
       </div>
       <div class="access-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6!2d130.3897!3d33.5847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191b0a3c3b3b3%3A0x0!2z5qCq5byP5Lya56S-44Kv44Ot44K544Ki44OT44Oq44OG44Kj44K6!5e0!3m2!1sja!2sjp!4v1"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="クロスアビリティズ アクセスマップ">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6!2d130.3897!3d33.5847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191b0a3c3b3b3%3A0x0!2z5qCq5byP5Lya56S-44Kv44Ot44K544Ki44OT44Oq44OG44Kj44K6!5e0!3m2!1sja!2sjp!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="クロスアビリティズ アクセスマップ"></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== CTA ========== -->
-<section class="cta-section">
-  <div class="container">
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-deco d1"></div>
+  <div class="cta-deco d2"></div>
+  <div class="cta-inner">
     <div class="cta-eyebrow">Contact Us</div>
-    <h2 class="cta-title">まずはお気軽に<br>ご相談ください</h2>
+    <h2 class="cta-h2">まずはお気軽に<br><span class="ca">ご相談ください</span></h2>
     <p class="cta-desc">「どんな研修ができるか知りたい」「見積もりだけ聞きたい」という段階でも大歓迎です。<br>会場の見学も随時受け付けています。</p>
     <div class="cta-btns">
-      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="cta-btn-main">お問い合わせ・見積もりを依頼する</a>
+      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="cta-btn-main">✉ お問い合わせ・見積もりを依頼する</a>
       <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="cta-btn-sub">見学を申し込む</a>
     </div>
-    <div class="cta-tel-wrap">
+    <div class="cta-tel">
       <div>お電話でのお問い合わせ</div>
       <a href="tel:0927917656">092-791-7656</a>
       <div class="cta-tel-note">受付時間 9:00〜18:00（平日）</div>
@@ -1261,11 +1014,11 @@
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
-<footer class="site-footer">
+<!-- FOOTER -->
+<footer class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-brand-name">株式会社クロスアビリティズ</div>
+      <div class="footer-brand">株式会社クロスアビリティズ</div>
       <p class="footer-brand-desc">福岡・赤坂エリアのパソコン完備貸し教室。<br>会場だけのご利用から、研修企画・講師手配まで<br>ワンストップで対応します。</p>
     </div>
     <div>
@@ -1289,70 +1042,38 @@
   </div>
   <div class="footer-bottom">
     <div>© 2024 株式会社クロスアビリティズ All Rights Reserved.</div>
-    <div><a href="https://www.c-as.co.jp/" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;">www.c-as.co.jp</a></div>
+    <div><a href="https://www.c-as.co.jp/" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;">www.c-as.co.jp</a></div>
   </div>
 </footer>
 
-<!-- ========== FLOATING CTA ========== -->
-<div class="floating-cta">
-  <a href="tel:0927917656" class="floating-tel-btn">📞 092-791-7656</a>
-  <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="floating-contact-btn">✉ お問い合わせ・見積もり</a>
+<!-- FLOATING -->
+<div class="floating">
+  <a href="tel:0927917656" class="fl-tel">📞 092-791-7656</a>
+  <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="fl-contact">✉ お問い合わせ・見積もり</a>
 </div>
 
-<!-- ========== LIGHTBOX ========== -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <span class="lightbox-close" onclick="closeLightboxDirect()">×</span>
-  <span class="lightbox-prev" onclick="lightboxPrev(event)">‹</span>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="">
-  <span class="lightbox-next" onclick="lightboxNext(event)">›</span>
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <span class="lb-close" onclick="closeLbDirect()">×</span>
+  <span class="lb-prev" onclick="lbPrev(event)">‹</span>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <span class="lb-next" onclick="lbNext(event)">›</span>
 </div>
 
 <script>
-  // FAQ
-  function toggleFaq(el) {
-    const item = el.parentElement;
-    item.classList.toggle('open');
-  }
-
-  // Lightbox
-  const lightboxImages = [
-    'images/room503_1.jpg',
-    'images/room506_1.jpg',
-    'images/room606_1.jpg',
-    'images/room503_2.jpg',
-    'images/room506_2.jpg',
-    'images/room606_2.jpg',
-  ];
-  let currentLightboxIndex = 0;
-
-  function openLightbox(index) {
-    currentLightboxIndex = index;
-    document.getElementById('lightbox-img').src = lightboxImages[index];
-    document.getElementById('lightbox').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox(e) {
-    if (e.target === document.getElementById('lightbox')) closeLightboxDirect();
-  }
-  function closeLightboxDirect() {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  function lightboxPrev(e) {
-    e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-    document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex];
-  }
-  function lightboxNext(e) {
-    e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
-    document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex];
-  }
+  function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+  const lbImgs = ['images/room503_1.jpg','images/room506_1.jpg','images/room606_1.jpg','images/room503_2.jpg','images/room506_2.jpg','images/room606_2.jpg'];
+  let lbIdx = 0;
+  function openLb(i) { lbIdx = i; document.getElementById('lb-img').src = lbImgs[i]; document.getElementById('lb').classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeLb(e) { if (e.target === document.getElementById('lb')) closeLbDirect(); }
+  function closeLbDirect() { document.getElementById('lb').classList.remove('active'); document.body.style.overflow = ''; }
+  function lbPrev(e) { e.stopPropagation(); lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length; document.getElementById('lb-img').src = lbImgs[lbIdx]; }
+  function lbNext(e) { e.stopPropagation(); lbIdx = (lbIdx + 1) % lbImgs.length; document.getElementById('lb-img').src = lbImgs[lbIdx]; }
   document.addEventListener('keydown', function(e) {
-    if (!document.getElementById('lightbox').classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightboxDirect();
-    if (e.key === 'ArrowLeft') lightboxPrev(e);
-    if (e.key === 'ArrowRight') lightboxNext(e);
+    if (!document.getElementById('lb').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLbDirect();
+    if (e.key === 'ArrowLeft') lbPrev(e);
+    if (e.key === 'ArrowRight') lbNext(e);
   });
 </script>
 </body>
