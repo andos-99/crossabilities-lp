@@ -1,1752 +1,1358 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>【期間限定20%OFF】パソコン完備の研修教室｜株式会社クロスアビリティズ</title>
-  <meta name="description" content="2026年3月1日〜4月15日限定。会場・PC・講師・研修プログラムまでワンストップ対応。福岡市大名・赤坂エリアのパソコン完備研修教室。3教室・最大30名収容。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #333;
-      background: #fff;
-    }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>貸し教室・研修会場 | 株式会社クロスアビリティズ</title>
+<meta name="description" content="福岡・赤坂エリアのパソコン完備貸し教室。会場だけのご利用から研修企画・講師手配まで、丸ごとお任せいただけます。地下鉄赤坂駅徒歩3分。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ===== DESIGN TOKENS ===== */
-    :root {
-      --primary: #E07B00;
-      --primary-light: #F5A623;
-      --primary-pale: #FFF3E0;
-      --secondary: #1A6BAA;
-      --accent-red: #C0392B;
-      --green: #3A9E6A;
-      --text-dark: #1A1A1A;
-      --text-mid: #555;
-      --text-light: #888;
-      --bg-light: #F8F8F8;
-      --border: #E0E0E0;
-      --shadow: 0 4px 20px rgba(0,0,0,0.08);
-      --shadow-hover: 0 8px 30px rgba(0,0,0,0.14);
-      --radius: 12px;
-      --radius-sm: 6px;
-    }
+  :root {
+    --navy: #1a2744;
+    --navy-light: #2c3e6b;
+    --green: #2e7d52;
+    --green-light: #3a9e68;
+    --green-pale: #e8f5ee;
+    --orange: #e07b2a;
+    --orange-light: #f5a050;
+    --gold: #c8a84b;
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --gray-100: #f4f5f7;
+    --gray-200: #e8eaed;
+    --gray-400: #9aa0ab;
+    --gray-700: #4a5568;
+    --gray-900: #1a202c;
+    --font-main: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+  }
 
-    /* ===== HEADER ===== */
-    .site-header {
-      background: #fff;
-      border-bottom: 3px solid var(--primary);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .logo-area { display: flex; flex-direction: column; gap: 2px; }
-    .logo-name { font-size: 18px; font-weight: 700; color: var(--primary); white-space: nowrap; }
-    .logo-sub { font-size: 11px; color: var(--text-light); }
-    .header-contact { text-align: right; }
-    .header-tel { font-size: 22px; font-weight: 900; color: var(--text-dark); letter-spacing: 0.05em; }
-    .header-tel span { font-size: 13px; font-weight: 400; color: var(--text-mid); margin-right: 4px; }
-    .header-hours { font-size: 11px; color: var(--text-light); }
-    .header-cta-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 10px 20px;
-      border-radius: 50px;
-      white-space: nowrap;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .header-cta-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-main); color: var(--gray-900); background: var(--white); line-height: 1.7; }
 
-    /* ===== HERO ===== */
-    .hero {
-      position: relative;
-      min-height: 460px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: #e8f0e8;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('images/room503_1.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: 1;
-    }
-    /* 左側に自然なグラデーションオーバーレイで文字を読みやすく */
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        105deg,
-        rgba(10, 30, 10, 0.38) 0%,
-        rgba(10, 30, 10, 0.22) 45%,
-        rgba(10, 30, 10, 0.04) 75%,
-        transparent 100%
-      );
-      pointer-events: none;
-      z-index: 1;
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 44px 40px;
-      width: 100%;
-    }
-    .hero-text-box {
-      max-width: 600px;
-    }
-    .hero-title {
-      font-size: clamp(18px, 2.8vw, 32px);
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      text-shadow:
-        0 2px 8px rgba(0,0,0,0.7),
-        0 0 30px rgba(0,0,0,0.5);
-    }
-    .hero-title .highlight {
-      color: #7FFFA0;
-      border-bottom: 3px solid rgba(127,255,160,0.6);
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,80,30,0.4);
-    }
-    .hero-subtitle {
-      font-size: clamp(14px, 1.9vw, 18px);
-      color: rgba(255,255,255,0.95);
-      font-weight: 500;
-      margin-bottom: 16px;
-      line-height: 1.7;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
-    }
-    /* ヒーロー内キャンペーン帯 */
-    .hero-campaign-bar {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      background: var(--accent-red);
-      border-radius: 8px;
-      padding: 12px 24px;
-      margin-bottom: 16px;
-      flex-wrap: nowrap;
-    }
-    .hero-campaign-bar .hcb-period {
-      font-size: clamp(13px, 2vw, 15px);
-      font-weight: 700;
-      color: rgba(255,255,255,0.92);
-      white-space: nowrap;
-    }
-    .hero-campaign-bar .hcb-off {
-      font-size: clamp(22px, 3.5vw, 32px);
-      font-weight: 900;
-      color: #FFD700;
-      line-height: 1;
-      white-space: nowrap;
-    }
-    .hero-campaign-bar .hcb-sep {
-      width: 1px;
-      height: 32px;
-      background: rgba(255,255,255,0.35);
-      flex-shrink: 0;
-    }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .hero-tag {
-      background: rgba(255,255,255,0.18);
-      border: 1.5px solid rgba(255,255,255,0.7);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 50px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-    }
-    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; }
-    .btn-primary {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      font-size: 17px;
-      font-weight: 700;
-      padding: 16px 36px;
-      border-radius: 50px;
-      box-shadow: 0 4px 16px rgba(224,123,0,0.4);
-      transition: all 0.2s;
-      text-align: center;
-    }
-    .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,123,0,0.5); }
-    .btn-secondary {
-      display: inline-block;
-      background: rgba(255,255,255,0.18);
-      border: 2px solid rgba(255,255,255,0.9);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 14px 32px;
-      border-radius: 50px;
-      backdrop-filter: blur(6px);
-      transition: all 0.2s;
-      text-align: center;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.32); transform: translateY(-2px); }
+  /* ========== HEADER ========== */
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 24px;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .header-logo a {
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .header-logo-mark {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 14px; font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+  .header-logo-text {
+    font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.3;
+  }
+  .header-logo-sub {
+    font-size: 10px; font-weight: 400; color: var(--gray-400);
+  }
+  .header-right {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .header-tel {
+    text-align: right;
+  }
+  .header-tel a {
+    font-size: 18px; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: 0.5px;
+  }
+  .header-tel-note { font-size: 10px; color: var(--gray-400); }
+  .header-cta-btn {
+    background: var(--green);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .header-cta-btn:hover { background: var(--green-light); }
 
-    /* ===== CAMPAIGN SECTION ===== */
-    .campaign-section {
-      background: linear-gradient(135deg, var(--accent-red) 0%, #E74C3C 100%);
-      padding: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .campaign-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.03) 0px,
-        rgba(255,255,255,0.03) 2px,
-        transparent 2px,
-        transparent 20px
-      );
-    }
-    .campaign-top-bar {
-      background: #FFD700;
-      text-align: center;
-      padding: 10px 20px;
-      font-size: clamp(13px, 2vw, 16px);
-      font-weight: 900;
-      color: #333;
-      letter-spacing: 0.06em;
-    }
-    .campaign-main {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 44px;
-      text-align: center;
-      color: #fff;
-    }
-    .campaign-eyecatch {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(255,255,255,0.15);
-      border: 2px solid rgba(255,255,255,0.5);
-      border-radius: 50px;
-      padding: 8px 24px;
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: 0.05em;
-    }
-    /* キャンペーン期間＋OFFを横並びで表示 */
-    .campaign-info-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-    .campaign-period-block {
-      background: rgba(0,0,0,0.2);
-      border: 2px solid rgba(255,255,255,0.4);
-      border-radius: var(--radius);
-      padding: 16px 28px;
-      text-align: center;
-    }
-    .campaign-period-label {
-      font-size: 12px;
-      font-weight: 700;
-      opacity: 0.8;
-      letter-spacing: 0.1em;
-      margin-bottom: 6px;
-    }
-    .campaign-period-date {
-      font-size: clamp(18px, 3vw, 24px);
-      font-weight: 900;
-      letter-spacing: 0.04em;
-    }
-    .campaign-off-block {
-      background: rgba(255,215,0,0.15);
-      border: 2px solid #FFD700;
-      border-radius: var(--radius);
-      padding: 16px 32px;
-      text-align: center;
-    }
-    .campaign-off-label {
-      font-size: 12px;
-      font-weight: 700;
-      opacity: 0.85;
-      letter-spacing: 0.1em;
-      margin-bottom: 4px;
-    }
-    .campaign-off-num {
-      font-size: clamp(36px, 6vw, 56px);
-      font-weight: 900;
-      color: #FFD700;
-      line-height: 1;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    .campaign-price-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-    .campaign-price-before {
-      font-size: 18px;
-      text-decoration: line-through;
-      opacity: 0.65;
-    }
-    .campaign-price-arrow { font-size: 28px; opacity: 0.8; }
-    .campaign-price-after {
-      font-size: clamp(22px, 4vw, 36px);
-      font-weight: 900;
-      color: #FFD700;
-    }
-    .campaign-price-note { font-size: 12px; opacity: 0.75; margin-top: 4px; }
-    .campaign-cta-btn {
-      display: inline-block;
-      background: #fff;
-      color: var(--accent-red);
-      font-size: clamp(16px, 2.5vw, 20px);
-      font-weight: 900;
-      padding: 18px 48px;
-      border-radius: 50px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
-      transition: all 0.2s;
-      letter-spacing: 0.03em;
-    }
-    .campaign-cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 32px rgba(0,0,0,0.3); }
+  /* ========== HERO ========== */
+  .hero {
+    margin-top: 64px;
+    position: relative;
+    min-height: 520px;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('images/room503_1.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(26,39,68,0.82) 0%, rgba(26,39,68,0.55) 55%, rgba(26,39,68,0.15) 100%);
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1100px; margin: 0 auto;
+    padding: 60px 32px;
+    width: 100%;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.45;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-title em {
+    font-style: normal;
+    color: #7ee8a2;
+  }
+  .hero-subtitle {
+    font-size: clamp(14px, 2vw, 17px);
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 28px;
+    max-width: 520px;
+    line-height: 1.8;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 32px;
+  }
+  .hero-tag {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    font-size: 12px; font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .hero-btns {
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .btn-primary {
+    background: var(--green);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 16px rgba(46,125,82,0.4);
+  }
+  .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.6);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px; font-weight: 600;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.22); }
 
-    /* ===== DIVIDER ===== */
-    .divider { height: 4px; background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%); }
+  /* ========== SECTION BASE ========== */
+  section { padding: 72px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    color: var(--green); text-transform: uppercase;
+    margin-bottom: 10px; display: block;
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+  .section-desc {
+    font-size: 15px; color: var(--gray-700); line-height: 1.85;
+    max-width: 640px;
+  }
+  .section-header { margin-bottom: 48px; }
 
-    /* ===== SECTION BASE ===== */
-    section { padding: 72px 20px; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      display: inline-block;
-      background: var(--primary-pale);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 50px;
-      margin-bottom: 12px;
-      letter-spacing: 0.08em;
-    }
-    .section-title {
-      font-size: clamp(22px, 3.5vw, 34px);
-      font-weight: 900;
-      color: var(--text-dark);
-      line-height: 1.4;
-      margin-bottom: 16px;
-    }
-    .section-title .accent { color: var(--primary); }
-    .section-lead {
-      font-size: 16px;
-      color: var(--text-mid);
-      max-width: 700px;
-      margin-bottom: 48px;
-      line-height: 1.8;
-    }
-    .text-center { text-align: center; }
-    .text-center .section-lead { margin-left: auto; margin-right: auto; }
+  /* ========== APPEAL STRIP ========== */
+  .appeal-strip {
+    background: var(--navy);
+    padding: 0;
+  }
+  .appeal-strip-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    divide-x: 1px solid rgba(255,255,255,0.1);
+  }
+  .appeal-item {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .appeal-item:last-child { border-right: none; }
+  .appeal-icon { font-size: 28px; margin-bottom: 8px; }
+  .appeal-num {
+    font-size: 28px; font-weight: 900; color: #7ee8a2;
+    line-height: 1; margin-bottom: 4px;
+  }
+  .appeal-num span { font-size: 14px; font-weight: 400; }
+  .appeal-label { font-size: 12px; color: rgba(255,255,255,0.7); }
 
-    /* ===== PAIN SECTION ===== */
-    .pain-section { background: var(--bg-light); }
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-    .pain-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      box-shadow: var(--shadow);
-      border-left: 4px solid var(--border);
-    }
-    .pain-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-    .pain-text { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
-    .pain-text strong { color: var(--text-dark); display: block; margin-bottom: 4px; }
-    .pain-answer {
-      background: linear-gradient(135deg, var(--secondary) 0%, #1a5a9a 100%);
-      color: #fff;
-      border-radius: var(--radius);
-      padding: 32px 40px;
-      text-align: center;
-    }
-    .pain-answer p { font-size: 18px; font-weight: 700; line-height: 1.7; }
-    .pain-answer .big { font-size: clamp(22px, 3.5vw, 28px); }
-    .pain-answer .highlight-yellow { color: #FFD700; }
+  /* ========== STRENGTH ========== */
+  .strength-section { background: var(--white); }
+  .strength-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .strength-card {
+    background: var(--off-white);
+    border-radius: 16px;
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .strength-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .strength-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--green);
+  }
+  .strength-card.accent::before { background: var(--navy); }
+  .strength-card.accent2::before { background: var(--gold); }
+  .strength-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    color: var(--green); margin-bottom: 12px;
+  }
+  .strength-card.accent .strength-num { color: var(--navy); }
+  .strength-card.accent2 .strength-num { color: var(--gold); }
+  .strength-title {
+    font-size: 19px; font-weight: 700; color: var(--navy);
+    margin-bottom: 12px; line-height: 1.4;
+  }
+  .strength-body { font-size: 14px; color: var(--gray-700); line-height: 1.8; }
+  .strength-list { list-style: none; margin-top: 14px; }
+  .strength-list li {
+    font-size: 13px; color: var(--gray-700);
+    padding: 5px 0 5px 20px;
+    position: relative;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .strength-list li:last-child { border-bottom: none; }
+  .strength-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--green); font-weight: 700;
+  }
 
-    /* ===== STRENGTHS + ONESTOP (統合) ===== */
-    .strengths-section { background: #fff; }
-    .strength-cards { display: flex; flex-direction: column; gap: 32px; }
-    .strength-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: box-shadow 0.2s;
-    }
-    .strength-card:hover { box-shadow: var(--shadow-hover); }
-    .strength-card.reverse { direction: rtl; }
-    .strength-card.reverse > * { direction: ltr; }
-    .strength-img { overflow: hidden; min-height: 280px; }
-    .strength-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .strength-card:hover .strength-img img { transform: scale(1.04); }
-    .strength-body {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: #fff;
-    }
-    .strength-num { font-size: 48px; font-weight: 900; color: var(--primary-pale); line-height: 1; margin-bottom: 8px; font-style: italic; }
-    .strength-tag {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 50px;
-      margin-bottom: 14px;
-    }
-    .strength-title { font-size: clamp(18px, 2.5vw, 22px); font-weight: 900; color: var(--text-dark); margin-bottom: 14px; line-height: 1.4; }
-    .strength-desc { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
-    .strength-points { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
-    .strength-point { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-mid); }
-    .strength-point::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  /* ========== VENUE OK BANNER ========== */
+  .venue-ok-banner {
+    background: linear-gradient(135deg, var(--green-pale) 0%, #d4eddf 100%);
+    border-left: 5px solid var(--green);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-top: 48px;
+    display: flex; align-items: flex-start; gap: 20px;
+  }
+  .venue-ok-icon { font-size: 36px; flex-shrink: 0; }
+  .venue-ok-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .venue-ok-body { font-size: 14px; color: var(--gray-700); line-height: 1.8; }
 
-    /* ===== ONESTOP FLOW (統合後のフロー図) ===== */
-    .onestop-flow-section {
-      background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%);
-      color: #fff;
-    }
-    .onestop-flow-section .section-title { color: #fff; }
-    .onestop-flow-section .section-lead { color: rgba(255,255,255,0.85); }
-    .onestop-flow-section .section-label { background: rgba(255,255,255,0.2); color: #FFD700; }
-    .flow-arrow-row {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      gap: 0;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-    .flow-arrow-item {
-      background: rgba(255,255,255,0.12);
-      border: 1.5px solid rgba(255,255,255,0.3);
-      border-radius: var(--radius);
-      padding: 20px 16px;
-      text-align: center;
-      min-width: 130px;
-      flex: 1;
-      max-width: 180px;
-      position: relative;
-    }
-    .flow-arrow-item:not(:last-child)::after {
-      content: '▶';
-      position: absolute;
-      right: -14px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 18px;
-      color: #FFD700;
-      z-index: 1;
-    }
-    .flow-arrow-icon { font-size: 32px; margin-bottom: 10px; }
-    .flow-arrow-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
-    .flow-arrow-desc { font-size: 11px; opacity: 0.75; margin-top: 6px; line-height: 1.5; }
-    .onestop-cta { text-align: center; margin-top: 8px; }
+  /* ========== EQUIPMENT ========== */
+  .equipment-section { background: var(--gray-100); }
+  .equip-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .equip-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 20px;
+    display: flex; align-items: flex-start; gap: 14px;
+    border: 1px solid var(--gray-200);
+  }
+  .equip-icon-wrap {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--green-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .equip-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .equip-detail { font-size: 12px; color: var(--gray-700); line-height: 1.6; }
+  .equip-free-badge {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 10px;
+    margin-left: 6px; vertical-align: middle;
+  }
 
-    /* ===== EQUIPMENT (設備) ===== */
-    .equipment-section { background: var(--bg-light); }
-    .equip-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    }
-    .equip-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 24px 16px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border-top: 4px solid var(--primary);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .equip-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-    .equip-icon { font-size: 34px; margin-bottom: 10px; }
-    .equip-name { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
-    .equip-detail { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
-    .equip-free-badge {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 50px;
-      margin-top: 8px;
-    }
+  /* ========== USE CASES ========== */
+  .usecase-section { background: var(--white); }
+  .usecase-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .usecase-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    display: flex; flex-direction: column;
+  }
+  .usecase-header {
+    background: var(--navy);
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .usecase-header.green { background: var(--green); }
+  .usecase-header.gold { background: var(--gold); }
+  .usecase-header.navy-light { background: var(--navy-light); }
+  .usecase-case-num { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
+  .usecase-case-title { font-size: 17px; font-weight: 700; color: white; }
+  .usecase-body { padding: 20px 24px; background: white; flex: 1; }
+  .usecase-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .usecase-tag {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-size: 11px; font-weight: 500;
+    padding: 3px 10px; border-radius: 12px;
+  }
+  .usecase-desc { font-size: 13px; color: var(--gray-700); line-height: 1.75; }
 
-    /* ===== USE CASES ===== */
-    .usecase-section { background: #fff; }
-    .usecase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
-    .usecase-card {
-      background: var(--bg-light);
-      border-radius: var(--radius);
-      padding: 24px 12px;
-      text-align: center;
-      transition: all 0.2s;
-      border: 2px solid transparent;
-    }
-    .usecase-card:hover { background: var(--primary-pale); border-color: var(--primary); transform: translateY(-3px); }
-    .usecase-icon { font-size: 34px; margin-bottom: 10px; }
-    .usecase-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+  /* ========== ROOMS ========== */
+  .rooms-section { background: var(--gray-100); }
+  .rooms-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-bottom: 40px;
+  }
+  .room-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .room-img {
+    width: 100%; height: 180px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .room-img:hover { opacity: 0.9; }
+  .room-info { padding: 20px; }
+  .room-name { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .room-specs { list-style: none; }
+  .room-specs li {
+    font-size: 13px; color: var(--gray-700);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--gray-100);
+    display: flex; justify-content: space-between;
+  }
+  .room-specs li:last-child { border-bottom: none; }
+  .room-spec-val { font-weight: 600; color: var(--navy); }
 
-    /* ===== ROOMS ===== */
-    .rooms-section { background: var(--bg-light); }
-    .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 40px; }
-    .room-card {
-      background: #fff;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .room-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-    .room-img { height: 220px; overflow: hidden; }
-    .room-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .room-card:hover .room-img img { transform: scale(1.05); }
-    .room-body { padding: 24px; }
-    .room-name { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-    .room-specs { display: flex; flex-direction: column; gap: 8px; }
-    .room-spec { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-mid); }
-    .room-spec-icon { width: 24px; text-align: center; font-size: 16px; flex-shrink: 0; }
-    .rooms-summary {
-      background: linear-gradient(135deg, var(--secondary) 0%, #1a5a9a 100%);
-      border-radius: var(--radius);
-      padding: 36px 40px;
-      color: #fff;
-    }
-    .rooms-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
-    .summary-item { text-align: center; }
-    .summary-num { font-size: clamp(28px, 4vw, 40px); font-weight: 900; color: #FFD700; line-height: 1.2; }
-    .summary-label { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  /* ========== PRICE ========== */
+  .price-section { background: var(--white); }
+  .price-intro {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 36px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    align-items: center;
+  }
+  .price-highlight-num {
+    font-size: 52px; font-weight: 900; color: #7ee8a2; line-height: 1;
+  }
+  .price-highlight-num span { font-size: 20px; }
+  .price-highlight-label { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+  .price-highlight-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.8; }
+  .price-table-wrap { overflow-x: auto; }
+  .price-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 14px;
+  }
+  .price-table th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .price-table td {
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .price-table tr:nth-child(even) td { background: var(--gray-100); }
+  .price-table .price-val { font-weight: 700; color: var(--navy); font-size: 15px; }
+  .price-note {
+    margin-top: 16px;
+    padding: 16px 20px;
+    background: var(--gray-100);
+    border-radius: 8px;
+    font-size: 13px; color: var(--gray-700); line-height: 1.7;
+  }
+  .price-note strong { color: var(--navy); }
 
-    /* ===== PRICING ===== */
-    .pricing-section { background: #fff; }
-    .pricing-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
-    .pricing-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .pricing-card-head { padding: 20px 24px; font-size: 16px; font-weight: 700; color: #fff; }
-    .pricing-card-head.normal { background: var(--text-mid); }
-    .pricing-card-head.campaign { background: var(--accent-red); }
-    .pricing-card-head .badge {
-      display: inline-block;
-      background: #FFD700;
-      color: #333;
-      font-size: 12px;
-      padding: 2px 10px;
-      border-radius: 50px;
-      margin-left: 10px;
-      vertical-align: middle;
-    }
-    .pricing-table { width: 100%; border-collapse: collapse; }
-    .pricing-table th, .pricing-table td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); font-size: 14px; }
-    .pricing-table th { background: var(--bg-light); font-weight: 700; color: var(--text-dark); }
-    .pricing-table td { color: var(--text-mid); }
-    .pricing-table .price { font-weight: 700; color: var(--text-dark); font-size: 16px; }
-    .pricing-table .price-campaign { font-weight: 700; color: var(--accent-red); font-size: 16px; }
-    .pricing-note { background: var(--bg-light); border-radius: var(--radius-sm); padding: 16px 20px; font-size: 13px; color: var(--text-mid); line-height: 1.8; }
+  /* ========== ONESTOP ========== */
+  .onestop-section { background: var(--navy); }
+  .onestop-section .section-title { color: white; }
+  .onestop-section .section-label { color: #7ee8a2; }
+  .onestop-section .section-desc { color: rgba(255,255,255,0.75); }
+  .onestop-flow {
+    display: flex; align-items: stretch; gap: 0;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    flex: 1; min-width: 160px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 24px 18px;
+    text-align: center;
+    position: relative;
+  }
+  .flow-step + .flow-step { margin-left: 12px; }
+  .flow-step-num {
+    font-size: 11px; font-weight: 700; color: #7ee8a2;
+    letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .flow-step-icon { font-size: 28px; margin-bottom: 10px; }
+  .flow-step-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .flow-step-desc { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .flow-arrow {
+    display: flex; align-items: center; padding: 0 4px;
+    color: #7ee8a2; font-size: 20px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .onestop-note {
+    margin-top: 32px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px 28px;
+    font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.8;
+  }
+  .onestop-note strong { color: #7ee8a2; }
 
-    /* ===== FLOW ===== */
-    .flow-section { background: var(--bg-light); }
-    .flow-steps { display: flex; flex-direction: column; gap: 0; }
-    .flow-step { display: flex; gap: 24px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--border); }
-    .flow-step:last-child { border-bottom: none; }
-    .flow-num { width: 52px; height: 52px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; flex-shrink: 0; }
-    .flow-body { flex: 1; }
-    .flow-title { font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
-    .flow-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+  /* ========== AI ========== */
+  .ai-section { background: linear-gradient(135deg, #0f1f3d 0%, #1a3a5c 100%); }
+  .ai-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  }
+  .ai-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #7ee8a2, #4db8ff);
+    color: var(--navy);
+    font-size: 11px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+    letter-spacing: 1px; margin-bottom: 16px;
+  }
+  .ai-title { font-size: clamp(20px, 3vw, 30px); font-weight: 700; color: white; margin-bottom: 14px; line-height: 1.4; }
+  .ai-desc { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.85; margin-bottom: 24px; }
+  .ai-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ai-tag {
+    background: rgba(126,232,162,0.15);
+    border: 1px solid rgba(126,232,162,0.4);
+    color: #7ee8a2;
+    font-size: 12px; padding: 4px 14px; border-radius: 16px;
+  }
+  .ai-visual {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 36px;
+    text-align: center;
+  }
+  .ai-visual-icon { font-size: 64px; margin-bottom: 16px; }
+  .ai-visual-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
-    /* ===== TRUST ===== */
-    .trust-section { background: #fff; }
-    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-    .trust-card { background: var(--bg-light); border-radius: var(--radius); padding: 28px 24px; border-left: 4px solid var(--primary); }
-    .trust-icon { font-size: 32px; margin-bottom: 12px; }
-    .trust-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-    .trust-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+  /* ========== FAQ ========== */
+  .faq-section { background: var(--gray-100); }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 20px 24px;
+    display: flex; align-items: flex-start; gap: 14px;
+    cursor: pointer;
+    font-size: 15px; font-weight: 600; color: var(--navy);
+    line-height: 1.5;
+    user-select: none;
+  }
+  .faq-q-mark {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: var(--navy);
+    color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+  .faq-q-text { flex: 1; }
+  .faq-toggle { color: var(--gray-400); font-size: 18px; flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-a {
+    display: none;
+    padding: 0 24px 20px 66px;
+    font-size: 14px; color: var(--gray-700); line-height: 1.85;
+    border-top: 1px solid var(--gray-200);
+    padding-top: 16px;
+  }
+  .faq-item.open .faq-a { display: block; }
 
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      padding: 72px 20px;
-      text-align: center;
-    }
-    .cta-inner { max-width: 700px; margin: 0 auto; }
-    .cta-badge { display: inline-block; background: rgba(255,255,255,0.25); border: 1.5px solid rgba(255,255,255,0.6); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 18px; border-radius: 50px; margin-bottom: 20px; }
-    .cta-title { font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: #fff; margin-bottom: 16px; line-height: 1.4; }
-    .cta-desc { font-size: 16px; color: rgba(255,255,255,0.92); margin-bottom: 36px; line-height: 1.7; }
-    .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 28px; }
-    .btn-cta-white { display: inline-block; background: #fff; color: var(--primary); font-size: 17px; font-weight: 700; padding: 18px 40px; border-radius: 50px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transition: all 0.2s; }
-    .btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .btn-cta-outline { display: inline-block; background: transparent; border: 2px solid rgba(255,255,255,0.8); color: #fff; font-size: 16px; font-weight: 700; padding: 16px 36px; border-radius: 50px; transition: all 0.2s; }
-    .btn-cta-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
-    .cta-tel { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: 0.05em; }
-    .cta-tel span { font-size: 15px; font-weight: 400; opacity: 0.85; margin-right: 8px; }
-    .cta-hours { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+  /* ========== ACCESS ========== */
+  .access-section { background: var(--white); }
+  .access-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+  }
+  .access-info-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .access-list { list-style: none; }
+  .access-list li {
+    display: flex; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 14px;
+  }
+  .access-list li:last-child { border-bottom: none; }
+  .access-list-label { font-weight: 600; color: var(--navy); min-width: 80px; flex-shrink: 0; }
+  .access-list-val { color: var(--gray-700); line-height: 1.6; }
+  .access-map {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .access-map iframe { display: block; width: 100%; height: 320px; border: none; }
 
-    /* ===== FOOTER ===== */
-    .site-footer { background: #1A1A1A; color: rgba(255,255,255,0.7); padding: 48px 20px 28px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-logo { font-size: 18px; font-weight: 700; color: var(--primary-light); margin-bottom: 12px; }
-    .footer-address { font-size: 13px; line-height: 1.9; }
-    .footer-address strong { color: rgba(255,255,255,0.9); }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-    .footer-link { font-size: 13px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
-    .footer-link:hover { color: var(--primary-light); }
-    .footer-bottom { text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
+  /* ========== CTA ========== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--green) 0%, #1e5e3a 100%);
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .cta-eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    color: rgba(255,255,255,0.7); text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 700; color: white;
+    line-height: 1.4; margin-bottom: 14px;
+  }
+  .cta-desc { font-size: 15px; color: rgba(255,255,255,0.82); margin-bottom: 36px; line-height: 1.8; }
+  .cta-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 32px; }
+  .cta-btn-main {
+    background: white;
+    color: var(--green);
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px; font-weight: 700;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .cta-btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+  .cta-btn-sub {
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px; font-weight: 600;
+    transition: background 0.2s;
+  }
+  .cta-btn-sub:hover { background: rgba(255,255,255,0.22); }
+  .cta-tel-wrap { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .cta-tel-wrap a { color: white; font-size: 26px; font-weight: 700; text-decoration: none; display: block; margin: 4px 0; }
+  .cta-tel-note { font-size: 12px; color: rgba(255,255,255,0.6); }
 
-    /* ===== STATS ===== */
-    .stats-section { background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%); color: #fff; padding: 56px 20px; }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
-    .stat-item { text-align: center; padding: 24px 16px; background: rgba(255,255,255,0.1); border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
-    .stat-num { font-size: clamp(32px, 5vw, 48px); font-weight: 900; color: #FFD700; line-height: 1.1; }
-    .stat-unit { font-size: 16px; font-weight: 700; color: #FFD700; }
-    .stat-label { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px; line-height: 1.5; }
+  /* ========== FOOTER ========== */
+  .site-footer {
+    background: var(--gray-900);
+    padding: 48px 24px 24px;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-brand-name { font-size: 15px; font-weight: 700; color: white; margin-bottom: 8px; }
+  .footer-brand-desc { font-size: 13px; line-height: 1.8; }
+  .footer-nav-title { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.8); letter-spacing: 1px; margin-bottom: 14px; text-transform: uppercase; }
+  .footer-nav-list { list-style: none; }
+  .footer-nav-list li { margin-bottom: 8px; }
+  .footer-nav-list a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-nav-list a:hover { color: white; }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px;
+  }
 
-    /* ===== FAQ ===== */
-    .faq-section { background: var(--bg-light); }
-    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; }
-    .faq-item { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-    .faq-question {
-      padding: 20px 24px;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-dark);
-      cursor: pointer;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      user-select: none;
-      list-style: none;
-    }
-    .faq-question::-webkit-details-marker { display: none; }
-    .faq-q-icon { width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
-    .faq-q-text { flex: 1; line-height: 1.6; }
-    .faq-toggle { font-size: 18px; color: var(--primary); flex-shrink: 0; transition: transform 0.3s; margin-top: 2px; }
-    details[open] .faq-toggle { transform: rotate(45deg); }
-    .faq-answer { padding: 0 24px 20px 66px; font-size: 14px; color: var(--text-mid); line-height: 1.8; border-top: 1px solid var(--border); padding-top: 16px; }
-    .faq-a-icon { color: var(--secondary); font-weight: 700; margin-right: 6px; }
+  /* ========== FLOATING CTA ========== */
+  .floating-cta {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
+  }
+  .floating-tel-btn {
+    background: var(--navy);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.15s;
+  }
+  .floating-tel-btn:hover { transform: scale(1.04); }
+  .floating-contact-btn {
+    background: var(--green);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 20px rgba(46,125,82,0.4);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.15s;
+  }
+  .floating-contact-btn:hover { transform: scale(1.04); }
 
-    /* ===== MAP ===== */
-    .map-section { background: #fff; }
-    .map-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-    .map-info { display: flex; flex-direction: column; gap: 16px; }
-    .map-info-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--bg-light); border-radius: var(--radius-sm); }
-    .map-info-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-    .map-info-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
-    .map-info-text strong { color: var(--text-dark); display: block; margin-bottom: 2px; font-size: 15px; }
-    .map-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .map-frame iframe { display: block; width: 100%; height: 340px; border: none; }
-    @media (max-width: 768px) {
-      .map-wrap { grid-template-columns: 1fr; }
-      .map-frame iframe { height: 260px; }
-    }
+  /* ========== LIGHTBOX ========== */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.9);
+    align-items: center; justify-content: center;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 28px;
+    color: white; font-size: 36px; cursor: pointer; line-height: 1;
+  }
+  .lightbox-prev, .lightbox-next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: white; font-size: 40px; cursor: pointer;
+    background: rgba(255,255,255,0.1); width: 52px; height: 52px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    user-select: none;
+  }
+  .lightbox-prev { left: 16px; }
+  .lightbox-next { right: 16px; }
 
-    /* ===== GALLERY LIGHTBOX ===== */
-    .gallery-section { background: var(--bg-light); }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .gallery-thumb {
-      position: relative;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      cursor: pointer;
-      aspect-ratio: 4/3;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .gallery-thumb:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
-    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .gallery-thumb-overlay {
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0);
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .gallery-thumb:hover .gallery-thumb-overlay { background: rgba(0,0,0,0.28); }
-    .gallery-thumb-overlay span { color: #fff; font-size: 28px; opacity: 0; transition: opacity 0.2s; }
-    .gallery-thumb:hover .gallery-thumb-overlay span { opacity: 1; }
-    /* Lightbox */
-    .lightbox-overlay {
-      display: none;
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.88);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .lightbox-overlay.active { display: flex; }
-    .lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); object-fit: contain; }
-    .lightbox-close { position: absolute; top: 20px; right: 24px; color: #fff; font-size: 36px; cursor: pointer; line-height: 1; background: none; border: none; }
-    .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.85); font-size: 14px; text-align: center; white-space: nowrap; }
-    .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; font-size: 40px; cursor: pointer; background: rgba(255,255,255,0.12); border: none; border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-    .lightbox-prev { left: 16px; }
-    .lightbox-next { right: 16px; }
-    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.28); }
-
-    /* ===== FLOATING CTA ===== */
-    .floating-cta { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
-    .floating-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: var(--primary);
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 50px;
-      box-shadow: 0 6px 24px rgba(224,123,0,0.45);
-      font-size: 14px;
-      font-weight: 700;
-      transition: all 0.2s;
-      text-align: center;
-      line-height: 1.4;
-    }
-    .floating-btn:hover { background: var(--primary-light); transform: translateY(-3px); }
-    .floating-btn .small { font-size: 11px; font-weight: 400; opacity: 0.85; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      section { padding: 52px 16px; }
-      .header-inner { flex-wrap: wrap; gap: 10px; }
-      .header-tel { font-size: 18px; }
-      .header-cta-btn { display: none; }
-      .hero { min-height: 460px; }
-      .hero-inner { padding: 40px 16px; }
-      .strength-card { grid-template-columns: 1fr; }
-      .strength-card.reverse { direction: ltr; }
-      .strength-img { min-height: 220px; }
-      .strength-body { padding: 28px 24px; }
-      .pricing-wrap { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-links { align-items: flex-start; }
-      .floating-cta { bottom: 16px; right: 16px; }
-      .rooms-summary { padding: 28px 20px; }
-      .flow-arrow-item { min-width: 100px; max-width: 140px; }
-      .flow-arrow-item:not(:last-child)::after { right: -12px; font-size: 14px; }
-      .campaign-period-box { padding: 14px 20px; }
-    }
-    @media (max-width: 480px) {
-      .hero-title { font-size: 22px; }
-      .hero-btns { flex-direction: column; }
-      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-      .cta-btns { flex-direction: column; }
-      .btn-cta-white, .btn-cta-outline { width: 100%; text-align: center; }
-      .campaign-headline .big-off { font-size: 64px; }
-      .flow-arrow-row { gap: 6px; }
-      .flow-arrow-item { min-width: 80px; padding: 14px 8px; }
-      .flow-arrow-item:not(:last-child)::after { display: none; }
-    }
-  </style>
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 900px) {
+    .strength-grid { grid-template-columns: 1fr; }
+    .equip-grid { grid-template-columns: repeat(2, 1fr); }
+    .usecase-grid { grid-template-columns: 1fr; }
+    .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+    .appeal-strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .price-intro { grid-template-columns: 1fr; gap: 16px; }
+    .ai-inner { grid-template-columns: 1fr; }
+    .access-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .onestop-flow { gap: 8px; }
+    .flow-step + .flow-step { margin-left: 0; }
+    .flow-arrow { display: none; }
+  }
+  @media (max-width: 600px) {
+    .equip-grid { grid-template-columns: 1fr; }
+    .rooms-grid { grid-template-columns: 1fr; }
+    .appeal-strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .hero-btns { flex-direction: column; }
+    .cta-btns { flex-direction: column; align-items: center; }
+    .header-tel { display: none; }
+    .floating-tel-btn { display: none; }
+  }
+</style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- ========== HEADER ========== -->
 <header class="site-header">
-  <div class="header-inner">
-    <a href="https://www.c-as.co.jp" target="_blank" rel="noopener noreferrer" class="logo-area" style="text-decoration:none;">
-      <div class="logo-name">株式会社クロスアビリティズ</div>
-      <div class="logo-sub">研修センター｜福岡市中央区大名</div>
+  <div class="header-logo">
+    <a href="https://www.c-as.co.jp/" target="_blank" rel="noopener">
+      <div class="header-logo-mark">CA</div>
+      <div>
+        <div class="header-logo-text">株式会社クロスアビリティズ</div>
+        <div class="header-logo-sub">Cross Abilities Co., Ltd.</div>
+      </div>
     </a>
-    <div class="header-contact">
-      <a href="tel:0927917656" class="header-tel" style="text-decoration:none;"><span>TEL</span>092-791-7656</a>
-      <div class="header-hours">受付時間：平日 9:00〜18:00</div>
+  </div>
+  <div class="header-right">
+    <div class="header-tel">
+      <a href="tel:0927917656">092-791-7656</a>
+      <div class="header-tel-note">受付時間 9:00〜18:00</div>
     </div>
-    <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener noreferrer" class="header-cta-btn">お問い合わせ・見積もり</a>
+    <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="header-cta-btn">お問い合わせ</a>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ========== HERO ========== -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-text-box">
-    <!-- キャンペーン帯（ファーストビュー内） -->
-    <div class="hero-campaign-bar">
-      <div class="hcb-period">📅 2026年3月1日〜4月15日 期間限定</div>
-      <div class="hcb-sep"></div>
-      <div class="hcb-off">20% OFF</div>
-      <div class="hcb-period">キャンペーン実施中</div>
-    </div>
+    <span class="hero-eyebrow">Rental Classroom · Fukuoka Akasaka</span>
     <h1 class="hero-title">
-      研修は<span class="highlight">まるごと</span>お任せください。<br>
-      <span style="font-size:0.82em;">会場・PC・講師まで<span class="highlight">ワンストップ</span>対応。</span>
+      研修は、<em>まるごと</em>お任せください。<br>
+      会場・PC・講師まで<em>ワンストップ</em>対応。
     </h1>
     <p class="hero-subtitle">
-      パソコン完備の研修教室を<strong style="color:#7FFFA0;">期間限定20%OFF</strong>でご提供中。会場のみのご利用も大歓迎です。
+      福岡・赤坂エリアのパソコン完備貸し教室。<br>
+      会場だけのご利用はもちろん、研修の企画・運営・講師手配まで、ご要望に合わせて柔軟に対応します。
     </p>
     <div class="hero-tags">
-      <span class="hero-tag">💻 PC完備（11〜31台）</span>
-      <span class="hero-tag">👥 最大30名収容</span>
-      <span class="hero-tag">📅 土曜日利用可</span>
-      <span class="hero-tag">🚇 赤坂駅徒歩3分</span>
+      <span class="hero-tag">✅ 会場のみの利用もOK</span>
+      <span class="hero-tag">💻 PC最大31台完備・無料</span>
+      <span class="hero-tag">🚇 地下鉄赤坂駅 徒歩3分</span>
+      <span class="hero-tag">📅 土曜日も利用可</span>
     </div>
     <div class="hero-btns">
-      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener noreferrer" class="btn-primary">📩 お問い合わせ・見積もりを依頼する</a>
-      <a href="#pricing" class="btn-secondary">料金・キャンペーンを確認する</a>
+      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="btn-primary">お問い合わせ・見積もりを依頼する</a>
+      <a href="#price" class="btn-secondary">料金を確認する</a>
     </div>
   </div>
 </section>
 
-<!-- ===== CAMPAIGN SECTION ===== -->
-<div class="campaign-section">
-  <div class="campaign-top-bar">
-    🌸 新年度研修の会場をお探しの方へ ── 期間限定キャンペーン実施中！今すぐご確認ください 🌸
-  </div>
-  <div class="campaign-main">
-    <div class="campaign-eyecatch">
-      📅 期間限定キャンペーン実施中
+<!-- ========== APPEAL STRIP ========== -->
+<div class="appeal-strip">
+  <div class="appeal-strip-inner">
+    <div class="appeal-item">
+      <div class="appeal-icon">🏫</div>
+      <div class="appeal-num">3<span>教室</span></div>
+      <div class="appeal-label">最大30名 × 3室</div>
     </div>
-
-    <div class="campaign-info-row">
-      <div class="campaign-period-block">
-        <div class="campaign-period-label">キャンペーン期間</div>
-        <div class="campaign-period-date">2026年 3月1日（日）〜 4月15日（水）</div>
-      </div>
-      <div class="campaign-off-block">
-        <div class="campaign-off-label">通常料金より</div>
-        <div class="campaign-off-num">20% OFF</div>
-      </div>
+    <div class="appeal-item">
+      <div class="appeal-icon">💻</div>
+      <div class="appeal-num">31<span>台</span></div>
+      <div class="appeal-label">Windows11 PC完備</div>
     </div>
-
-    <div class="campaign-price-row">
-      <div>
-        <div class="campaign-price-before">通常 3時間 20,000円〜（税抜）</div>
-        <div class="campaign-price-arrow">↓</div>
-        <div class="campaign-price-after">キャンペーン価格 16,000円〜（税抜）</div>
-        <div class="campaign-price-note">※設備（PC・モニター・マイク等）はすべて無料でご利用いただけます</div>
-      </div>
+    <div class="appeal-item">
+      <div class="appeal-icon">🚇</div>
+      <div class="appeal-num">3<span>分</span></div>
+      <div class="appeal-label">地下鉄赤坂駅から徒歩</div>
     </div>
-
-    <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener noreferrer" class="campaign-cta-btn">📩 お問い合わせ・見積もりを依頼する</a>
+    <div class="appeal-item">
+      <div class="appeal-icon">🕘</div>
+      <div class="appeal-num">9<span>〜</span>20<span>時</span></div>
+      <div class="appeal-label">ご利用可能時間（相談可）</div>
+    </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<!-- ===== PAIN SECTION ===== -->
-<section class="pain-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">こんなお悩みはありませんか？</div>
-      <h2 class="section-title">研修担当者様が抱える<br><span class="accent">よくある5つのお悩み</span></h2>
+<!-- ========== STRENGTH ========== -->
+<section class="strength-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">クロスアビリティズが<br>選ばれる3つの理由</h2>
+      <p class="section-desc">設備・立地・サポート体制の三拍子が揃った、法人研修に最適な環境をご提供します。</p>
     </div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">🏢</div>
-        <div class="pain-text">
-          <strong>会場がなかなか決まらない</strong>
-          新年度研修に最適な会場が、まだ見つかっていない…。
-        </div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">💻</div>
-        <div class="pain-text">
-          <strong>機材の準備が大変すぎる</strong>
-          参加者全員分のPCや機材を手配・設営するのが負担だ…。
-        </div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📅</div>
-        <div class="pain-text">
-          <strong>短期間だけ借りたい</strong>
-          数日〜数週間だけ、必要な期間だけ利用できる場所を探している。
-        </div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">👨‍🏫</div>
-        <div class="pain-text">
-          <strong>講師を探す時間がない</strong>
-          研修内容に合った質の高い講師を探す余裕がない…。
-        </div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😟</div>
-        <div class="pain-text">
-          <strong>初めてで何から始めれば…</strong>
-          初めて研修担当になったが、何から手をつければいいか分からない。
-        </div>
-      </div>
-    </div>
-    <div class="pain-answer">
-      <p class="big"><span class="highlight-yellow">そのお悩み、</span>クロスアビリティズが<span class="highlight-yellow">すべて解決します。</span></p>
-      <p style="margin-top:12px; font-size:16px; opacity:0.9;">会場・設備・講師・研修プログラムまで、ワンストップでサポート。<br>研修をゼロから準備する必要はありません。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STRENGTHS ===== -->
-<section class="strengths-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">選ばれる3つの理由</div>
-      <h2 class="section-title">単なる「場所貸し」ではありません。<br><span class="accent">研修をまるごとサポートします。</span></h2>
-      <p class="section-lead">会場・設備・講師・プログラムまで、一か所でまとめてご相談いただけます。</p>
-      <!-- 会場のみ利用OK バナー -->
-      <div style="max-width:680px;margin:0 auto 12px;background:linear-gradient(135deg,#f0f9f4 0%,#e6f7ee 100%);border:2px solid #3a9e6a;border-radius:12px;padding:20px 28px;text-align:left;display:flex;align-items:flex-start;gap:16px;">
-        <div style="font-size:28px;line-height:1;flex-shrink:0;padding-top:2px;">✅</div>
-        <div>
-          <div style="font-size:clamp(15px,2.2vw,17px);font-weight:900;color:#2a7a50;margin-bottom:6px;">会場だけ借りたい方も、もちろん大歓迎です。</div>
-          <div style="font-size:clamp(13px,1.8vw,14px);color:#444;line-height:1.75;">「研修の手配までは不要、会場とPCだけ使いたい」というご要望にも対応しています。必要なサービスだけを選んでご利用いただけますので、まずはお気軽にお問い合わせください。</div>
-        </div>
-      </div>
-    </div>
-    <div class="strength-cards">
-
-      <!-- 理由1 -->
+    <div class="strength-grid">
       <div class="strength-card">
-        <div class="strength-img">
-          <img src="images/room503_1.jpg" alt="パソコン完備の研修教室503号室">
-        </div>
-        <div class="strength-body">
-          <div class="strength-num">01</div>
-          <div class="strength-tag">準備ゼロ</div>
-          <h3 class="strength-title">PC・設備はすべて無料完備。<br>身一つで研修が始められます。</h3>
-          <p class="strength-desc">Windows11搭載のパソコン（11台〜31台）、65インチの大型モニター、マイク、ホワイトボード、高速インターネット環境など、研修に必要な設備がすべて揃っています。機材の手配・設営・撤収といった面倒な作業は一切不要です。</p>
-          <div class="strength-points">
-            <div class="strength-point">Windows11搭載PC（11〜31台）・15インチ画面</div>
-            <div class="strength-point">65インチ大型モニター・マイク完備</div>
-            <div class="strength-point">高速Wi-Fiで快適なネット環境</div>
-            <div class="strength-point">荷物の事前受取・発送代行サービスあり</div>
-          </div>
-        </div>
+        <div class="strength-num">REASON 01</div>
+        <h3 class="strength-title">準備ゼロで<br>すぐに研修が始められる</h3>
+        <p class="strength-body">Windows 11 PC・65インチモニター・マイク・ホワイトボード・インターネット環境がすべて揃っています。機材の手配や設営は一切不要です。</p>
+        <ul class="strength-list">
+          <li>PC 11〜31台（講師用含む）無料</li>
+          <li>65インチ大型モニター設置済み</li>
+          <li>Wi-Fi完備・有線接続も対応</li>
+          <li>荷物の事前受取・送付にも対応</li>
+        </ul>
       </div>
-
-      <!-- 理由2 -->
-      <div class="strength-card reverse">
-        <div class="strength-img">
-          <img src="images/room506_1.jpg" alt="パソコン完備の研修教室506号室">
-        </div>
-        <div class="strength-body">
-          <div class="strength-num">02</div>
-          <div class="strength-tag">丸ごと相談</div>
-          <h3 class="strength-title">会場だけじゃない。講師手配・<br>研修プログラムまで相談できます。</h3>
-          <p class="strength-desc">クロスアビリティズは、長年にわたり企業研修・公共職業訓練・各種スクール運営を手がけてきた実績を持つ会社です。研修プログラムの企画・提案から、実績豊富なプロ講師の手配まで、トータルでサポートします。<br><strong style="color:var(--primary);">もちろん、会場のみのご利用も大歓迎です。</strong></p>
-          <div class="strength-points">
-            <div class="strength-point">会場のみの利用もOK・必要なサービスだけ選べる</div>
-            <div class="strength-point">ITスキル研修・ビジネスマナー研修など幅広く対応</div>
-            <div class="strength-point">研修プログラムのゼロからの企画・提案が可能</div>
-            <div class="strength-point">実績豊富なプロ講師を手配（講師料は別途・内容により異なります）</div>
-            <div class="strength-point">初めての研修担当者様も安心してご相談を</div>
-          </div>
-          <div style="margin-top:16px;padding:12px 16px;background:#fff8f0;border:1.5px solid #f0c080;border-radius:8px;font-size:13px;color:#666;line-height:1.75;">
-            💡 <strong>講師手配について：</strong>講師料は研修内容・時間・専門分野によって異なります。まずはご要望をお聞かせください。内容に合わせた講師とお見積もりをご提案します。
-          </div>
-        </div>
+      <div class="strength-card accent">
+        <div class="strength-num">REASON 02</div>
+        <h3 class="strength-title">研修の企画から<br>当日運営まで相談できる</h3>
+        <p class="strength-body">「どんな研修をすればいいかわからない」という段階からご相談いただけます。研修プログラムの設計・講師の手配・当日の運営サポートまで、ワンストップで対応します。</p>
+        <ul class="strength-list">
+          <li>研修プログラムの企画・設計</li>
+          <li>講師の手配（講師料は別途）</li>
+          <li>当日の運営・進行サポート</li>
+          <li>AI研修・IT研修にも対応</li>
+        </ul>
       </div>
-
-      <!-- 理由3 -->
-      <div class="strength-card">
-        <div class="strength-img">
-          <img src="images/room606_1.jpg" alt="パソコン完備の研修教室606号室">
-        </div>
-        <div class="strength-body">
-          <div class="strength-num">03</div>
-          <div class="strength-tag">短期OK・柔軟対応</div>
-          <h3 class="strength-title">短期利用・単発利用も大歓迎。<br>必要な期間だけ、無駄なく使える。</h3>
-          <p class="strength-desc">「新人研修の3日間だけ」「資格対策講座の週末だけ」など、お客様のスケジュールに合わせて柔軟にご利用いただけます。3部屋・最大30名収容で、小規模なセミナーから大規模な全社研修まで対応可能です。</p>
-          <div class="strength-points">
-            <div class="strength-point">1日単位から利用可能・長期契約不要</div>
-            <div class="strength-point">3教室・最大30名収容（各70㎡以上）</div>
-            <div class="strength-point">土曜日も利用可（9:00〜20:00）</div>
-          </div>
-        </div>
+      <div class="strength-card accent2">
+        <div class="strength-num">REASON 03</div>
+        <h3 class="strength-title">短期・単発利用も<br>大歓迎です</h3>
+        <p class="strength-body">1日だけ、数日間だけのご利用も歓迎します。繁忙期・新年度・特定のプロジェクト期間など、必要なときだけご利用いただけます。</p>
+        <ul class="strength-list">
+          <li>1日からの短期利用OK</li>
+          <li>複数日・連続利用も対応</li>
+          <li>土曜日も利用可能</li>
+          <li>9:00〜20:00（時間相談可）</li>
+        </ul>
       </div>
+    </div>
 
+    <div class="venue-ok-banner">
+      <div class="venue-ok-icon">🏢</div>
+      <div>
+        <div class="venue-ok-title">「会場だけ借りたい」という方も、もちろん大歓迎です。</div>
+        <p class="venue-ok-body">研修の手配はご自身で行い、会場と設備だけをご利用いただくことも可能です。必要なサービスだけを選んでご利用ください。研修の準備が整っている方も、まずはお気軽にお問い合わせください。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ONESTOP FLOW ===== -->
-<section class="onestop-flow-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">ワンストップサービス</div>
-      <h2 class="section-title">研修に必要なすべてを、<br><span style="color:#FFD700;">一か所でまとめて相談できます。</span></h2>
-      <p class="section-lead">「何から始めればいいか分からない」という方も大歓迎。研修の企画から当日まで、クロスアビリティズがトータルでサポートします。</p>
-    </div>
-
-    <div class="flow-arrow-row">
-      <div class="flow-arrow-item">
-        <div class="flow-arrow-icon">📋</div>
-        <div class="flow-arrow-title">研修の<br>企画・相談</div>
-        <div class="flow-arrow-desc">何を研修すべきかから一緒に考えます</div>
-      </div>
-      <div class="flow-arrow-item">
-        <div class="flow-arrow-icon">🏢</div>
-        <div class="flow-arrow-title">会場の<br>確保</div>
-        <div class="flow-arrow-desc">PC完備の教室を3部屋ご用意</div>
-      </div>
-      <div class="flow-arrow-item">
-        <div class="flow-arrow-icon">💻</div>
-        <div class="flow-arrow-title">設備・PC<br>準備</div>
-        <div class="flow-arrow-desc">全設備無料・準備の手間ゼロ</div>
-      </div>
-      <div class="flow-arrow-item">
-        <div class="flow-arrow-icon">👨‍🏫</div>
-        <div class="flow-arrow-title">講師の<br>手配</div>
-        <div class="flow-arrow-desc">実績豊富なプロ講師をご紹介</div>
-      </div>
-      <div class="flow-arrow-item">
-        <div class="flow-arrow-icon">✅</div>
-        <div class="flow-arrow-title">研修<br>当日</div>
-        <div class="flow-arrow-desc">スタッフが常駐し安心サポート</div>
-      </div>
-    </div>
-
-    <div class="onestop-cta">
-      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#fff;color:var(--accent-red);font-size:17px;font-weight:700;padding:18px 44px;border-radius:50px;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:all 0.2s;">📩 お問い合わせ・見積もりを依頼する</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== EQUIPMENT ===== -->
+<!-- ========== EQUIPMENT ========== -->
 <section class="equipment-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">設備一覧</div>
-      <h2 class="section-title">研修に必要なものは、<span class="accent">すべて無料で揃っています。</span></h2>
-      <p class="section-lead">追加費用なしでご利用いただける設備・サービスをご確認ください。</p>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Equipment</span>
+      <h2 class="section-title">充実の設備が<br>すべて無料でご利用いただけます</h2>
+      <p class="section-desc">研修に必要な設備を一式ご用意しています。追加費用なしで、すぐにご利用いただけます。</p>
     </div>
     <div class="equip-grid">
       <div class="equip-card">
-        <div class="equip-icon">💻</div>
-        <div class="equip-name">Windows11 PC</div>
-        <div class="equip-detail">11台〜31台（講師用含む）<br>15インチ画面</div>
-        <div class="equip-free-badge">無料</div>
+        <div class="equip-icon-wrap">💻</div>
+        <div>
+          <div class="equip-name">Windows 11 PC<span class="equip-free-badge">無料</span></div>
+          <div class="equip-detail">11〜31台（講師用含む）・15インチ画面</div>
+        </div>
       </div>
       <div class="equip-card">
-        <div class="equip-icon">🖥️</div>
-        <div class="equip-name">65インチ大型モニター</div>
-        <div class="equip-detail">見やすい大画面で<br>研修効果を高めます</div>
-        <div class="equip-free-badge">無料</div>
+        <div class="equip-icon-wrap">📺</div>
+        <div>
+          <div class="equip-name">65インチ大型モニター<span class="equip-free-badge">無料</span></div>
+          <div class="equip-detail">全教室に設置。プレゼン・講義に最適</div>
+        </div>
       </div>
       <div class="equip-card">
-        <div class="equip-icon">🎤</div>
-        <div class="equip-name">マイク</div>
-        <div class="equip-detail">大人数の研修でも<br>声がしっかり届きます</div>
-        <div class="equip-free-badge">無料</div>
+        <div class="equip-icon-wrap">🎤</div>
+        <div>
+          <div class="equip-name">マイク<span class="equip-free-badge">無料</span></div>
+          <div class="equip-detail">講師・発表者の声を明瞭に届けます</div>
+        </div>
       </div>
       <div class="equip-card">
-        <div class="equip-icon">📋</div>
-        <div class="equip-name">ホワイトボード</div>
-        <div class="equip-detail">板書・ワーク・<br>グループ演習に活用</div>
-        <div class="equip-free-badge">無料</div>
+        <div class="equip-icon-wrap">📋</div>
+        <div>
+          <div class="equip-name">ホワイトボード<span class="equip-free-badge">無料</span></div>
+          <div class="equip-detail">マーカー・イレーザー完備</div>
+        </div>
       </div>
       <div class="equip-card">
-        <div class="equip-icon">📶</div>
-        <div class="equip-name">高速インターネット</div>
-        <div class="equip-detail">Wi-Fi完備<br>オンライン研修にも対応</div>
-        <div class="equip-free-badge">無料</div>
+        <div class="equip-icon-wrap">🌐</div>
+        <div>
+          <div class="equip-name">インターネット環境<span class="equip-free-badge">無料</span></div>
+          <div class="equip-detail">Wi-Fi・有線LAN完備。高速回線</div>
+        </div>
       </div>
       <div class="equip-card">
-        <div class="equip-icon">📦</div>
-        <div class="equip-name">荷物の受取・発送</div>
-        <div class="equip-detail">教材・資料の事前受取<br>終了後の発送代行も可</div>
-        <div class="equip-free-badge">無料</div>
+        <div class="equip-icon-wrap">📦</div>
+        <div>
+          <div class="equip-name">荷物の事前受取・送付<span class="equip-free-badge">無料</span></div>
+          <div class="equip-detail">テキスト・教材の事前送付に対応</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== GALLERY ===== -->
-<section class="gallery-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">教室ギャラリー</div>
-      <h2 class="section-title">清潔で広々とした<span class="accent">教室をご覧ください</span></h2>
-      <p class="section-lead">写真をクリックすると拡大表示されます。見学のご予約もお気軽にどうぞ。</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-thumb" onclick="openLightbox(0)">
-        <img src="images/room503_1.jpg" alt="503号室 研修教室 全体" loading="lazy">
-        <div class="gallery-thumb-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(1)">
-        <img src="images/room503_2.jpg" alt="503号室 研修教室 PC席" loading="lazy">
-        <div class="gallery-thumb-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(2)">
-        <img src="images/room506_1.jpg" alt="506号室 研修教室 全体" loading="lazy">
-        <div class="gallery-thumb-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(3)">
-        <img src="images/room506_2.jpg" alt="506号室 研修教室 前方" loading="lazy">
-        <div class="gallery-thumb-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(4)">
-        <img src="images/room606_1.jpg" alt="606号室 研修教室 全体" loading="lazy">
-        <div class="gallery-thumb-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(5)">
-        <img src="images/facility1.jpg" alt="施設設備 PC" loading="lazy">
-        <div class="gallery-thumb-overlay"><span>🔍</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOnBg(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <button class="lightbox-prev" onclick="changeLightbox(-1)">&#8249;</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="">
-  <button class="lightbox-next" onclick="changeLightbox(1)">&#8250;</button>
-  <div class="lightbox-caption" id="lightboxCaption"></div>
-</div>
-
-<!-- ===== USE CASES ===== -->
+<!-- ========== USE CASES ========== -->
 <section class="usecase-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">ご利用シーン</div>
-      <h2 class="section-title">企業研修から資格講座まで、<span class="accent">幅広いニーズに対応</span></h2>
-      <p class="section-lead">様々な企業様・団体様の研修・セミナーでご活用いただいています。</p>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Use Cases</span>
+      <h2 class="section-title">こんな研修・講座に<br>ご活用いただいています</h2>
     </div>
     <div class="usecase-grid">
-      <div class="usecase-card"><div class="usecase-icon">🌱</div><div class="usecase-name">新人研修</div></div>
-      <div class="usecase-card"><div class="usecase-icon">💻</div><div class="usecase-name">IT研修</div></div>
-      <div class="usecase-card"><div class="usecase-icon">📜</div><div class="usecase-name">資格対策講座</div></div>
-      <div class="usecase-card"><div class="usecase-icon">🏢</div><div class="usecase-name">社内研修</div></div>
-      <div class="usecase-card"><div class="usecase-icon">🎤</div><div class="usecase-name">セミナー</div></div>
-      <div class="usecase-card"><div class="usecase-icon">🏫</div><div class="usecase-name">短期スクール</div></div>
-      <div class="usecase-card"><div class="usecase-icon">📚</div><div class="usecase-name">講習会</div></div>
-      <div class="usecase-card"><div class="usecase-icon">👔</div><div class="usecase-name">マネジメント研修</div></div>
+      <div class="usecase-card">
+        <div class="usecase-header">
+          <div>
+            <div class="usecase-case-num">CASE 01</div>
+            <div class="usecase-case-title">新入社員・社内研修</div>
+          </div>
+        </div>
+        <div class="usecase-body">
+          <div class="usecase-tags">
+            <span class="usecase-tag">新入社員研修</span>
+            <span class="usecase-tag">ビジネスマナー</span>
+            <span class="usecase-tag">OJT補完</span>
+          </div>
+          <p class="usecase-desc">4月の新年度に合わせた新入社員研修や、社内スキルアップ研修に最適です。PCを使ったハンズオン研修もすぐに実施できます。</p>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-header green">
+          <div>
+            <div class="usecase-case-num">CASE 02</div>
+            <div class="usecase-case-title">IT・パソコン研修</div>
+          </div>
+        </div>
+        <div class="usecase-body">
+          <div class="usecase-tags">
+            <span class="usecase-tag">Excel・Word</span>
+            <span class="usecase-tag">プログラミング</span>
+            <span class="usecase-tag">AI活用</span>
+          </div>
+          <p class="usecase-desc">PC完備のため、参加者が自分のPCを持参する必要がありません。Excel・Word・プログラミング・AI活用など、実践的なIT研修に最適です。</p>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-header gold">
+          <div>
+            <div class="usecase-case-num">CASE 03</div>
+            <div class="usecase-case-title">資格対策講座・スクール</div>
+          </div>
+        </div>
+        <div class="usecase-body">
+          <div class="usecase-tags">
+            <span class="usecase-tag">IT資格</span>
+            <span class="usecase-tag">短期集中</span>
+            <span class="usecase-tag">資格スクール</span>
+          </div>
+          <p class="usecase-desc">ITパスポート・基本情報技術者など、PCを使った資格対策講座の会場として多くのスクールにご利用いただいています。</p>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-header navy-light">
+          <div>
+            <div class="usecase-case-num">CASE 04</div>
+            <div class="usecase-case-title">セミナー・講習会</div>
+          </div>
+        </div>
+        <div class="usecase-body">
+          <div class="usecase-tags">
+            <span class="usecase-tag">企業セミナー</span>
+            <span class="usecase-tag">勉強会</span>
+            <span class="usecase-tag">講習会</span>
+          </div>
+          <p class="usecase-desc">9〜30名規模のセミナー・勉強会・講習会に最適です。65インチモニターとマイクで、参加者全員に伝わる環境を整えています。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== EXAMPLE PLANS ===== -->
-<section style="background:#f8f4ff;padding:72px 20px;">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label" style="background:#ede7f6;color:#6a3ea1;">ご利用イメージ</div>
-      <h2 class="section-title">こんな使い方ができます<br><span style="color:var(--primary);">研修内容＋会場、まるごとご相談いただけます</span></h2>
-      <p class="section-lead">「どんな研修ができるか分からない」という方へ。よくあるご利用例をご紹介します。<br>会場のみのご利用はもちろん、講師手配・プログラム作成もセットでご相談いただけます。</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:48px;">
-
-      <!-- 例1 接客英語研修 -->
-      <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <div style="background:linear-gradient(135deg,#1a6baa 0%,#2563a8 100%);padding:24px 28px;">
-          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.1em;margin-bottom:8px;">CASE 01</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.4;">接客英語研修<br>＋ 会場</div>
-          <div style="margin-top:10px;display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:50px;">ホテル・飲食・小売業向け</div>
-        </div>
-        <div style="padding:24px 28px;">
-          <div style="font-size:14px;color:#555;line-height:1.9;margin-bottom:20px;">外国人のお客様対応を想定した実践的な英語研修。ロールプレイ形式で、現場で使えるフレーズを身につけます。パソコンを使った発音練習・動画教材の活用も可能です。</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>対象：接客スタッフ・フロント担当者など
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>人数：10〜30名程度
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>時間：半日〜1日（3〜8時間）
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>設備：PC・大型モニター・マイク（すべて無料）
-            </div>
-          </div>
-          <div style="margin-top:20px;padding:14px 16px;background:#fff8f0;border-left:3px solid var(--primary);border-radius:0 8px 8px 0;font-size:13px;color:#666;">
-            💡 英語講師の手配もご相談いただけます。<span style="color:#888;">（講師料は別途）</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 例2 プログラム言語研修 -->
-      <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <div style="background:linear-gradient(135deg,#2d7a3a 0%,#3a9e6a 100%);padding:24px 28px;">
-          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.1em;margin-bottom:8px;">CASE 02</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.4;">プログラミング研修<br>＋ 会場</div>
-          <div style="margin-top:10px;display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:50px;">IT企業・新人エンジニア向け</div>
-        </div>
-        <div style="padding:24px 28px;">
-          <div style="font-size:14px;color:#555;line-height:1.9;margin-bottom:20px;">Python・Java・Webアプリ開発など、実際にPCを使いながら学ぶハンズオン形式の研修。全員分のPCが完備されているため、機材の持ち込みや準備が一切不要です。</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#3a9e6a;font-weight:700;flex-shrink:0;">✓</span>対象：新入社員・若手エンジニア・IT部門スタッフ
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#3a9e6a;font-weight:700;flex-shrink:0;">✓</span>人数：10〜30名程度
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#3a9e6a;font-weight:700;flex-shrink:0;">✓</span>時間：複数日・連続開催も可
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#3a9e6a;font-weight:700;flex-shrink:0;">✓</span>設備：Windows11 PC（31台）・高速Wi-Fi（すべて無料）
-            </div>
-          </div>
-          <div style="margin-top:20px;padding:14px 16px;background:#f0f9f4;border-left:3px solid #3a9e6a;border-radius:0 8px 8px 0;font-size:13px;color:#666;">
-            💡 プログラミング講師の手配・カリキュラム作成もご相談いただけます。<span style="color:#888;">（講師料は別途）</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 例3 新人ビジネスマナー研修 -->
-      <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <div style="background:linear-gradient(135deg,#c07000 0%,#e07b00 100%);padding:24px 28px;">
-          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.1em;margin-bottom:8px;">CASE 03</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.4;">新人ビジネスマナー研修<br>＋ 会場</div>
-          <div style="margin-top:10px;display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:50px;">4月入社の新入社員向け</div>
-        </div>
-        <div style="padding:24px 28px;">
-          <div style="font-size:14px;color:#555;line-height:1.9;margin-bottom:20px;">社会人としての基礎マナー（挨拶・電話応対・メール作成・報連相）をしっかり身につける研修。Officeソフトを使った実習も組み込めます。新年度の入社研修に最適です。</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>対象：新入社員・第二新卒
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>人数：5〜30名程度
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>時間：1日〜3日間の集中研修
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:var(--primary);font-weight:700;flex-shrink:0;">✓</span>設備：PC・ホワイトボード・マイク（すべて無料）
-            </div>
-          </div>
-          <div style="margin-top:20px;padding:14px 16px;background:#fff8f0;border-left:3px solid var(--primary);border-radius:0 8px 8px 0;font-size:13px;color:#666;">
-            💡 ビジネスマナー講師の手配・研修プログラムの作成もご相談いただけます。<span style="color:#888;">（講師料は別途）</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 例4 資格対策講座 -->
-      <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <div style="background:linear-gradient(135deg,#8e24aa 0%,#ab47bc 100%);padding:24px 28px;">
-          <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.1em;margin-bottom:8px;">CASE 04</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.4;">IT資格対策講座<br>＋ 会場</div>
-          <div style="margin-top:10px;display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:50px;">資格スクール・研修会社向け</div>
-        </div>
-        <div style="padding:24px 28px;">
-          <div style="font-size:14px;color:#555;line-height:1.9;margin-bottom:20px;">ITパスポート・基本情報技術者・MOS（Word/Excel）など、PCを使った資格対策講座に最適な環境です。短期集中の週末講座や、平日夜間の講習にも対応しています。</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#8e24aa;font-weight:700;flex-shrink:0;">✓</span>対象：資格スクール・研修会社・社内資格取得支援
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#8e24aa;font-weight:700;flex-shrink:0;">✓</span>人数：5〜30名程度
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#8e24aa;font-weight:700;flex-shrink:0;">✓</span>時間：土曜・週末の短期集中も可
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;">
-              <span style="color:#8e24aa;font-weight:700;flex-shrink:0;">✓</span>設備：Windows11 PC（31台）・テキスト事前受取OK
-            </div>
-          </div>
-          <div style="margin-top:20px;padding:14px 16px;background:#f9f0ff;border-left:3px solid #8e24aa;border-radius:0 8px 8px 0;font-size:13px;color:#666;">
-            💡 会場のみのご利用も大歓迎です。講師はご自身でお連れいただいてもOKです。
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="text-align:center;margin-top:48px;padding:32px;background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-      <p style="font-size:16px;color:#555;margin-bottom:8px;">上記以外の研修内容でもお気軽にご相談ください。</p>
-      <p style="font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:24px;">「こんな研修をしたいけど、どうすれば？」という段階からご相談いただけます。</p>
-      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--primary);color:#fff;font-size:17px;font-weight:700;padding:18px 48px;border-radius:50px;box-shadow:0 4px 16px rgba(224,123,0,0.35);transition:all 0.2s;">📩 お問い合わせ・見積もりを依頼する</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ROOMS ===== -->
+<!-- ========== ROOMS ========== -->
 <section class="rooms-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">教室のご案内</div>
-      <h2 class="section-title">3教室・最大30名収容。<span class="accent">広々とした研修空間。</span></h2>
-      <p class="section-lead">各教室70㎡以上の広々とした空間で、快適な研修環境をご提供します。</p>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Rooms</span>
+      <h2 class="section-title">3つの教室から<br>ご要望に合わせてお選びいただけます</h2>
+      <p class="section-desc">各教室70㎡以上の広々とした空間。最大30名まで収容可能です。</p>
     </div>
     <div class="rooms-grid">
       <div class="room-card">
-        <div class="room-img"><img src="images/room503_1.jpg" alt="503号室 研修教室"></div>
-        <div class="room-body">
+        <img src="images/room503_1.jpg" alt="503号室" class="room-img" onclick="openLightbox(0)">
+        <div class="room-info">
           <div class="room-name">503号室</div>
-          <div class="room-specs">
-            <div class="room-spec"><span class="room-spec-icon">👥</span>最大30名収容</div>
-            <div class="room-spec"><span class="room-spec-icon">📐</span>70㎡以上</div>
-            <div class="room-spec"><span class="room-spec-icon">💻</span>PC完備（講師用含む）</div>
-            <div class="room-spec"><span class="room-spec-icon">🖥️</span>65インチモニター設置</div>
-          </div>
+          <ul class="room-specs">
+            <li><span>収容人数</span><span class="room-spec-val">最大30名</span></li>
+            <li><span>面積</span><span class="room-spec-val">70㎡以上</span></li>
+            <li><span>PC台数</span><span class="room-spec-val">最大31台</span></li>
+          </ul>
         </div>
       </div>
       <div class="room-card">
-        <div class="room-img"><img src="images/room506_1.jpg" alt="506号室 研修教室"></div>
-        <div class="room-body">
+        <img src="images/room506_1.jpg" alt="506号室" class="room-img" onclick="openLightbox(1)">
+        <div class="room-info">
           <div class="room-name">506号室</div>
-          <div class="room-specs">
-            <div class="room-spec"><span class="room-spec-icon">👥</span>最大30名収容</div>
-            <div class="room-spec"><span class="room-spec-icon">📐</span>70㎡以上</div>
-            <div class="room-spec"><span class="room-spec-icon">💻</span>PC完備（講師用含む）</div>
-            <div class="room-spec"><span class="room-spec-icon">🖥️</span>65インチモニター設置</div>
-          </div>
+          <ul class="room-specs">
+            <li><span>収容人数</span><span class="room-spec-val">最大30名</span></li>
+            <li><span>面積</span><span class="room-spec-val">70㎡以上</span></li>
+            <li><span>PC台数</span><span class="room-spec-val">最大31台</span></li>
+          </ul>
         </div>
       </div>
       <div class="room-card">
-        <div class="room-img"><img src="images/room606_1.jpg" alt="606号室 研修教室"></div>
-        <div class="room-body">
+        <img src="images/room606_1.jpg" alt="606号室" class="room-img" onclick="openLightbox(2)">
+        <div class="room-info">
           <div class="room-name">606号室</div>
-          <div class="room-specs">
-            <div class="room-spec"><span class="room-spec-icon">👥</span>最大30名収容</div>
-            <div class="room-spec"><span class="room-spec-icon">📐</span>70㎡以上</div>
-            <div class="room-spec"><span class="room-spec-icon">💻</span>PC完備（講師用含む）</div>
-            <div class="room-spec"><span class="room-spec-icon">🖥️</span>65インチモニター設置</div>
-          </div>
+          <ul class="room-specs">
+            <li><span>収容人数</span><span class="room-spec-val">最大30名</span></li>
+            <li><span>面積</span><span class="room-spec-val">70㎡以上</span></li>
+            <li><span>PC台数</span><span class="room-spec-val">最大31台</span></li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="rooms-summary">
-      <div class="rooms-summary-grid">
-        <div class="summary-item"><div class="summary-num">3</div><div class="summary-label">教室</div></div>
-        <div class="summary-item"><div class="summary-num">30名</div><div class="summary-label">1部屋あたりの最大収容人数</div></div>
-        <div class="summary-item"><div class="summary-num">70㎡+</div><div class="summary-label">各教室の広さ</div></div>
-        <div class="summary-item"><div class="summary-num">9:00〜20:00</div><div class="summary-label">ご利用可能時間（相談可）</div></div>
+  </div>
+</section>
+
+<!-- ========== PRICE ========== -->
+<section class="price-section" id="price">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-desc">福岡・天神エリアで最安値クラスの料金設定。設備費は一部無料で、コストパフォーマンスの高い研修環境をご提供します。</p>
+    </div>
+
+    <div class="price-intro">
+      <div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:6px;">30名・3時間ご利用の場合</div>
+        <div class="price-highlight-num">550<span>円</span></div>
+        <div class="price-highlight-label">1人当たり（税込・平日）</div>
       </div>
+      <div class="price-highlight-desc">
+        設備代込みのこの料金は、天神・赤坂エリアでも最安値クラスです。PC・モニター・ホワイトボードなど、研修に必要な設備がすべて含まれています。
+      </div>
+    </div>
+
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>ご利用時間</th>
+            <th>平日</th>
+            <th>土曜日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3時間</td><td class="price-val">20,000円（税別）</td><td class="price-val">25,000円（税別）</td></tr>
+          <tr><td>4時間</td><td class="price-val">22,000円（税別）</td><td class="price-val">27,500円（税別）</td></tr>
+          <tr><td>5時間</td><td class="price-val">24,000円（税別）</td><td class="price-val">30,000円（税別）</td></tr>
+          <tr><td>6時間</td><td class="price-val">26,000円（税別）</td><td class="price-val">32,500円（税別）</td></tr>
+          <tr><td>7時間</td><td class="price-val">28,000円（税別）</td><td class="price-val">35,000円（税別）</td></tr>
+          <tr><td>8時間</td><td class="price-val">30,000円（税別）</td><td class="price-val">37,500円（税別）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="price-note">
+      <strong>基本時間以降の追加料金：</strong>平日 +2,000円/時（税別）、土曜日 +2,500円/時（税別）<br>
+      <strong>講師料について：</strong>上記の料金は会場・設備のご利用料金のみです。講師手配をご希望の場合は、研修内容・時間・専門性により講師料が別途必要となります。まずはお気軽にご相談ください。<br>
+      <strong>お支払い：</strong>事前お支払いにてご予約が確定します。クレジットカードもご利用いただけます。
     </div>
   </div>
 </section>
 
-<!-- ===== PRICING ===== -->
-<section class="pricing-section" id="pricing">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">料金プラン</div>
-      <h2 class="section-title">期間限定<span class="accent">20%OFF</span>でご利用いただけます</h2>
-      <p class="section-lead">2026年3月1日〜4月15日の期間限定で、通常料金から20%割引の特別価格をご用意しました。</p>
+<!-- ========== ONESTOP ========== -->
+<section class="onestop-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">One-Stop Service</span>
+      <h2 class="section-title">「何から始めればいいか<br>わからない」という方へ</h2>
+      <p class="section-desc">研修の企画・会場・設備・講師・当日の運営まで、すべてご相談いただけます。初めて研修を担当する方も、安心してお任せください。</p>
     </div>
-    <div class="pricing-wrap">
-      <div class="pricing-card">
-        <div class="pricing-card-head normal">通常料金（税抜）</div>
-        <table class="pricing-table">
-          <thead><tr><th>利用時間</th><th>平日</th><th>土曜</th></tr></thead>
-          <tbody>
-            <tr><td>3時間</td><td class="price">20,000円〜</td><td class="price">25,000円〜</td></tr>
-            <tr><td>4時間</td><td class="price">22,000円〜</td><td class="price">27,500円〜</td></tr>
-            <tr><td>5時間</td><td class="price">24,000円〜</td><td class="price">30,000円〜</td></tr>
-            <tr><td>6時間</td><td class="price">26,000円〜</td><td class="price">32,500円〜</td></tr>
-            <tr><td>7時間</td><td class="price">28,000円〜</td><td class="price">35,000円〜</td></tr>
-            <tr><td>8時間</td><td class="price">30,000円〜</td><td class="price">37,500円〜</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-card-head campaign">期間限定キャンペーン料金（税抜）<span class="badge">20%OFF</span></div>
-        <table class="pricing-table">
-          <thead><tr><th>利用時間</th><th>平日</th><th>土曜</th></tr></thead>
-          <tbody>
-            <tr><td>3時間</td><td class="price-campaign">16,000円〜</td><td class="price-campaign">20,000円〜</td></tr>
-            <tr><td>4時間</td><td class="price-campaign">17,600円〜</td><td class="price-campaign">22,000円〜</td></tr>
-            <tr><td>5時間</td><td class="price-campaign">19,200円〜</td><td class="price-campaign">24,000円〜</td></tr>
-            <tr><td>6時間</td><td class="price-campaign">20,800円〜</td><td class="price-campaign">26,000円〜</td></tr>
-            <tr><td>7時間</td><td class="price-campaign">22,400円〜</td><td class="price-campaign">28,000円〜</td></tr>
-            <tr><td>8時間</td><td class="price-campaign">24,000円〜</td><td class="price-campaign">30,000円〜</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="pricing-note">
-      ※料金はすべて税抜き表示です。別途消費税が加算されます。<br>
-      ※基本時間以降は1時間あたり平日+2,000円、土曜+2,500円（税抜）の追加料金が発生します。<br>
-      ※キャンペーン料金は2026年3月1日〜4月15日のご利用分に適用されます。<br>
-      ※キャンセルは原則1週間前までにご連絡ください（1週間前50%、前日70%、当日100%のキャンセル料が発生します）。
-      <div style="margin-top:16px;padding:16px 20px;background:#fff8f0;border-left:4px solid var(--primary);border-radius:0 8px 8px 0;font-size:14px;color:#555;line-height:1.8;">
-        <strong style="color:var(--primary);font-size:15px;">📌 講師料について</strong><br>
-        上記の料金は<strong>会場・設備のご利用料金のみ</strong>です。<br>
-        講師手配をご希望の場合は、<strong>講師料が別途必要</strong>となります。講師料は研修内容・時間・専門性などにより異なりますので、まずはお気軽にご相談ください。お見積もりを無料でご提示いたします。
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FLOW ===== -->
-<section class="flow-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">ご利用の流れ</div>
-      <h2 class="section-title">シンプルな<span class="accent">4ステップ</span>でご利用開始</h2>
-      <p class="section-lead">お問い合わせから研修当日まで、専任スタッフが丁寧にサポートします。</p>
-    </div>
-    <div class="flow-steps">
+    <div class="onestop-flow">
       <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-body">
-          <div class="flow-title">お問い合わせ・空き状況のご確認</div>
-          <div class="flow-desc">お電話またはWebフォームより、ご希望の日程・人数・研修内容をお知らせください。講師手配や研修プログラムのご相談もこの段階で承ります。</div>
+        <div class="flow-step-num">STEP 01</div>
+        <div class="flow-step-icon">💬</div>
+        <div class="flow-step-title">ご相談・ヒアリング</div>
+        <div class="flow-step-desc">研修の目的・人数・日程・予算をお聞きします</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="flow-step-num">STEP 02</div>
+        <div class="flow-step-icon">📝</div>
+        <div class="flow-step-title">プログラム提案</div>
+        <div class="flow-step-desc">ご要望に合わせた研修プログラムと会場をご提案</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="flow-step-num">STEP 03</div>
+        <div class="flow-step-icon">👨‍🏫</div>
+        <div class="flow-step-title">講師・会場の手配</div>
+        <div class="flow-step-desc">講師の選定・手配と会場の予約を行います</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="flow-step-num">STEP 04</div>
+        <div class="flow-step-icon">🎓</div>
+        <div class="flow-step-title">当日の研修実施</div>
+        <div class="flow-step-desc">設備設営・受付・運営サポートまで対応します</div>
+      </div>
+    </div>
+    <div class="onestop-note">
+      <strong>会場だけのご利用も歓迎しています。</strong> 研修の手配はご自身で行い、会場と設備だけをご利用いただくことも可能です。必要なサービスだけを選んでご利用ください。講師料は別途となります。内容・時間・専門性により異なりますので、お気軽にご相談ください。
+    </div>
+  </div>
+</section>
+
+<!-- ========== AI ========== -->
+<section class="ai-section">
+  <div class="container">
+    <div class="ai-inner">
+      <div>
+        <span class="ai-badge">NEW · AI Training</span>
+        <h2 class="ai-title">AI研修にも<br>対応しています</h2>
+        <p class="ai-desc">ChatGPT・生成AI・業務効率化ツールの活用研修など、最新のAI研修にも対応しています。PC完備の環境で、実践的なハンズオン研修を実施できます。詳細は別途ご案内予定です。</p>
+        <div class="ai-tags">
+          <span class="ai-tag">ChatGPT活用</span>
+          <span class="ai-tag">生成AI入門</span>
+          <span class="ai-tag">業務効率化</span>
+          <span class="ai-tag">DX推進</span>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-body">
-          <div class="flow-title">お見積もり・ご提案</div>
-          <div class="flow-desc">ご希望の条件に合わせて、最適なプランとお見積もりをご提示します。研修プログラムや講師のご提案もこの段階で行います。</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-body">
-          <div class="flow-title">ご予約・お手続き</div>
-          <div class="flow-desc">内容をご確認いただいた後、お申込書のご返送と事前お支払いにてご予約が確定します。お支払いはクレジットカードもご利用いただけます。</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-body">
-          <div class="flow-title">ご利用当日</div>
-          <div class="flow-desc">ご予約時間の10分前より受付を開始します。スタッフが丁寧にご案内しますので、安心してお越しください。</div>
-        </div>
+      <div class="ai-visual">
+        <div class="ai-visual-icon">🤖</div>
+        <div class="ai-visual-text">AI研修の詳細については<br>お問い合わせください。<br>専用ページも準備中です。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== STATS ===== -->
-<section class="stats-section">
-  <div class="section-inner">
-    <div class="text-center" style="margin-bottom:36px;">
-      <div class="section-label" style="background:rgba(255,255,255,0.2);color:#FFD700;">実績・信頼</div>
-      <h2 class="section-title" style="color:#fff;">数字で見る<span style="color:#FFD700;">クロスアビリティズ</span></h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-num">2003<span class="stat-unit">年</span></div>
-        <div class="stat-label">創業。20年以上にわたり<br>教育・研修を支援</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3<span class="stat-unit">教室</span></div>
-        <div class="stat-label">パソコン完備の教室を<br>3部屋ご用意</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">30<span class="stat-unit">名</span></div>
-        <div class="stat-label">1部屋あたり最大収容。<br>小〜大規模まで対応</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">31<span class="stat-unit">台</span></div>
-        <div class="stat-label">Windows11 PC完備。<br>機材持ち込み不要</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">9:00<span class="stat-unit">〜</span>20:00</div>
-        <div class="stat-label">土曜日も利用可。<br>柔軟な時間帯に対応</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TRUST ===== -->
-<section class="trust-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">安心してお任せください</div>
-      <h2 class="section-title">初めての研修担当者様も、<span class="accent">安心です。</span></h2>
-      <p class="section-lead">「何から始めればいいか分からない」という方も、クロスアビリティズにすべてお任せください。</p>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-card">
-        <div class="trust-icon">🏆</div>
-        <div class="trust-title">豊富な実績と経験</div>
-        <div class="trust-desc">企業研修・公共職業訓練・各種スクール運営を長年にわたって手がけてきた実績があります。研修のプロが全力でサポートします。</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon">👩‍💼</div>
-        <div class="trust-title">経験豊富なスタッフが常駐</div>
-        <div class="trust-desc">研修当日も経験豊富なスタッフが常駐。機材トラブルや急な変更にも迅速に対応します。安心して研修に集中していただけます。</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon">🔍</div>
-        <div class="trust-title">会場見学を随時受付</div>
-        <div class="trust-desc">「実際に見てから決めたい」というご要望にも対応。事前に会場をご見学いただけますので、お気軽にお申し付けください。</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon">💬</div>
-        <div class="trust-title">どんな相談でも歓迎</div>
-        <div class="trust-desc">「こんな研修がしたい」「予算はこのくらい」など、どんな些細なご相談でも丁寧にお答えします。まずはお気軽にご連絡ください。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
+<!-- ========== FAQ ========== -->
 <section class="faq-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">よくあるご質問</div>
-      <h2 class="section-title">お申し込み前に<span class="accent">よく聞かれること</span></h2>
-      <p class="section-lead">ご不明な点はお気軽にお問い合わせください。</p>
+  <div class="container">
+    <div class="section-header" style="text-align:center;">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">会場だけ借りることはできますか？講師手配は必須ですか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>もちろん会場のみのご利用も大歓迎です。講師手配・研修プログラムのご相談はオプションですので、必要な方だけお申し付けください。「会場だけ借りたい」「設備だけ使いたい」というご要望にも柔軟に対応いたします。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">1日だけ・数時間だけの短期利用はできますか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、1日単位・数時間単位からご利用いただけます。長期契約は不要です。「新人研修の3日間だけ」「週末の資格対策講座だけ」など、必要な期間だけ柔軟にご利用ください。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">パソコンの台数は変更できますか？自分のPCを持ち込んでもいいですか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>各教室にWindows11 PCを11〜31台ご用意しています。参加人数に合わせてご利用いただけます。もちろんご自身のPCの持ち込みも可能です。ご不明な点はお気軽にご相談ください。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">土曜日・夜間の利用はできますか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、土曜日もご利用いただけます。利用時間は9:00〜20:00を基本としており、ご要望に応じてご相談も承ります。週末の資格講座・社外セミナーにもご活用ください。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">事前に会場を見学することはできますか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、随時見学を受け付けております。「実際の広さを確認したい」「設備を見てから決めたい」という方も、まずはお気軽にご連絡ください。スタッフが丁寧にご案内します。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">教材・資料を事前に送ることはできますか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>はい、荷物の事前受取・終了後の発送代行に無料で対応しています。大量の教材や機材も事前にお送りいただけますので、当日の持ち込みの手間を省けます。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-question">
-          <div class="faq-q-icon">Q</div>
-          <div class="faq-q-text">キャンペーン料金は何回でも使えますか？</div>
-          <div class="faq-toggle">＋</div>
-        </summary>
-        <div class="faq-answer"><span class="faq-a-icon">A</span>2026年3月1日〜4月15日の期間中にご利用いただく分については、何回でもキャンペーン料金（20%OFF）が適用されます。複数日程のご予約もお気軽にご相談ください。</div>
-      </details>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">会場だけ借りることはできますか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">はい、もちろんです。会場と設備のみのご利用も大歓迎です。研修の手配はご自身で行い、会場・PC・モニター・ホワイトボードなどの設備だけをご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">1日だけの短期利用は可能ですか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">はい、1日からのご利用を歓迎しています。短期・単発のご利用も、複数日・連続利用も柔軟に対応します。まずはご希望の日程をお知らせください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">PCの台数は変更できますか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">各教室に11〜31台のPCをご用意しています。参加人数に合わせて台数を調整できます。詳しくはお問い合わせください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">土曜日や夜間の利用は可能ですか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">土曜日もご利用いただけます。ご利用時間は9:00〜20:00が基本ですが、時間についてはご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">講師の手配もお願いできますか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">はい、対応しております。研修内容・人数・時間などをお聞きした上で、適切な講師をご提案します。講師料は研修内容・時間・専門性により異なりますので、まずはお気軽にご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">テキストや教材を事前に送ることはできますか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">はい、荷物の事前受取・送付に対応しています。研修で使用するテキスト・教材を事前にお送りいただくことが可能です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">見学はできますか？</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">はい、事前にご連絡いただければ見学も可能です。実際の教室の広さや設備をご確認いただけます。お気軽にお問い合わせください。</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== MAP ===== -->
-<section class="map-section">
-  <div class="section-inner">
-    <div class="text-center">
-      <div class="section-label">アクセス</div>
-      <h2 class="section-title">福岡市中央区大名。<span class="accent">地下鉄赤坂駅から徒歩3分。</span></h2>
-      <p class="section-lead">天神・赤坂エリアの中心部。交通アクセス抜群で、参加者の方も来やすい立地です。</p>
+<!-- ========== ACCESS ========== -->
+<section class="access-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Access</span>
+      <h2 class="section-title">アクセス</h2>
     </div>
-    <div class="map-wrap">
-      <div class="map-info">
-        <div class="map-info-item">
-          <div class="map-info-icon">🏢</div>
-          <div class="map-info-text">
-            <strong>研修センター（503号室・506号室）</strong>
-            〒810-0041 福岡市中央区大名2丁目11-25 新栄ビル
-          </div>
-        </div>
-        <div class="map-info-item">
-          <div class="map-info-icon">🏢</div>
-          <div class="map-info-text">
-            <strong>研修センター（606号室）</strong>
-            〒810-0041 福岡市中央区大名2丁目11-25 新栄ビル
-          </div>
-        </div>
-        <div class="map-info-item">
-          <div class="map-info-icon">🚇</div>
-          <div class="map-info-text">
-            <strong>最寄り駅</strong>
-            福岡市地下鉄空港線「赤坂駅」2番出口より徒歩約3分
-          </div>
-        </div>
-        <div class="map-info-item">
-          <div class="map-info-icon">🚌</div>
-          <div class="map-info-text">
-            <strong>バス</strong>
-            西鉄バス「大名」バス停より徒歩約2分
-          </div>
-        </div>
-        <div class="map-info-item">
-          <div class="map-info-icon">📞</div>
-          <div class="map-info-text">
-            <strong>お電話でのお問い合わせ</strong>
-            <a href="tel:0927917656" style="color:var(--primary);font-weight:700;font-size:18px;">092-791-7656</a><br>
-            受付時間：平日 9:00〜18:00
-          </div>
-        </div>
+    <div class="access-grid">
+      <div>
+        <div class="access-info-title">株式会社クロスアビリティズ</div>
+        <ul class="access-list">
+          <li>
+            <span class="access-list-label">所在地</span>
+            <span class="access-list-val">福岡市中央区赤坂1丁目（新栄ビル5F・6F）</span>
+          </li>
+          <li>
+            <span class="access-list-label">最寄り駅</span>
+            <span class="access-list-val">地下鉄空港線「赤坂駅」2番出口より徒歩3分</span>
+          </li>
+          <li>
+            <span class="access-list-label">電話番号</span>
+            <span class="access-list-val"><a href="tel:0927917656" style="color:var(--navy);font-weight:700;">092-791-7656</a></span>
+          </li>
+          <li>
+            <span class="access-list-label">受付時間</span>
+            <span class="access-list-val">9:00〜18:00（平日）</span>
+          </li>
+          <li>
+            <span class="access-list-label">利用時間</span>
+            <span class="access-list-val">9:00〜20:00（相談可）</span>
+          </li>
+        </ul>
       </div>
-      <div class="map-frame">
+      <div class="access-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4!2d130.3886!3d33.5897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191c5a0e5d8e3%3A0x1!2z56aP5qCh44OT44Or77yI5paw5qCh44OT44Or77yJ!5e0!3m2!1sja!2sjp!4v1"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="株式会社クロスアビリティズ 研修センター 地図"
-          style="width:100%;height:340px;border:none;">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6!2d130.3897!3d33.5847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191b0a3c3b3b3%3A0x0!2z5qCq5byP5Lya56S-44Kv44Ot44K544Ki44OT44Oq44OG44Kj44K6!5e0!3m2!1sja!2sjp!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="クロスアビリティズ アクセスマップ">
         </iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta-section" id="cta">
-  <div class="cta-inner">
-    <div class="cta-badge">🌸 期間限定キャンペーン実施中</div>
-    <h2 class="cta-title">まずは、お気軽にご相談ください。</h2>
-    <p class="cta-desc">
-      空き状況のご確認、お見積もり、研修プログラムのご相談まで、<br>
-      すべて無料で承ります。お気軽にお問い合わせください。
-    </p>
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-eyebrow">Contact Us</div>
+    <h2 class="cta-title">まずはお気軽に<br>ご相談ください</h2>
+    <p class="cta-desc">「どんな研修ができるか知りたい」「見積もりだけ聞きたい」という段階でも大歓迎です。<br>会場の見学も随時受け付けています。</p>
     <div class="cta-btns">
-      <a href="https://www.c-as.co.jp/contact/" class="btn-cta-white">📩 お問い合わせ・見積もりフォームはこちら</a>
-      <a href="tel:0927917656" class="btn-cta-outline">📞 今すぐ電話する</a>
+      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="cta-btn-main">お問い合わせ・見積もりを依頼する</a>
+      <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="cta-btn-sub">見学を申し込む</a>
     </div>
-    <a href="tel:0927917656" class="cta-tel" style="text-decoration:none;"><span>TEL</span>092-791-7656</a>
-    <div class="cta-hours">受付時間：平日 9:00〜18:00</div>
+    <div class="cta-tel-wrap">
+      <div>お電話でのお問い合わせ</div>
+      <a href="tel:0927917656">092-791-7656</a>
+      <div class="cta-tel-note">受付時間 9:00〜18:00（平日）</div>
+    </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ========== FOOTER ========== -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <a href="https://www.c-as.co.jp" target="_blank" rel="noopener noreferrer" class="footer-logo" style="text-decoration:none;display:inline-block;">株式会社クロスアビリティズ</a>
-        <div class="footer-address">
-          <strong>【研修センター】</strong><br>
-          〒810-0041 福岡市中央区大名2丁目11-25 新栄ビル503号<br>
-          TEL: <a href="tel:0927917656" style="color:inherit;">092-791-7656</a><br><br>
-          <strong>【本社】</strong><br>
-          〒810-0001 福岡市中央区天神3丁目4-9 GGソーラービル 8F
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.c-as.co.jp/" class="footer-link">公式サイト トップ</a>
-        <a href="https://www.c-as.co.jp/rental/" class="footer-link">貸会議室ページ</a>
-        <a href="https://www.c-as.co.jp/contact/" class="footer-link">お問い合わせ</a>
-        <a href="https://www.c-as.co.jp/privacy-policy/" class="footer-link">プライバシーポリシー</a>
-      </div>
+    <div>
+      <div class="footer-brand-name">株式会社クロスアビリティズ</div>
+      <p class="footer-brand-desc">福岡・赤坂エリアのパソコン完備貸し教室。<br>会場だけのご利用から、研修企画・講師手配まで<br>ワンストップで対応します。</p>
     </div>
-    <div class="footer-bottom">
-      Copyright © 2026 株式会社クロスアビリティズ All Rights Reserved.
+    <div>
+      <div class="footer-nav-title">サービス</div>
+      <ul class="footer-nav-list">
+        <li><a href="https://www.c-as.co.jp/rental/" target="_blank">貸し教室・貸会議室</a></li>
+        <li><a href="https://www.c-as.co.jp/" target="_blank">研修・講座</a></li>
+        <li><a href="https://www.c-as.co.jp/" target="_blank">公共職業訓練</a></li>
+        <li><a href="https://www.c-as.co.jp/" target="_blank">テストセンター</a></li>
+      </ul>
     </div>
+    <div>
+      <div class="footer-nav-title">お問い合わせ</div>
+      <ul class="footer-nav-list">
+        <li><a href="https://www.c-as.co.jp/contact/" target="_blank">お問い合わせフォーム</a></li>
+        <li><a href="tel:0927917656">092-791-7656</a></li>
+        <li><a href="https://www.c-as.co.jp/" target="_blank">会社情報</a></li>
+        <li><a href="https://www.c-as.co.jp/" target="_blank">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2024 株式会社クロスアビリティズ All Rights Reserved.</div>
+    <div><a href="https://www.c-as.co.jp/" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;">www.c-as.co.jp</a></div>
   </div>
 </footer>
 
-<!-- ===== FLOATING CTA ===== -->
+<!-- ========== FLOATING CTA ========== -->
 <div class="floating-cta">
-  <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener noreferrer" class="floating-btn">
-    <span>お問い合わせ・見積もり</span>
-    <span class="small">20%OFFキャンペーン中</span>
-  </a>
+  <a href="tel:0927917656" class="floating-tel-btn">📞 092-791-7656</a>
+  <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="floating-contact-btn">✉ お問い合わせ・見積もり</a>
 </div>
 
-
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightboxDirect()">×</span>
+  <span class="lightbox-prev" onclick="lightboxPrev(event)">‹</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <span class="lightbox-next" onclick="lightboxNext(event)">›</span>
+</div>
 
 <script>
-  // Gallery Lightbox
-  const galleryImages = [
-    { src: 'images/room503_1.jpg', caption: '503号室 研修教室 全体' },
-    { src: 'images/room503_2.jpg', caption: '503号室 研修教室 PC席' },
-    { src: 'images/room506_1.jpg', caption: '506号室 研修教室 全体' },
-    { src: 'images/room506_2.jpg', caption: '506号室 研修教室 前方' },
-    { src: 'images/room606_1.jpg', caption: '606号室 研修教室 全体' },
-    { src: 'images/facility1.jpg', caption: '施設設備 PC' },
+  // FAQ
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Lightbox
+  const lightboxImages = [
+    'images/room503_1.jpg',
+    'images/room506_1.jpg',
+    'images/room606_1.jpg',
+    'images/room503_2.jpg',
+    'images/room506_2.jpg',
+    'images/room606_2.jpg',
   ];
-  let currentIndex = 0;
+  let currentLightboxIndex = 0;
 
   function openLightbox(index) {
-    currentIndex = index;
-    updateLightbox();
+    currentLightboxIndex = index;
+    document.getElementById('lightbox-img').src = lightboxImages[index];
     document.getElementById('lightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-  function closeLightbox() {
+  function closeLightbox(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightboxDirect();
+  }
+  function closeLightboxDirect() {
     document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
   }
-  function closeLightboxOnBg(e) {
-    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  function lightboxPrev(e) {
+    e.stopPropagation();
+    currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex];
   }
-  function changeLightbox(dir) {
-    currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
-    updateLightbox();
-  }
-  function updateLightbox() {
-    document.getElementById('lightboxImg').src = galleryImages[currentIndex].src;
-    document.getElementById('lightboxImg').alt = galleryImages[currentIndex].caption;
-    document.getElementById('lightboxCaption').textContent = galleryImages[currentIndex].caption + ' (' + (currentIndex + 1) + ' / ' + galleryImages.length + ')';
+  function lightboxNext(e) {
+    e.stopPropagation();
+    currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
+    document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex];
   }
   document.addEventListener('keydown', function(e) {
     if (!document.getElementById('lightbox').classList.contains('active')) return;
-    if (e.key === 'ArrowLeft') changeLightbox(-1);
-    if (e.key === 'ArrowRight') changeLightbox(1);
-    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Escape') closeLightboxDirect();
+    if (e.key === 'ArrowLeft') lightboxPrev(e);
+    if (e.key === 'ArrowRight') lightboxNext(e);
   });
 </script>
 </body>
