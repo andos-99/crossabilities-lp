@@ -232,30 +232,6 @@
     backdrop-filter: blur(4px);
   }
 
-  /* ===== BEFORE/AFTER ===== */
-  .ba-sec { background: var(--off); }
-  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
-  .ba-card {
-    border-radius: 24px; overflow: hidden;
-    box-shadow: var(--sh-lg);
-    position: relative;
-  }
-  .ba-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
-  .ba-label {
-    position: absolute; top: 18px; left: 18px;
-    font-size: 15px; font-weight: 700; padding: 8px 20px; border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  .ba-label.before { background: #ECEFF1; color: #546E7A; }
-  .ba-label.after  { background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%); color: white; }
-  .ba-info { background: white; padding: 24px 28px; }
-  .ba-title { font-size: 20px; font-weight: 700; color: var(--sky-d); margin-bottom: 10px; }
-  .ba-desc { font-size: 15px; color: var(--g700); line-height: 1.8; }
-  .ba-arrow {
-    display: flex; align-items: center; justify-content: center;
-    font-size: 52px; color: var(--gold);
-    align-self: center;
-  }
 
   /* ===== REASON ===== */
   .reason-sec { background: white; }
@@ -715,8 +691,6 @@
     .access-grid { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; gap: 28px; }
     .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-    .ba-grid { grid-template-columns: 1fr; }
-    .ba-arrow { transform: rotate(90deg); }
     .results-band { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .result-item { border-right: none; border-bottom: 1px solid rgba(30,136,229,0.15); padding: 16px 0; }
     .result-item:last-child { border-bottom: none; }
@@ -828,35 +802,6 @@
       <span class="diff-point">👨‍🏫 講師手配・研修企画もワンストップ</span>
       <span class="diff-point">🚇 天神・赤坂エリアで抜群のアクセス</span>
       <span class="diff-point">🏢 会場だけの利用も歓迎</span>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER -->
-<section class="ba-sec">
-  <div class="container">
-    <div class="sec-hd c">
-      <span class="sec-lbl">Before / After</span>
-      <h2 class="sec-h2">研修前と研修中の<br>違いをご覧ください</h2>
-      <p class="sec-desc">設備が整った空間で、参加者が自然と前向きになれる環境をご提供しています。</p>
-    </div>
-    <div class="ba-grid">
-      <div class="ba-card">
-        <img src="images/room503_1.jpg" alt="研修前の教室">
-        <div class="ba-label before">研修前 — 整然とした空間</div>
-        <div class="ba-info">
-          <div class="ba-title">準備ゼロで到着できます</div>
-          <p class="ba-desc">PCもモニターもホワイトボードも、すべてセット済み。担当者様は手ぶらで来ていただくだけ。機材の手配・設営・撤収はすべてこちらで対応します。</p>
-        </div>
-      </div>
-      <div class="ba-card">
-        <img src="images/room606_1.jpg" alt="研修中の教室">
-        <div class="ba-label after">研修中 — 活気ある学びの場</div>
-        <div class="ba-info">
-          <div class="ba-title">参加者が自然と前のめりになる</div>
-          <p class="ba-desc">広々とした70㎡以上の空間、65インチの大型モニター、快適な椅子と机。「この環境なら集中できる」と参加者から好評をいただいています。</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
