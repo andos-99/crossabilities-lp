@@ -171,20 +171,7 @@
   .hero-badge2 .bt { font-size: 10px; font-weight: 700; }
 
   /* ===== STATS ===== */
-  .stats { background: var(--sky-d); }
-  .stats-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: repeat(4, 1fr);
-  }
-  .stat {
-    padding: 32px 20px; text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.12);
-  }
-  .stat:last-child { border-right: none; }
-  .stat-icon { font-size: 28px; margin-bottom: 8px; }
-  .stat-num { font-size: 38px; font-weight: 900; color: white; line-height: 1; }
-  .stat-num span { font-size: 16px; font-weight: 400; }
-  .stat-lbl { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 6px; }
+  .stats { display: none; }
 
   /* ===== SECTION BASE ===== */
   section { padding: 88px 24px; }
@@ -207,12 +194,13 @@
   .sec-hd.c { text-align: center; }
   .sec-hd.c .sec-desc { margin: 0 auto; }
 
-  /* ===== CATCHCOPY DIFFERENCE ===== */
+  /* ===== CATCHCOPY / DIFFERENCE ===== */
   .diff-sec {
     background: linear-gradient(135deg, var(--sky-d) 0%, #1976D2 60%, #0288D1 100%);
-    padding: 72px 24px; text-align: center;
+    padding: 80px 24px;
   }
-  .diff-inner { max-width: 900px; margin: 0 auto; }
+  .diff-inner { max-width: 1100px; margin: 0 auto; }
+  .diff-top { text-align: center; margin-bottom: 52px; }
   .diff-lbl { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-bottom: 20px; text-transform: uppercase; }
   .diff-copy {
     font-family: var(--serif);
@@ -220,17 +208,21 @@
     font-weight: 700; color: white; line-height: 1.45; margin-bottom: 20px;
   }
   .diff-copy .ca { color: #FFD54F; }
-  .diff-sub { font-size: 18px; color: rgba(255,255,255,0.88); line-height: 1.85; margin-bottom: 36px; }
-  .diff-points {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+  .diff-sub { font-size: 18px; color: rgba(255,255,255,0.88); line-height: 1.85; }
+  .diff-cards {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
   }
-  .diff-point {
-    background: rgba(255,255,255,0.15);
-    border: 1.5px solid rgba(255,255,255,0.4);
-    color: white; font-size: 15px; font-weight: 600;
-    padding: 10px 22px; border-radius: 50px;
-    backdrop-filter: blur(4px);
+  .diff-card {
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 20px; padding: 32px 30px;
+    backdrop-filter: blur(6px);
+    transition: background 0.2s, transform 0.2s;
   }
+  .diff-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-3px); }
+  .diff-card-icon { font-size: 38px; margin-bottom: 14px; }
+  .diff-card-title { font-size: 20px; font-weight: 700; color: #FFD54F; margin-bottom: 12px; line-height: 1.4; }
+  .diff-card-body { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.85; }
 
 
   /* ===== REASON ===== */
@@ -704,7 +696,7 @@
     .cta-btns { flex-direction: column; align-items: center; }
     .hdr-tel { display: none; }
     .fl-tel { display: none; }
-    .diff-points { flex-direction: column; align-items: center; }
+    .diff-cards { grid-template-columns: 1fr; }
     .results-band { grid-template-columns: 1fr; }
   }
 </style>
@@ -774,34 +766,44 @@
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat"><div class="stat-icon">🏫</div><div class="stat-num">3<span>教室</span></div><div class="stat-lbl">最大30名 × 3室</div></div>
-    <div class="stat"><div class="stat-icon">💻</div><div class="stat-num">31<span>台</span></div><div class="stat-lbl">Windows11 PC完備</div></div>
-    <div class="stat"><div class="stat-icon">🚇</div><div class="stat-num">3<span>分</span></div><div class="stat-lbl">地下鉄赤坂駅から徒歩</div></div>
-    <div class="stat"><div class="stat-icon">🕘</div><div class="stat-num">9<span>〜</span>20<span>時</span></div><div class="stat-lbl">ご利用可能時間（相談可）</div></div>
-  </div>
-</div>
+
 
 <!-- CATCHCOPY / DIFFERENCE -->
 <section class="diff-sec">
   <div class="diff-inner">
-    <div class="diff-lbl">What Makes Us Different</div>
-    <h2 class="diff-copy">
-      他の貸し会議室と<br>
-      <span class="ca">何が違うのか</span>、<br>
-      正直にお伝えします。
-    </h2>
-    <p class="diff-sub">
-      「PCを持ち込む必要がない」「講師まで頼める」「研修の企画から相談できる」<br>
-      ——この3つが揃っている会場は、福岡でもほとんどありません。
-    </p>
-    <div class="diff-points">
-      <span class="diff-point">💻 PC31台が最初から揃っている</span>
-      <span class="diff-point">👨‍🏫 講師手配・研修企画もワンストップ</span>
-      <span class="diff-point">🚇 天神・赤坂エリアで抜群のアクセス</span>
-      <span class="diff-point">🏢 会場だけの利用も歓迎</span>
+    <div class="diff-top">
+      <div class="diff-lbl">What Makes Us Different</div>
+      <h2 class="diff-copy">
+        他の貸し会議室と<br>
+        <span class="ca">何が違うのか</span>、<br>
+        ご説明します。
+      </h2>
+      <p class="diff-sub">
+        「PCを持ち込む必要がない」「講師まで頼める」「研修の企画から相談できる」<br>
+        ——この3つすべてが揃っている会場は、福岡でもほとんどありません。
+      </p>
+    </div>
+    <div class="diff-cards">
+      <div class="diff-card">
+        <div class="diff-card-icon">💻</div>
+        <div class="diff-card-title">PC31台が最初から揃っている</div>
+        <p class="diff-card-body">参加者全員分のWindows 11 PCが会場に常設されています。持参不要・設定不要。研修当日はそのままお使いいただけます。これだけで、担当者様の準備負担が大きく減ります。</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-card-icon">👨‍🏫</div>
+        <div class="diff-card-title">講師手配・研修企画もワンストップ</div>
+        <p class="diff-card-body">「何から始めればいいかわからない」という段階からご相談いただけます。研修プログラムの設計・講師の手配・当日の運営まで、すべてお任せいただけます。会場だけのご利用も歓迎です。</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-card-icon">🚇</div>
+        <div class="diff-card-title">天神・赤坂エリアで抜群のアクセス</div>
+        <p class="diff-card-body">地下鉄空港線「赤坂駅」2番出口より徒歩3分。天神からも近く、福岡市内どこからでもアクセスしやすい立地です。参加者が迷わず来られる会場は、研修の満足度にも直結します。</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-card-icon">🏢</div>
+        <div class="diff-card-title">会場だけの利用も、もちろん歓迎</div>
+        <p class="diff-card-body">研修の手配はご自身で行い、会場と設備だけをご利用いただくことも可能です。PC・モニター・マイク・ホワイトボード・インターネット環境がすべて揃っています。必要なものだけ、柔軟にご利用ください。</p>
+      </div>
     </div>
   </div>
 </section>
