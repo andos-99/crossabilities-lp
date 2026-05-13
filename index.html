@@ -126,6 +126,20 @@
     box-shadow: 0 2px 8px rgba(30,136,229,0.08);
   }
   .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-badges-row {
+    display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px;
+  }
+  .hero-info-badge {
+    background: white;
+    border: 2px solid var(--sky-l);
+    border-radius: 16px; padding: 14px 20px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 4px 16px rgba(30,136,229,0.10);
+    min-width: 180px;
+  }
+  .hib-icon { font-size: 28px; flex-shrink: 0; }
+  .hib-val { font-size: 16px; font-weight: 700; color: var(--sky-d); line-height: 1.2; }
+  .hib-note { font-size: 12px; color: var(--g500); margin-top: 3px; }
   .btn-main {
     background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
     color: white; padding: 17px 36px; border-radius: 50px;
@@ -731,18 +745,35 @@
       </div>
       <h1 class="hero-h1">
         「この研修、<span class="hl">うまくいった</span>」<br>
-        と言わせる会場が<br>
-        ここにあります。
+        と言わせる会場が、<br>
+        赤坂にあります。
       </h1>
       <p class="hero-sub">
-        準備ゼロで、プロ仕様の研修が始められます。<br>
+        地下鉄赤坂駅 徒歩3分・PC31台完備・1人あたり約600円〜<br>
         会場だけのご利用も、企画・講師手配もすべてご相談いただけます。
       </p>
-      <div class="hero-tags">
-        <span class="hero-tag">✅ 会場のみ利用OK</span>
-        <span class="hero-tag">💻 PC最大31台・無料</span>
-        <span class="hero-tag">🚇 赤坂駅 徒歩3分</span>
-        <span class="hero-tag">📅 土曜日も利用可</span>
+      <div class="hero-badges-row">
+        <div class="hero-info-badge">
+          <div class="hib-icon">🚇</div>
+          <div>
+            <div class="hib-val">赤坂駅 徒歩3分</div>
+            <div class="hib-note">地下鉄空港線2番出口</div>
+          </div>
+        </div>
+        <div class="hero-info-badge">
+          <div class="hib-icon">💻</div>
+          <div>
+            <div class="hib-val">PC31台 無料</div>
+            <div class="hib-note">Windows 11・持参不要</div>
+          </div>
+        </div>
+        <div class="hero-info-badge">
+          <div class="hib-icon">💰</div>
+          <div>
+            <div class="hib-val">20,000円〜（税別）</div>
+            <div class="hib-note">設備費込み・3時間〜</div>
+          </div>
+        </div>
       </div>
       <div class="hero-btns">
         <a href="https://www.c-as.co.jp/contact/" target="_blank" rel="noopener" class="btn-main">✉ お問い合わせ・見積もりを依頼する</a>
