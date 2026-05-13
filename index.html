@@ -37,7 +37,7 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+  body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.8; font-size: 17px; }
 
   /* ===== HEADER ===== */
   .hdr {
@@ -116,7 +116,7 @@
     border-radius: 3px; opacity: 0.65;
   }
   .hero-sub {
-    font-size: 17px; color: var(--g700); line-height: 1.9; margin-bottom: 28px;
+    font-size: 18px; color: var(--g700); line-height: 1.9; margin-bottom: 28px;
   }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
   .hero-tag {
@@ -127,18 +127,18 @@
   }
   .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; }
   .hero-badges-row {
-    display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px;
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px;
   }
   .hero-info-badge {
     background: white;
     border: 2px solid var(--sky-l);
-    border-radius: 16px; padding: 14px 20px;
-    display: flex; align-items: center; gap: 12px;
+    border-radius: 16px; padding: 13px 18px;
+    display: flex; align-items: center; gap: 10px;
     box-shadow: 0 4px 16px rgba(30,136,229,0.10);
-    min-width: 180px;
+    flex: 1 1 140px; min-width: 0;
   }
-  .hib-icon { font-size: 28px; flex-shrink: 0; }
-  .hib-val { font-size: 16px; font-weight: 700; color: var(--sky-d); line-height: 1.2; }
+  .hib-icon { font-size: 26px; flex-shrink: 0; }
+  .hib-val { font-size: 15px; font-weight: 700; color: var(--sky-d); line-height: 1.2; }
   .hib-note { font-size: 12px; color: var(--g500); margin-top: 3px; }
   .btn-main {
     background: linear-gradient(135deg, var(--sky) 0%, #42A5F5 100%);
@@ -203,7 +203,7 @@
     font-weight: 700; color: var(--sky-d);
     line-height: 1.4; margin-bottom: 16px;
   }
-  .sec-desc { font-size: 17px; color: var(--g700); line-height: 1.9; max-width: 660px; }
+  .sec-desc { font-size: 18px; color: var(--g700); line-height: 1.9; max-width: 660px; }
   .sec-hd { margin-bottom: 52px; }
   .sec-hd.c { text-align: center; }
   .sec-hd.c .sec-desc { margin: 0 auto; }
@@ -222,7 +222,7 @@
     font-weight: 700; color: white; line-height: 1.45; margin-bottom: 20px;
   }
   .diff-copy .ca { color: #FFD54F; }
-  .diff-sub { font-size: 18px; color: rgba(255,255,255,0.88); line-height: 1.85; }
+  .diff-sub { font-size: 18px; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 0; }
   .diff-cards {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
   }
@@ -236,7 +236,7 @@
   .diff-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-3px); }
   .diff-card-icon { font-size: 38px; margin-bottom: 14px; }
   .diff-card-title { font-size: 20px; font-weight: 700; color: #FFD54F; margin-bottom: 12px; line-height: 1.4; }
-  .diff-card-body { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.85; }
+  .diff-card-body { font-size: 16px; color: rgba(255,255,255,0.92); line-height: 1.9; }
 
 
   /* ===== REASON ===== */
@@ -315,7 +315,7 @@
 
   /* ===== USE CASES ===== */
   .uc-sec { background: white; }
-  .uc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+  .uc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .uc-card {
     background: white; border-radius: 20px; overflow: hidden;
     box-shadow: var(--sh);
@@ -547,7 +547,7 @@
     padding: 22px 26px;
     display: flex; align-items: flex-start; gap: 16px;
     cursor: pointer; user-select: none;
-    font-size: 16px; font-weight: 600; color: var(--sky-d); line-height: 1.5;
+    font-size: 17px; font-weight: 600; color: var(--sky-d); line-height: 1.6;
   }
   .faq-q-mark {
     width: 32px; height: 32px; flex-shrink: 0;
@@ -562,7 +562,7 @@
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
   .faq-a {
     display: none; padding: 18px 26px 22px 74px;
-    font-size: 15px; color: var(--g700); line-height: 1.9;
+    font-size: 16px; color: var(--g700); line-height: 1.9;
     border-top: 1px solid var(--g100);
   }
   .faq-item.open .faq-a { display: block; }
@@ -683,11 +683,11 @@
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 960px) {
-    .hero-inner { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 52px 20px; }
     .hero-photo { display: none; }
     .reason-grid { grid-template-columns: 1fr; }
     .equip-grid { grid-template-columns: repeat(2, 1fr); }
-    .uc-grid { grid-template-columns: 1fr; }
+    .uc-grid { grid-template-columns: repeat(2, 1fr); }
     .rooms-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
     .price-hl { grid-template-columns: 1fr; gap: 22px; text-align: center; }
@@ -701,17 +701,37 @@
     .result-item { border-right: none; border-bottom: 1px solid rgba(30,136,229,0.15); padding: 16px 0; }
     .result-item:last-child { border-bottom: none; }
     .voices-grid { grid-template-columns: 1fr; }
+    .diff-cards { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
+    section { padding: 60px 18px; }
     .equip-grid { grid-template-columns: 1fr; }
+    .uc-grid { grid-template-columns: 1fr; }
     .rooms-grid { grid-template-columns: 1fr; }
     .flow-grid { grid-template-columns: 1fr; }
-    .hero-btns { flex-direction: column; }
+    .hero-btns { flex-direction: column; align-items: stretch; }
+    .hero-btns a { text-align: center; }
     .cta-btns { flex-direction: column; align-items: center; }
     .hdr-tel { display: none; }
     .fl-tel { display: none; }
     .diff-cards { grid-template-columns: 1fr; }
     .results-band { grid-template-columns: 1fr; }
+    .hero-badges-row { gap: 10px; }
+    .hero-info-badge { flex: 1 1 100%; }
+    .hdr { padding: 0 16px; height: 64px; }
+    .hdr-logo-img { height: 36px; }
+    .hdr-btn { padding: 9px 16px; font-size: 13px; }
+    .sec-h2 { font-size: clamp(22px, 6vw, 32px); }
+    .hero-h1 { font-size: clamp(26px, 7vw, 38px); }
+    .price-tbl { font-size: 14px; }
+    .faq-q { font-size: 15px; padding: 18px 16px; gap: 12px; }
+    .faq-a { padding: 14px 16px 18px 60px; font-size: 15px; }
+    .diff-card { padding: 24px 20px; }
+    .diff-card-title { font-size: 18px; }
+    .diff-card-body { font-size: 15px; }
+    .voice-card { padding: 24px 20px; }
+    .floating { bottom: 16px; right: 14px; gap: 10px; }
+    .fl-contact { padding: 12px 18px; font-size: 14px; }
   }
 </style>
 </head>
@@ -919,7 +939,7 @@
   <div class="container">
     <div class="sec-hd">
       <span class="sec-lbl">Use Cases</span>
-      <h2 class="sec-h2">こんな研修・講座に<br>ご活用いただいています</h2>
+      <h2 class="sec-h2">研修・会議・説明会など<br>幅広くご活用いただいています</h2>
     </div>
     <div class="uc-grid">
       <div class="uc-card">
@@ -936,7 +956,15 @@
       </div>
       <div class="uc-card">
         <div class="uc-head purple"><div class="uc-head-icon">🎤</div><div><div class="uc-case-num">CASE 04</div><div class="uc-case-title">セミナー・講習会</div></div></div>
-        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">企業セミナー</span><span class="uc-tag">勉強会</span><span class="uc-tag">講習会</span></div><p class="uc-desc">9〜30名規模のセミナー・勉強会・講習会に最適です。65インチモニターとマイクで、参加者全員に伝わる環境を整えています。</p></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">企業セミナー</span><span class="uc-tag">勉強会</span><span class="uc-tag">講習会</span></div><p class="uc-desc">9〜30名規模のセミナー・勉強会・講習会にご利用いただいています。65インチモニターとマイクがあり、参加者全員に声と画面がしっかり届きます。</p></div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-head sky"><div class="uc-head-icon">🤝</div><div><div class="uc-case-num">CASE 05</div><div class="uc-case-title">会議・例会・総会</div></div></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">社内会議</span><span class="uc-tag">例会・総会</span><span class="uc-tag">合同会議</span></div><p class="uc-desc">複数拠点の合同会議や、定期的な例会・総会の会場としてもご利用いただけます。広さと設備が整っているので、大切な場をしっかり演出できます。</p></div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-head teal"><div class="uc-head-icon">📢</div><div><div class="uc-case-num">CASE 06</div><div class="uc-case-title">会社説明会・採用イベント</div></div></div>
+        <div class="uc-body"><div class="uc-tags"><span class="uc-tag">会社説明会</span><span class="uc-tag">採用イベント</span><span class="uc-tag">インターンシップ</span></div><p class="uc-desc">学生向けの会社説明会や採用イベントにも最適です。アクセスがよく、きれいな環境で実施できるため、会社の印象アップにもつながります。</p></div>
       </div>
     </div>
   </div>
@@ -1035,18 +1063,18 @@
   <div class="container">
     <div class="sec-hd c">
       <span class="sec-lbl">One-Stop Service</span>
-      <h2 class="sec-h2">「何から始めればいいか<br>わからない」という方へ</h2>
-      <p class="sec-desc">研修の企画・会場・設備・講師・当日の運営まで、すべてご相談いただけます。初めて研修を担当する方も、安心してお任せください。</p>
+      <h2 class="sec-h2">「何から手をつければいいか<br>わからない」という方へ</h2>
+      <p class="sec-desc">研修の内容を決めるところから、会場・設備・講師の手配、当日の進行まで、まとめてご相談いただけます。はじめて研修を担当される方も、ぜひお気軽にどうぞ。</p>
     </div>
     <div class="flow-grid">
-      <div class="flow-step"><div class="flow-circle">💬</div><div class="flow-num">STEP 01</div><div class="flow-title">ご相談・ヒアリング</div><div class="flow-desc">研修の目的・人数・日程・予算をお聞きします</div></div>
-      <div class="flow-step"><div class="flow-circle">📝</div><div class="flow-num">STEP 02</div><div class="flow-title">プログラム提案</div><div class="flow-desc">ご要望に合わせた研修プログラムと会場をご提案</div></div>
-      <div class="flow-step"><div class="flow-circle">👨‍🏫</div><div class="flow-num">STEP 03</div><div class="flow-title">講師・会場の手配</div><div class="flow-desc">講師の選定・手配と会場の予約を行います</div></div>
-      <div class="flow-step"><div class="flow-circle">🎓</div><div class="flow-num">STEP 04</div><div class="flow-title">当日の研修実施</div><div class="flow-desc">設備設営・受付・運営サポートまで対応します</div></div>
+      <div class="flow-step"><div class="flow-circle">💬</div><div class="flow-num">STEP 01</div><div class="flow-title">まずはご相談</div><div class="flow-desc">研修の目的・人数・日程・ご予算をお聞かせください</div></div>
+      <div class="flow-step"><div class="flow-circle">📝</div><div class="flow-num">STEP 02</div><div class="flow-title">内容のご提案</div><div class="flow-desc">ご要望に合わせた研修内容と会場をご提案します</div></div>
+      <div class="flow-step"><div class="flow-circle">👨‍🏫</div><div class="flow-num">STEP 03</div><div class="flow-title">講師・会場の手配</div><div class="flow-desc">講師の選定・手配と会場の予約をいたします</div></div>
+      <div class="flow-step"><div class="flow-circle">🎓</div><div class="flow-num">STEP 04</div><div class="flow-title">当日の研修実施</div><div class="flow-desc">設備の準備・受付・当日の進行サポートまで対応します</div></div>
     </div>
-    <div class="os-note">
-      <strong>会場だけのご利用も歓迎しています。</strong> 研修の手配はご自身で行い、会場と設備だけをご利用いただくことも可能です。必要なサービスだけを選んでご利用ください。
-    </div>
+      <div class="os-note">
+        <strong>会場だけのご利用も、もちろん歓迎です。</strong> 研修の手配はご自身で行い、会場と設備だけをお使いいただくことも可能です。必要な部分だけ、柔軟にご利用ください。
+      </div>
   </div>
 </section>
 
@@ -1124,12 +1152,12 @@
       <div>
         <span class="ai-badge">✦ NEW · AI Training</span>
         <h2 class="ai-title">AI研修にも<br>対応しています</h2>
-        <p class="ai-desc">ChatGPT・生成AI・業務効率化ツールの活用研修など、最新のAI研修にも対応しています。PC完備の環境で、実践的なハンズオン研修を実施できます。詳細は別途ご案内予定です。</p>
+        <p class="ai-desc">ChatGPTや生成AIの使い方、日常業務への取り入れ方など、最新のAI研修にも対応しています。パソコンを使いながら実際に体験できる環境が整っています。詳細は別途ご案内予定です。</p>
         <div class="ai-tags">
           <span class="ai-tag">ChatGPT活用</span>
           <span class="ai-tag">生成AI入門</span>
-          <span class="ai-tag">業務効率化</span>
-          <span class="ai-tag">DX推進</span>
+          <span class="ai-tag">業務への取り入れ方</span>
+          <span class="ai-tag">実践・体験型</span>
         </div>
       </div>
       <div class="ai-visual">
