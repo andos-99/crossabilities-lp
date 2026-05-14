@@ -69,8 +69,6 @@
   .hero {
     margin-top: 72px;
     position: relative;
-    min-height: 620px;
-    display: flex; align-items: center;
     overflow: hidden;
     background: linear-gradient(135deg, #E3F2FD 0%, #EDE7F6 40%, #E8F5E9 100%);
   }
@@ -84,8 +82,55 @@
   .hero-inner {
     position: relative; z-index: 2;
     max-width: 1100px; margin: 0 auto;
-    padding: 72px 32px; width: 100%;
+    padding: 64px 32px 52px; width: 100%;
     display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center;
+  }
+
+  /* 3つの大きなアピールカード */
+  .hero-appeal-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-bottom: 32px;
+  }
+  .hero-appeal-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px 18px;
+    box-shadow: 0 6px 24px rgba(30,136,229,0.13);
+    border-top: 4px solid var(--sky);
+    text-align: center;
+  }
+  .hac-icon { font-size: 32px; margin-bottom: 8px; }
+  .hac-val {
+    font-size: 20px; font-weight: 900; color: var(--sky-d);
+    line-height: 1.2; margin-bottom: 4px;
+  }
+  .hac-sub { font-size: 12px; color: var(--g500); line-height: 1.5; }
+
+  /* 周辺環境バンド */
+  .env-band {
+    background: white;
+    border-top: 3px solid var(--sky-l);
+    border-bottom: 3px solid var(--sky-l);
+    padding: 18px 24px;
+  }
+  .env-band-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 0;
+    justify-content: space-around;
+  }
+  .env-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 16px;
+    font-size: 14px; font-weight: 600; color: var(--g700);
+    white-space: nowrap;
+  }
+  .env-item-icon { font-size: 20px; }
+  .env-item-val { font-weight: 700; color: var(--sky-d); }
+  .env-divider {
+    width: 1px; height: 28px;
+    background: var(--g300);
+    flex-shrink: 0;
   }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
@@ -703,10 +748,18 @@
     .voices-grid { grid-template-columns: 1fr; }
     .diff-cards { grid-template-columns: 1fr; }
   }
+  @media (max-width: 960px) {
+    .hero-appeal-row { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .hac-val { font-size: 17px; }
+  }
   @media (max-width: 600px) {
     section { padding: 60px 18px; }
     .equip-grid { grid-template-columns: 1fr; }
     .uc-grid { grid-template-columns: 1fr; }
+    .hero-appeal-row { grid-template-columns: 1fr; gap: 12px; }
+    .env-band-inner { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .env-divider { display: none; }
+    .env-item { padding: 6px 8px; font-size: 15px; }
     .rooms-grid { grid-template-columns: 1fr; }
     .flow-grid { grid-template-columns: 1fr; }
     .hero-btns { flex-direction: column; align-items: stretch; }
@@ -772,27 +825,21 @@
         地下鉄赤坂駅 徒歩3分・PC31台完備・1人あたり約600円〜<br>
         会場だけのご利用も、企画・講師手配もすべてご相談いただけます。
       </p>
-      <div class="hero-badges-row">
-        <div class="hero-info-badge">
-          <div class="hib-icon">🚇</div>
-          <div>
-            <div class="hib-val">赤坂駅 徒歩3分</div>
-            <div class="hib-note">地下鉄空港線2番出口</div>
-          </div>
+      <div class="hero-appeal-row">
+        <div class="hero-appeal-card">
+          <div class="hac-icon">🚇</div>
+          <div class="hac-val">赤坂駅<br>徒歩3分</div>
+          <div class="hac-sub">地下鉄空港線 2番出口<br>天神から2駅・博多から4駅</div>
         </div>
-        <div class="hero-info-badge">
-          <div class="hib-icon">💻</div>
-          <div>
-            <div class="hib-val">PC31台 無料</div>
-            <div class="hib-note">Windows 11・持参不要</div>
-          </div>
+        <div class="hero-appeal-card">
+          <div class="hac-icon">💰</div>
+          <div class="hac-val">3時間<br>20,000円〜</div>
+          <div class="hac-sub">設備費込み・税別<br>PC31台・全設備無料</div>
         </div>
-        <div class="hero-info-badge">
-          <div class="hib-icon">💰</div>
-          <div>
-            <div class="hib-val">20,000円〜（税別）</div>
-            <div class="hib-note">設備費込み・3時間〜</div>
-          </div>
+        <div class="hero-appeal-card">
+          <div class="hac-icon">🏢</div>
+          <div class="hac-val">福岡市<br>中央区赤坂</div>
+          <div class="hac-sub">新栄ビル 5F・6F<br>3教室・最大30名</div>
         </div>
       </div>
       <div class="hero-btns">
@@ -817,7 +864,35 @@
   </div>
 </section>
 
-
+<!-- ENVIRONMENT BAND -->
+<div class="env-band">
+  <div class="env-band-inner">
+    <div class="env-item">
+      <span class="env-item-icon">✈️</span>
+      <span>福岡空港から<span class="env-item-val">地下鉄15分</span></span>
+    </div>
+    <div class="env-divider"></div>
+    <div class="env-item">
+      <span class="env-item-icon">🚄</span>
+      <span>博多駅から<span class="env-item-val">地下鉄10分</span></span>
+    </div>
+    <div class="env-divider"></div>
+    <div class="env-item">
+      <span class="env-item-icon">🏪</span>
+      <span>コンビニ<span class="env-item-val">徒歩1分</span></span>
+    </div>
+    <div class="env-divider"></div>
+    <div class="env-item">
+      <span class="env-item-icon">🍜</span>
+      <span>飲食店<span class="env-item-val">多数あり</span></span>
+    </div>
+    <div class="env-divider"></div>
+    <div class="env-item">
+      <span class="env-item-icon">🏨</span>
+      <span>近隣に<span class="env-item-val">ホテルあり</span></span>
+    </div>
+  </div>
+</div>
 
 <!-- CATCHCOPY / DIFFERENCE -->
 <section class="diff-sec">
